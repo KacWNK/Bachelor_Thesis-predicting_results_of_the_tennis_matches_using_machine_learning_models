@@ -1,0 +1,105 @@
+
+1. **w_2ndIn**: The number of second serves made by the winner. Calculated as `w_svpt - w_1stIn - w_df`.
+
+2. **l_2ndIn**: The number of second serves made by the loser. Calculated as `l_svpt - l_1stIn - l_df`.
+
+3. **h2h_diff**: The head-to-head difference from the perspective of the winner. It represents the difference in the number of wins between the winner and the loser before the current match.
+
+4. **h2h_matches_played**: The total number of head-to-head matches played between the winner and the loser before the current match.
+
+5. **tourney_country**: The country where the tournament is held, mapped from the tournament location.
+
+6. **winner_home**: A boolean indicating if the winner is playing in their home country.
+
+7. **loser_home**: A boolean indicating if the loser is playing in their home country.
+
+8. **Round_Num**: The numerical representation of the round in the tournament.
+
+9. **Winner_Total_aces**: The total number of aces made by the winner before the current match in the tournament.
+
+10. **Loser_Total_aces**: The total number of aces made by the loser before the current match in the tournament.
+
+11. **Winner_Total_minutes**: The total number of minutes played by the winner before the current match in the tournament.
+
+12. **Loser_Total_minutes**: The total number of minutes played by the loser before the current match in the tournament.
+
+13. **Winner_Total_double_errors**: The total number of double faults made by the winner before the current match in the tournament.
+
+14. **Loser_Total_double_errors**: The total number of double faults made by the loser before the current match in the tournament.
+
+15. **Winner_Total_serves**: The total number of serves made by the winner before the current match in the tournament.
+
+16. **Loser_Total_serves**: The total number of serves made by the loser before the current match in the tournament.
+
+17. **Winner_Total_points_won_after_1st_serve**: The total number of points won by the winner after their first serve before the current match in the tournament.
+
+18. **Loser_Total_points_won_after_1st_serve**: The total number of points won by the loser after their first serve before the current match in the tournament.
+
+19. **Winner_Total_points_won_after_2nd_serve**: The total number of points won by the winner after their second serve before the current match in the tournament.
+
+20. **Loser_Total_points_won_after_2nd_serve**: The total number of points won by the loser after their second serve before the current match in the tournament.
+
+21. **Winner_Total_1st_serves**: The total number of first serves made by the winner before the current match in the tournament.
+
+22. **Loser_Total_1st_serves**: The total number of first serves made by the loser before the current match in the tournament.
+
+23. **Winner_Total_2nd_serves**: The total number of second serves made by the winner before the current match in the tournament.
+
+24. **Loser_Total_2nd_serves**: The total number of second serves made by the loser before the current match in the tournament.
+
+25. **Winner_Total_games_serving**: The total number of service games played by the winner before the current match in the tournament.
+
+26. **Loser_Total_games_serving**: The total number of service games played by the loser before the current match in the tournament.
+
+27. **winner_win_pct_last_10**: The win percentage of the winner in their last 10 matches before the current match.
+
+28. **loser_win_pct_last_10**: The win percentage of the loser in their last 10 matches before the current match.
+
+29. **winner_win_pct_last_10_surface**: The win percentage of the winner in their last 10 matches on the same surface as the current match.
+
+30. **loser_win_pct_last_10_surface**: The win percentage of the loser in their last 10 matches on the same surface as the current match.
+
+
+1. **winner_bp_won_pct**: The percentage of break points won by the winner. 
+
+2. **loser_bp_won_pct**: The percentage of break points won by the loser. 
+
+3. **winner_1st_serve_won_pct**: The percentage of points won by the winner on their first serve. 
+
+4. **loser_1st_serve_won_pct**: The percentage of points won by the loser on their first serve.
+
+5. **winner_2nd_serve_won_pct**: The percentage of points won by the winner on their second serve.
+
+6. **loser_2nd_serve_won_pct**: The percentage of points won by the loser on their second serve. 
+
+7. winner_1st_serve_in_pct: The percentage of first serves made by the winner. Calculated using the calculate_1st_serve_in_percentage function.
+
+8. winner_1st_serve_win_pct: The percentage of points won by the winner on their first serve. Calculated using the calculate_1st_serve_win_percentage function.
+
+9. winner_2nd_serve_in_pct: The percentage of second serves made by the winner. Calculated using the calculate_2nd_serve_in_percentage function.
+
+10. winner_2nd_serve_win_pct: The percentage of points won by the winner on their second serve. Calculated using the calculate_2nd_serve_win_percentage function.
+
+11. winner_service_games_won_pct: The percentage of service games won by the winner. Calculated using the calculate_service_games_won_percentage function.
+
+12. loser_1st_serve_in_pct: The percentage of first serves made by the loser. Calculated using the calculate_1st_serve_in_percentage_loser function.
+
+13. loser_1st_serve_win_pct: The percentage of points won by the loser on their first serve. Calculated using the calculate_1st_serve_win_percentage_loser function.
+
+14. loser_2nd_serve_in_pct: The percentage of second serves made by the loser. Calculated using the calculate_2nd_serve_in_percentage_loser function.
+
+15. loser_2nd_serve_win_pct: The percentage of points won by the loser on their second serve. Calculated using the calculate_2nd_serve_win_percentage_loser function.
+
+16. loser_service_games_won_pct: The percentage of service games won by the loser. Calculated using the calculate_service_games_won_percentage_loser function.
+
+winner_1st_serve_return_win_pct: The percentage of points won by the winner on the opponent's first serve. Calculated using the calculate_1st_serve_return_win_percentage function.
+
+winner_2nd_serve_return_win_pct: The percentage of points won by the winner on the opponent's second serve. Calculated using the calculate_2nd_serve_return_win_percentage function.
+
+winner_return_games_win_pct: The percentage of return games won by the winner. Calculated using the calculate_return_games_win_percentage function.
+
+loser_1st_serve_return_win_pct: The percentage of points won by the loser on the opponent's first serve return. Calculated using the calculate_1st_serve_return_win_percentage_loser function.
+
+loser_2nd_serve_return_win_pct: The percentage of points won by the loser on the opponent's second serve return. Calculated using the calculate_2nd_serve_return_win_percentage_loser function.
+
+loser_return_games_win_pct: The percentage of return games won by the loser. Calculated using the calculate_return_games_win_percentage_loser function.
