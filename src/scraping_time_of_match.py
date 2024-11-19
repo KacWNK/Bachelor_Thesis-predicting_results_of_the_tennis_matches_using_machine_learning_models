@@ -5,10 +5,10 @@ from datetime import datetime, timedelta
 import json
 
 results = {}
-unwanted_tournaments = ["challenger", "futures", "itf", "utr", "seniors", "a day at the drive", "bundesliga", "czech league", "german championships"]
+unwanted_tournaments = ["challenger", "futures", "itf", "utr", "seniors", "a day at the drive", "bundesliga", "czech league", "german championships", "laver cup", "exh", "World Tennis League", "Masters Cup ATP", "Next Gen ATP Finals", 'Melbourne Summer Set']
 # Define the start and end dates for iteration
-start_date = datetime(2021, 1, 1)
-end_date = datetime(2021, 12, 31)
+start_date = datetime(2022, 1, 1)
+end_date = datetime(2022, 12, 31)
 current_date = start_date
 while current_date <= end_date:
     year = current_date.year
@@ -41,7 +41,7 @@ while current_date <= end_date:
         if type_men2_span:
             tournament_name = tname_element.get_text(strip=True)
             # Condition to stop scraping (e.g., if the tournament name contains "Challenger")
-            if any(tournament_type in tournament_name.lower() for tournament_type in unwanted_tournaments):
+            if any(tournament_type.lower() in tournament_name.lower() for tournament_type in unwanted_tournaments):
                 print(f"Stopping scraping: Unwanted tournament found ({tournament_name}).")
                 break
             if tournament_name not in results:
