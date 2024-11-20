@@ -104,7 +104,7 @@ while current_date <= end_date:
                     results[tournament_name][round_info].append(match_data)
     current_date += timedelta(days=1)
 print(results)
-output_file = "scraped_match_time.json"
+output_file = "scraped_match_time_2021.json"
 
 # Save the results dictionary to a JSON file
 with open(output_file, "w", encoding="utf-8") as json_file:
