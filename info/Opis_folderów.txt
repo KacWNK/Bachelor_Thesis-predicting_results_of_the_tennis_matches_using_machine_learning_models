@@ -1,0 +1,3 @@
+opis danych w data:
+(data) Merged_year_data-> (src) New_columns -> (data) all_years_with_new_columns -> (src) merging_scraped_time_json ->
+-> (data) all_years_with_new_columns_and_time-> (src) localisation -> all_years_nc_time_coordinations
