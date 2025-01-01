@@ -1,3 +1,0 @@
-Best Configuration:
-{'batch_size': 128, 'dropout': np.float64(0.21480305388619705), 'embedding_hidden_layer_sizes': [16], 'embedding_size': 16, 'hidden_layer_sizes': [256, 128], 'learning_rate': np.float64(0.005888391987151447), 'optimizer': 'Adam', 'weight_decay': np.float64(2.1871318436814158e-06)}
-Best Validation ROI: 22.8572%
