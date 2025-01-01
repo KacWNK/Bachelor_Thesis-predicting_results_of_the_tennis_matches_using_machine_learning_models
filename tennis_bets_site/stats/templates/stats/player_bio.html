@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ player.name }}'s Bio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>{{ player.name }}</h1>
+        <p><strong>Rank:</strong> {{ player.rank|default:"Unranked" }}</p>
+        <p><strong>Age:</strong> {{ player.age|default:"Unknown" }}</p>
+        <p><strong>Hand:</strong> {{ player.hand|default:"Unknown" }}</p>
+
+        <!-- Recent Matches -->
+        <h2>Recent Matches</h2>
+        {% if recent_matches %}
+            <ul>
+                {% for match in recent_matches %}
+                    <li>
+                        {{ match.date }}:
+                        {% if match.winner == player %}
+                            Defeated {{ match.loser.name }}
+                        {% else %}
+                            Lost to {{ match.winner.name }}
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No recent matches found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

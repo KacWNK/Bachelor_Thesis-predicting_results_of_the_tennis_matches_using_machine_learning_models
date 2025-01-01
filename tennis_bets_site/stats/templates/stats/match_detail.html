@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* General Body */
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background-color: black; /* Black background */
+            color: white; /* White text color */
+            padding: 0.8rem 1.5rem; /* Padding inside the bar */
+            font-size: 1.2rem; /* Text size */
+            font-weight: bold; /* Make text bold */
+            display: flex; /* Flexbox layout */
+            align-items: center; /* Center items vertically */
+            justify-content: space-between; /* Space out elements */
+            height: 120px;
+        }
+
+        /* Top Bar Logo */
+        .top-bar .logo {
+            font-size: 1.5rem; /* Larger text size for logo */
+        }
+
+        /* Top Bar Buttons */
+        .top-bar .nav-buttons a {
+            color: white; /* White text */
+            text-decoration: none; /* No underline */
+            margin-left: 1rem; /* Spacing between buttons */
+            padding: 0.5rem 1rem; /* Button padding */
+            border-radius: 0.375rem; /* Rounded corners */
+            transition: background-color 0.2s; /* Smooth hover effect */
+        }
+
+        /* Hover Effect for Buttons */
+        .top-bar .nav-buttons a:hover {
+            background-color: #444; /* Darker gray on hover */
+        }
+
+        /* Main Container */
+        .container {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            width: 60%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 0 auto;
+        }
+
+        /* Match Header */
+        .match-header {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .match-score-container {
+            text-align: center; /* Center align both elements */
+            margin: 1rem 0; /* Add spacing around the container */
+        }
+
+        .match-score {
+            font-size: 3rem; /* Adjust font size for the score */
+            font-weight: bold; /* Make it bold */
+        }
+
+        .match-round {
+            font-size: 1rem; /* Smaller font size for the round */
+            font-weight: bold; /* Make it bold */
+            color: #6c757d; /* Optional: lighter color for round text */
+            margin-top: 0.5rem; /* Add spacing between score and round */
+        }
+
+        /* Player Section */
+        .players-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .player {
+            text-align: center;
+        }
+
+        .player img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 0.5rem;
+        }
+
+        .player-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .player-rank {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        /* Match Score */
+        .h2h-match-score {
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        /* Tabs Styling */
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid #ddd;
+            margin: 1rem 0;
+        }
+
+        .tabs button {
+            padding: 0.5rem 1rem;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .tabs button.active {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none; /* Hidden by default */
+        }
+
+        .tab-content.active {
+            display: block; /* Only active tab content is shown */
+        }
+
+        /* Score Table */
+        .score-table {
+            width: 100%;
+            margin-top: 1rem;
+            border-collapse: collapse;
+        }
+
+        .score-table th,
+        .score-table td {
+            padding: 0.5rem;
+            text-align: center;
+        }
+
+        .score-table th {
+            background-color: #f1f1f1;
+        }
+
+        .score-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .bar-fill.red {
+            background-color: #dc3545;
+        }
+
+        .bar-fill.blue {
+            background-color: #007bff;
+        }
+
+        /* Odds */
+        .odds-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        /* Footer Info */
+        .footer-info {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        /* Section Headers */
+        .section-header {
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            padding: 0.5rem 0;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd; /* Divider below header */
+            color: #6c757d;
+        }
+
+        /* Boxed Sections */
+        .section-box {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            background-color: #f8f9fa;
+        }
+
+        /* Stat Rows */
+        .stat-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .stat-top-row {
+            display: flex; /* Enable flexbox */
+            align-items: center; /* Vertically align items */
+            margin-bottom: 0.5rem; /* Space below the row */
+        }
+
+        /* Stat Title */
+        .stat-val-left {
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: left;
+            margin-right: 1rem; /* Add spacing between label and title */
+            white-space: nowrap; /* Prevent text from breaking */
+        }
+
+        .stat-val-right {
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: right;
+            margin-left: 1rem; /* Add spacing between label and title */
+            white-space: nowrap; /* Prevent text from breaking */
+        }
+
+        .stat-title {
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-align: center;
+            flex-grow: 1; /* Take remaining space in the row */
+        }
+
+        /* Bar Container */
+        .stat-bar-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 10px; /* Fixed height for bars */
+            background-color: #e9ecef; /* Light gray background for the bars */
+            border-radius: 4px;
+            overflow: hidden; /* Prevent overflow */
+        }
+
+        /* Bars */
+        .stat-bar-left {
+            height: 10px;
+            background-color: #1a202c; /* Dark Blue */
+            border-top-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+            direction: ltr; /* Makes the content flow from right to left */
+        }
+
+        .stat-bar-right {
+            height: 10px;
+            background-color: #dc3545; /* Red */
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+        }
+
+        /* Empty Middle Space */
+        .stat-bar-empty {
+            height: 100%;
+            background-color: #e9ecef; /* Gray */
+        }
+
+
+        .bar-fill.red {
+            background-color: #dc3545;
+        }
+
+        .bar-fill.blue {
+            background-color: #007bff;
+        }
+
+
+        .table th {
+            background-color: #e9ecef;
+            font-weight: bold;
+        }
+
+        .stat-header {
+            text-align: center;
+            font-weight: bold;
+            font-size: 1rem;
+            text-transform: uppercase;
+            padding: 0.5rem 0;
+            margin-bottom: 0.5rem;
+            border-bottom: 1px solid #ddd; /* Divider below header */
+            color: #6c757d;
+        }
+
+                .h2h-filters {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px; /* Rounded buttons */
+            background-color: #f1f1f1;
+            font-size: 0.9rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #495057;
+        }
+
+        .filter-btn.active {
+            background-color: #dc3545; /* Red for active */
+            color: white;
+        }
+
+        /* General Layout */
+.match-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 2fr 2fr 2fr 2fr; /* Flexible layout for columns */
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid #333; /* Divider */
+}
+
+    .h2h-match-row-text {
+        font-size: 0.9rem;
+        text-align: center;
+        font-weight: bold;
+    }
+
+
+    /* Buttons */
+    .match-actions {
+        display: flex;
+        gap: 0.5rem; /* Spacing between buttons */
+        justify-content: center;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        border: 1px solid #007bff; /* Blue border */
+        background: transparent;
+        color: #007bff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .btn:hover {
+        background-color: #007bff;
+        color: white;
+    }
+
+    /* Results Button */
+    .btn-results {
+        border-color: #007bff;
+    }
+
+    .match-row.hidden {
+        display: none;
+    }
+    .h2h-match-table {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden; /* Rounded corners */
+}
+
+/* Header Row */
+.h2h-match-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 2fr 2fr 2fr 2fr; /* Column sizes */
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #333; /* Divider */
+}
+
+/* Columns in Header */
+.h2h-match-col {
+    text-align: center;
+}
+
+    </style>
+</head>
+
+
+<body>
+<div class="top-bar">
+    <!-- Logo -->
+    <div class="logo">Logo</div>
+
+    <!-- Navigation -->
+    <div class="nav-buttons">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <button class="search-icon" id="search-btn">
+            <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" width="20" alt="Search">
+        </button>
+    </div>
+</div>
+<div class="container mt-4">
+    <!-- Match Header -->
+    <div class="match-header">
+        <div class="tournament">ATP - Singles: Auckland (New Zealand), Hard - Final</div>
+        <div>02:10 AM, January 13, 2024</div>
+    </div>
+
+    <!-- Players Section -->
+    <div class="players-container">
+        <div class="player">
+            <!--            <img src="player1.jpg" alt="Player 1">-->
+            <div class="player-name">Daniel T.</div>
+            <div class="player-rank">ATP: 84</div>
+        </div>
+        <div class="match-score-container">
+            <div class="match-score">0 - 2</div>
+            <div class="match-round">Final</div>
+        </div>
+        <div class="player">
+            <!--            <img src="player2.jpg" alt="Player 2">-->
+            <div class="player-name">Tabilo A.</div>
+            <div class="player-rank">ATP: 23</div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <button id="summary-tab" class="active">Summary</button>
+        <button id="stats-tab">Stats</button>
+        <button id="h2h-tab">H2H</button>
+    </div>
+    <div id="summary-content" class="tab-content active">
+        <!-- Score Section -->
+        <div class="section-box">
+            <div class="section-header">Score</div>
+            <table class="score-table">
+                <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Set 1</th>
+                    <th>Set 2</th>
+                    <th>Set 3</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Daniel T.</td>
+                    <td>2</td>
+                    <td>5</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>Tabilo A.</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>-</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Odds Section -->
+        <div id='odds-section' class="section-box">
+            <div class="section-header">Bookmakers Odds vs Model Predictions</div>
+            <table class="score-table">
+                <thead>
+                <tr>
+                    <th>Player</th>
+                    <th>Odds</th>
+                    <th>Implied Prob. (%)</th>
+                    <th>Model Prob. (%)</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Player 1</td>
+                    <td>1.82</td>
+                    <td>50.41%</td>
+                    <td>52.00%</td>
+                </tr>
+                <tr>
+                    <td>Player 2</td>
+                    <td>1.85</td>
+                    <td>49.59%</td>
+                    <td>48.00%</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Stats Section -->
+        <div id='stats-section' class="section-box">
+            <div class="section-header">Stats</div>
+
+            <!-- Row 1: 1st Serve Percentage -->
+            <div class="stat-top-row">
+                <div class="stat-val-left">54%</div>
+                <div class="stat-title">1st Serve Percentage</div>
+                <div class="stat-val-right">54%</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-bar-container">
+                    <div class="stat-bar-empty" style="width: 46%;"></div>
+                    <div class="stat-bar-left" style="width: 54%;"></div>
+                    <div class="stat-bar-right" style="width: 62%;"></div>
+                    <div class="stat-bar-empty" style="width: 38%;"></div>
+                </div>
+            </div>
+
+            <!-- Row 2: Winners -->
+            <div class="stat-top-row">
+                <div class="stat-val-left">10</div>
+                <div class="stat-title">Winners</div>
+                <div class="stat-val-right">15</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-bar-container">
+                    <div class="stat-bar-empty" style="width: 67%;"></div>
+                    <div class="stat-bar-left" style="width: 33%;"></div>
+                    <div class="stat-bar-right" style="width: 67%;"></div>
+                    <div class="stat-bar-empty" style="width: 33%;"></div>
+                </div>
+            </div>
+
+            <!-- Row 3: Unforced Errors -->
+            <div class="stat-top-row">
+                <div class="stat-val-left">5</div>
+                <div class="stat-title">Unforced Errors</div>
+                <div class="stat-val-right">8</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-bar-container">
+                    <div class="stat-bar-empty" style="width: 30%;"></div>
+                    <div class="stat-bar-left" style="width: 70%;"></div>
+                    <div class="stat-bar-right" style="width: 30%;"></div>
+                    <div class="stat-bar-empty" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="stats-content" class="tab-content hidden">
+        <div id="service-stats" class="section-box">
+            <div class="stat-header">Service</div>
+        </div>
+        <div id="return-stats" class="section-box">
+            <div class="stat-header">Return</div>
+        </div>
+            <div class="stat-header">Points</div>
+
+            <div class="stat-top-row">
+                <div class="stat-val-left">10</div>
+                <div class="stat-title">Winners</div>
+                <div class="stat-val-right">15</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-bar-container">
+                    <div class="stat-bar-empty" style="width: 67%;"></div>
+                    <div class="stat-bar-left" style="width: 33%;"></div>
+                    <div class="stat-bar-right" style="width: 67%;"></div>
+                    <div class="stat-bar-empty" style="width: 33%;"></div>
+                </div>
+            </div>
+
+            <div class="stat-top-row">
+                <div class="stat-val-left">5</div>
+                <div class="stat-title">Unforced Errors</div>
+                <div class="stat-val-right">8</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-bar-container">
+                    <div class="stat-bar-empty" style="width: 30%;"></div>
+                    <div class="stat-bar-left" style="width: 70%;"></div>
+                    <div class="stat-bar-right" style="width: 30%;"></div>
+                    <div class="stat-bar-empty" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="stat-top-row">
+                <div class="stat-val-left">5</div>
+                <div class="stat-title">Serve Points Won</div>
+                <div class="stat-val-right">8</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-bar-container">
+                    <div class="stat-bar-empty" style="width: 30%;"></div>
+                    <div class="stat-bar-left" style="width: 70%;"></div>
+                    <div class="stat-bar-right" style="width: 30%;"></div>
+                    <div class="stat-bar-empty" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="stat-top-row">
+                <div class="stat-val-left">5</div>
+                <div class="stat-title">Return Points Won</div>
+                <div class="stat-val-right">8</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-bar-container">
+                    <div class="stat-bar-empty" style="width: 30%;"></div>
+                    <div class="stat-bar-left" style="width: 70%;"></div>
+                    <div class="stat-bar-right" style="width: 30%;"></div>
+                    <div class="stat-bar-empty" style="width: 70%;"></div>
+                </div>
+            </div>
+
+            <div class="stat-header">Games</div>
+
+            <div class="stat-top-row">
+                <div class="stat-val-left">10</div>
+                <div class="stat-title">Serve Games Won</div>
+                <div class="stat-val-right">15</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-bar-container">
+                    <div class="stat-bar-empty" style="width: 67%;"></div>
+                    <div class="stat-bar-left" style="width: 33%;"></div>
+                    <div class="stat-bar-right" style="width: 67%;"></div>
+                    <div class="stat-bar-empty" style="width: 33%;"></div>
+                </div>
+            </div>
+
+            <div class="stat-top-row">
+                <div class="stat-val-left">5</div>
+                <div class="stat-title">Return Games Won</div>
+                <div class="stat-val-right">8</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-bar-container">
+                    <div class="stat-bar-empty" style="width: 30%;"></div>
+                    <div class="stat-bar-left" style="width: 70%;"></div>
+                    <div class="stat-bar-right" style="width: 30%;"></div>
+                    <div class="stat-bar-empty" style="width: 70%;"></div>
+                </div>
+            </div>
+            <div class="stat-top-row">
+                <div class="stat-val-left">5</div>
+                <div class="stat-title">Total Games Won</div>
+                <div class="stat-val-right">8</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-bar-container">
+                    <div class="stat-bar-empty" style="width: 30%;"></div>
+                    <div class="stat-bar-left" style="width: 70%;"></div>
+                    <div class="stat-bar-right" style="width: 30%;"></div>
+                    <div class="stat-bar-empty" style="width: 70%;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="h2h-content" class="tab-content hidden">
+        <div class="h2h-filters">
+                <button class="filter-btn active" data-surface="all">All Surfaces</button>
+                <button class="filter-btn" data-surface="clay">Clay</button>
+                <button class="filter-btn" data-surface="grass">Grass</button>
+                <button class="filter-btn" data-surface="hard">Hard</button>
+            </div>
+        <div class="section-box">
+            <!-- Matches Container -->
+                <!-- Match Table -->
+                <div class="h2h-match-table">
+                    <!-- Column Headers -->
+                    <div class="h2h-match-header">
+                        <div class="h2h-match-col">Year</div>
+                        <div class="h2h-match-col">Winner</div>
+                        <div class="h2h-match-col">Event</div>
+                        <div class="h2h-match-col">Round</div>
+                        <div class="h2h-match-col">Surface</div>
+                        <div class="h2h-match-col">Score</div>
+                        <div class="h2h-match-col">View Details</div>
+                    </div>
+                <div class="match-row" data-surface="clay">
+                    <!-- Year -->
+                    <div class="h2h-match-row-text">2024</div>
+
+                    <!-- Winner -->
+                    <div class="h2h-match-row-text">Holger Rune</div>
+
+                    <!-- Event -->
+                    <div class="h2h-match-row-text">ATP Masters 1000 Monte-Carlo</div>
+
+                    <!-- Round -->
+                    <div class="h2h-match-row-text">Round of 16</div>
+
+                    <!-- Surface -->
+                    <div class="h2h-match-row-text">Outdoor Clay</div>
+
+                    <!-- Score -->
+                    <div class="h2h-match-row-text">76(9) 36 76(2)</div>
+
+                    <!-- View Details Buttons -->
+                    <div class="match-actions">
+                        <button class="btn btn-results">Results</button>
+                    </div>
+                </div>
+                <div class="match-row" data-surface="hard">Match 3 (Hard)</div>
+                <div class="match-row" data-surface="clay">Match 4 (Clay)</div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabs = document.querySelectorAll('.tabs button');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function () {
+                // Remove 'active' class from all tabs and contents
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                // Activate the clicked tab and its corresponding content
+                this.classList.add('active');
+                const contentId = this.id.replace('-tab', '-content');
+                document.getElementById(contentId).classList.add('active');
+            });
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.filter-btn');
+    const matches = document.querySelectorAll('.match-row');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Remove 'active' class from all buttons
+            buttons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active'); // Mark current button as active
+
+            const filter = this.getAttribute('data-surface');
+
+            // Filter matches based on selected surface
+            matches.forEach(match => {
+                if (filter === 'all' || match.getAttribute('data-surface') === filter) {
+                    match.classList.remove('hidden'); // Show match
+                } else {
+                    match.classList.add('hidden'); // Hide match
+                }
+            });
+        });
+    });
+});
+
+    document.addEventListener('DOMContentLoaded', async function () {
+    // Get match_id from the URL
+        const matchId = window.location.pathname.replace(/\/$/, '').split('/').pop();
+    try {
+        // Fetch match details from the API
+        const response = await fetch(`/stats/api/matches/${matchId}/`);
+        const data = await response.json();
+
+        // Populate Header
+        document.querySelector('.tournament').textContent = `${data.tournament_name} (${data.indoor_or_outdoor})`;
+        document.querySelector('.match-header div:nth-child(2)').textContent = `${data.date} - ${data.round}`;
+
+        const playerNames = document.querySelectorAll('.player-name');
+        const playerRanks = document.querySelectorAll('.player-rank');
+
+        // Update Winner Details
+        playerNames[0].textContent = data.winner_name;
+        playerRanks[0].textContent = `ATP: ${data.winner_rank}`;
+
+        // Update Loser Details
+        playerNames[1].textContent = data.loser_name;
+        playerRanks[1].textContent = `ATP: ${data.loser_rank}`;
+
+        // Populate Score
+        const scoreContainer = document.querySelector('.match-score');
+        scoreContainer.textContent = `${data.wsets} - ${data.lsets}`;
+
+        const roundContainer = document.querySelector('.match-round');
+        roundContainer.textContent = data.round;
+
+        // Populate Set Scores
+        const scoreTable = document.querySelector('.score-table tbody');
+        scoreTable.innerHTML = `
+            <tr>
+                <td>${data.winner_name}</td>
+                <td>${data.w1 || '-'}</td>
+                <td>${data.w2 || '-'}</td>
+                <td>${data.w3 || '-'}</td>
+            </tr>
+            <tr>
+                <td>${data.loser_name}</td>
+                <td>${data.l1 || '-'}</td>
+                <td>${data.l2 || '-'}</td>
+                <td>${data.l3 || '-'}</td>
+            </tr>
+        `;
+
+        // Populate Odds Section
+        const impliedWinProb = (1 / data.avgw * 100).toFixed(2);
+        const impliedLoseProb = (1 / data.avgl * 100).toFixed(2);
+
+        const oddsTable = document.querySelector('#odds-section table tbody');
+        oddsTable.innerHTML = `
+            <tr>
+                <td>${data.winner_name}</td>
+                <td>${data.avgw.toFixed(2)}</td>
+                <td>${impliedWinProb}%</td>
+                <td>-</td> <!-- Replace with model prediction later -->
+            </tr>
+            <tr>
+                <td>${data.loser_name}</td>
+                <td>${data.avgl.toFixed(2)}</td>
+                <td>${impliedLoseProb}%</td>
+                <td>-</td> <!-- Replace with model prediction later -->
+            </tr>
+        `;
+
+        // Populate Stats
+        const statSection = document.querySelector('#stats-section');
+        const serviceStatSection = document.querySelector('#service-stats');
+        const returnStatSection = document.querySelector('#return-stats');
+        updateStatBar(serviceStatSection, "Aces", data.w_ace, data.l_ace, false);
+        updateStatBar(serviceStatSection, "Double Faults", data.w_df, data.l_df, false);
+        updateStatBar(serviceStatSection, "Break Points Saved", data.w_bpSaved, data.l_bpSaved, false);
+        updateStatBar(serviceStatSection, "1st Serve Percentage", data.winner_1st_serve_in_pct, data.loser_1st_serve_in_pct, true, data.w_svpt, data.w_1stIn);
+        updateStatBar(returnStatSection, "1st Serve Return Points Won", true, data.winner_1st_serve_return_win_pct, data.loser_1st_serve_return_win_pct);
+
+
+    } catch (error) {
+        console.error('Error fetching match data:', error);
+    }
+});
+
+function updateStatBar(section, statName, winnerRaw, loserRaw, isPercent = true, winnerVal = null, loserVal = null) {
+    // Calculate stats based on whether they should be treated as percentages
+    const winnerStat = isPercent ? (winnerRaw * 100).toFixed(0) : winnerRaw;
+    const loserStat = isPercent ? (loserRaw * 100).toFixed(0) : loserRaw;
+
+    // Calculate percentages for bar widths
+    const total = winnerRaw + loserRaw;
+    const winnerPct = isPercent
+        ? winnerStat // Already a percentage
+        : (total > 0 ? (winnerRaw / total) * 100 : 0).toFixed(1); // Compute percentage only for non-percent values
+
+    const loserPct = isPercent
+        ? loserStat // Already a percentage
+        : (total > 0 ? (loserRaw / total) * 100 : 0).toFixed(1); // Compute percentage only for non-percent values
+
+    // Display formats based on whether detailed values are provided
+    const winnerDisplay = (winnerVal !== null && loserVal !== null)
+        ? `${winnerStat}% (${winnerVal}/${winnerVal + loserVal})`
+        : isPercent ? `${winnerStat}%` : `${winnerStat}`;
+
+    const loserDisplay = (winnerVal !== null && loserVal !== null)
+        ? `${loserStat}% (${loserVal}/${winnerVal + loserVal})`
+        : isPercent ? `${loserStat}%` : `${loserStat}`;
+    // Generate the HTML row
+    const statRow = `
+        <div class="stat-top-row">
+            <div class="stat-val-left">${winnerDisplay}</div>
+            <div class="stat-title">${statName}</div>
+            <div class="stat-val-right">${loserDisplay}</div>
+        </div>
+        <div class="stat-row">
+            <div class="stat-bar-container">
+                <div class="stat-bar-empty" style="width: ${100 - winnerPct}%;"></div>
+                <div class="stat-bar-left" style="width: ${winnerPct}%;"></div>
+                <div class="stat-bar-right" style="width: ${loserPct}%;"></div>
+                <div class="stat-bar-empty" style="width: ${100 - loserPct}%;"></div>
+            </div>
+        </div>
+    `;
+    // Append the generated row to the section
+    section.insertAdjacentHTML('beforeend', statRow);
+}
+
+
+
+
+</script>
+
+</body>
+</html>
