@@ -1,0 +1,1 @@
+LogisticRegression(C=0.6985949090068287, max_iter=1000)
