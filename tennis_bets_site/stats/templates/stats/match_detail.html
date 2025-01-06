@@ -302,8 +302,7 @@
             color: #6c757d;
         }
 
-                .h2h-filters {
-            display: flex;
+        .h2h-filters {
             gap: 0.5rem;
             margin: 1rem 0;
         }
@@ -325,71 +324,88 @@
         }
 
         /* General Layout */
-.match-row {
-    display: grid;
-    grid-template-columns: 1fr 2fr 3fr 2fr 2fr 2fr 2fr; /* Flexible layout for columns */
-    align-items: center;
-    padding: 0.5rem 1rem;
-    border-bottom: 1px solid #333; /* Divider */
-}
+        .match-row {
+            display: grid;
+            grid-template-columns: 1fr 2fr 3fr 2fr 2fr 2fr 2fr; /* Flexible layout for columns */
+            align-items: center;
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #333; /* Divider */
+        }
 
-    .h2h-match-row-text {
-        font-size: 0.9rem;
-        text-align: center;
-        font-weight: bold;
-    }
+        .h2h-match-row-text {
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight: bold;
+        }
 
 
-    /* Buttons */
-    .match-actions {
-        display: flex;
-        gap: 0.5rem; /* Spacing between buttons */
-        justify-content: center;
-    }
+        /* Buttons */
+        .match-actions {
+            display: flex;
+            gap: 0.5rem; /* Spacing between buttons */
+            justify-content: center;
+        }
 
-    .btn {
-        padding: 0.5rem 1rem;
-        border: 1px solid #007bff; /* Blue border */
-        background: transparent;
-        color: #007bff;
-        border-radius: 5px;
-        cursor: pointer;
-        font-weight: bold;
-    }
+        .btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #007bff; /* Blue border */
+            background: transparent;
+            color: #007bff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
-    .btn:hover {
-        background-color: #007bff;
-        color: white;
-    }
+        .btn:hover {
+            background-color: #007bff;
+            color: white;
+        }
 
-    /* Results Button */
-    .btn-results {
-        border-color: #007bff;
-    }
+        /* Results Button */
+        .btn-results {
+            border-color: #007bff;
+        }
 
-    .match-row.hidden {
-        display: none;
-    }
-    .h2h-match-table {
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    overflow: hidden; /* Rounded corners */
-}
+        .match-row.hidden {
+            display: none;
+        }
 
-/* Header Row */
-.h2h-match-header {
-    display: grid;
-    grid-template-columns: 1fr 2fr 3fr 2fr 2fr 2fr 2fr; /* Column sizes */
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-    border-bottom: 1px solid #333; /* Divider */
-}
+        .stat-row-container.hidden {
+            display: none;
+        }
 
-/* Columns in Header */
-.h2h-match-col {
-    text-align: center;
-}
+        .h2h-match-table {
+            display: flex;
+            flex-direction: column;
+            border-radius: 8px;
+            overflow: hidden; /* Rounded corners */
+        }
+
+        /* Header Row */
+        .h2h-match-header {
+            display: grid;
+            grid-template-columns: 1fr 2fr 3fr 2fr 2fr 2fr 2fr; /* Column sizes */
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            border-bottom: 1px solid #333; /* Divider */
+        }
+
+        /* Columns in Header */
+        .h2h-match-col {
+            text-align: center;
+        }
+
+        .h2h-header {
+            display: flex; /* Align items horizontally */
+            justify-content: space-between; /* Push counts to opposite ends */
+            margin-bottom: 10px; /* Add spacing below */
+            padding: 10px 20px; /* Padding inside the section */
+            font-size: 18px; /* Make text larger */
+            font-weight: bold; /* Bold font for better emphasis */
+            border: 1px solid #ddd; /* Light border for visual separation */
+            border-radius: 5px; /* Rounded corners */
+            background-color: #f9f9f9; /* Light background color */
+        }
 
     </style>
 </head>
@@ -438,6 +454,8 @@
         <button id="summary-tab" class="active">Summary</button>
         <button id="stats-tab">Stats</button>
         <button id="h2h-tab">H2H</button>
+        <button id="pre-match-stats-tab">Pre-match Stats</button>
+
     </div>
     <div id="summary-content" class="tab-content active">
         <!-- Score Section -->
@@ -549,334 +567,447 @@
         </div>
     </div>
     <div id="stats-content" class="tab-content hidden">
+        <div class="h2h-filters" id="stats-filters">
+            <!-- Dynamic Filters Will Go Here -->
+        </div>
         <div id="service-stats" class="section-box">
             <div class="stat-header">Service</div>
         </div>
         <div id="return-stats" class="section-box">
             <div class="stat-header">Return</div>
         </div>
+        <div id="points-stats" class="section-box">
             <div class="stat-header">Points</div>
-
-            <div class="stat-top-row">
-                <div class="stat-val-left">10</div>
-                <div class="stat-title">Winners</div>
-                <div class="stat-val-right">15</div>
-            </div>
-            <div class="stat-row">
-                <div class="stat-bar-container">
-                    <div class="stat-bar-empty" style="width: 67%;"></div>
-                    <div class="stat-bar-left" style="width: 33%;"></div>
-                    <div class="stat-bar-right" style="width: 67%;"></div>
-                    <div class="stat-bar-empty" style="width: 33%;"></div>
-                </div>
-            </div>
-
-            <div class="stat-top-row">
-                <div class="stat-val-left">5</div>
-                <div class="stat-title">Unforced Errors</div>
-                <div class="stat-val-right">8</div>
-            </div>
-            <div class="stat-row">
-                <div class="stat-bar-container">
-                    <div class="stat-bar-empty" style="width: 30%;"></div>
-                    <div class="stat-bar-left" style="width: 70%;"></div>
-                    <div class="stat-bar-right" style="width: 30%;"></div>
-                    <div class="stat-bar-empty" style="width: 70%;"></div>
-                </div>
-            </div>
-            <div class="stat-top-row">
-                <div class="stat-val-left">5</div>
-                <div class="stat-title">Serve Points Won</div>
-                <div class="stat-val-right">8</div>
-            </div>
-            <div class="stat-row">
-                <div class="stat-bar-container">
-                    <div class="stat-bar-empty" style="width: 30%;"></div>
-                    <div class="stat-bar-left" style="width: 70%;"></div>
-                    <div class="stat-bar-right" style="width: 30%;"></div>
-                    <div class="stat-bar-empty" style="width: 70%;"></div>
-                </div>
-            </div>
-            <div class="stat-top-row">
-                <div class="stat-val-left">5</div>
-                <div class="stat-title">Return Points Won</div>
-                <div class="stat-val-right">8</div>
-            </div>
-            <div class="stat-row">
-                <div class="stat-bar-container">
-                    <div class="stat-bar-empty" style="width: 30%;"></div>
-                    <div class="stat-bar-left" style="width: 70%;"></div>
-                    <div class="stat-bar-right" style="width: 30%;"></div>
-                    <div class="stat-bar-empty" style="width: 70%;"></div>
-                </div>
-            </div>
-
-            <div class="stat-header">Games</div>
-
-            <div class="stat-top-row">
-                <div class="stat-val-left">10</div>
-                <div class="stat-title">Serve Games Won</div>
-                <div class="stat-val-right">15</div>
-            </div>
-            <div class="stat-row">
-                <div class="stat-bar-container">
-                    <div class="stat-bar-empty" style="width: 67%;"></div>
-                    <div class="stat-bar-left" style="width: 33%;"></div>
-                    <div class="stat-bar-right" style="width: 67%;"></div>
-                    <div class="stat-bar-empty" style="width: 33%;"></div>
-                </div>
-            </div>
-
-            <div class="stat-top-row">
-                <div class="stat-val-left">5</div>
-                <div class="stat-title">Return Games Won</div>
-                <div class="stat-val-right">8</div>
-            </div>
-            <div class="stat-row">
-                <div class="stat-bar-container">
-                    <div class="stat-bar-empty" style="width: 30%;"></div>
-                    <div class="stat-bar-left" style="width: 70%;"></div>
-                    <div class="stat-bar-right" style="width: 30%;"></div>
-                    <div class="stat-bar-empty" style="width: 70%;"></div>
-                </div>
-            </div>
-            <div class="stat-top-row">
-                <div class="stat-val-left">5</div>
-                <div class="stat-title">Total Games Won</div>
-                <div class="stat-val-right">8</div>
-            </div>
-            <div class="stat-row">
-                <div class="stat-bar-container">
-                    <div class="stat-bar-empty" style="width: 30%;"></div>
-                    <div class="stat-bar-left" style="width: 70%;"></div>
-                    <div class="stat-bar-right" style="width: 30%;"></div>
-                    <div class="stat-bar-empty" style="width: 70%;"></div>
-                </div>
-            </div>
         </div>
     </div>
     <div id="h2h-content" class="tab-content hidden">
-        <div class="h2h-filters">
-                <button class="filter-btn active" data-surface="all">All Surfaces</button>
-                <button class="filter-btn" data-surface="clay">Clay</button>
-                <button class="filter-btn" data-surface="grass">Grass</button>
-                <button class="filter-btn" data-surface="hard">Hard</button>
-            </div>
+        <div class="h2h-filters" id="surface-filters">
+            <!-- Dynamic Surface Filters Will Go Here -->
+        </div>
+
         <div class="section-box">
-            <!-- Matches Container -->
-                <!-- Match Table -->
-                <div class="h2h-match-table">
-                    <!-- Column Headers -->
-                    <div class="h2h-match-header">
-                        <div class="h2h-match-col">Year</div>
-                        <div class="h2h-match-col">Winner</div>
-                        <div class="h2h-match-col">Event</div>
-                        <div class="h2h-match-col">Round</div>
-                        <div class="h2h-match-col">Surface</div>
-                        <div class="h2h-match-col">Score</div>
-                        <div class="h2h-match-col">View Details</div>
-                    </div>
-                <div class="match-row" data-surface="clay">
-                    <!-- Year -->
-                    <div class="h2h-match-row-text">2024</div>
-
-                    <!-- Winner -->
-                    <div class="h2h-match-row-text">Holger Rune</div>
-
-                    <!-- Event -->
-                    <div class="h2h-match-row-text">ATP Masters 1000 Monte-Carlo</div>
-
-                    <!-- Round -->
-                    <div class="h2h-match-row-text">Round of 16</div>
-
-                    <!-- Surface -->
-                    <div class="h2h-match-row-text">Outdoor Clay</div>
-
-                    <!-- Score -->
-                    <div class="h2h-match-row-text">76(9) 36 76(2)</div>
-
-                    <!-- View Details Buttons -->
-                    <div class="match-actions">
-                        <button class="btn btn-results">Results</button>
-                    </div>
-                </div>
-                <div class="match-row" data-surface="hard">Match 3 (Hard)</div>
-                <div class="match-row" data-surface="clay">Match 4 (Clay)</div>
-                </div>
+            <div id="h2h-header" class="h2h-header">
+                <div id="player1-wins" class="h2h-wins">Player 1: 0</div>
+                <div id="player2-wins" class="h2h-wins">Player 2: 0</div>
             </div>
+            <!-- Matches Container -->
+            <div class="h2h-match-table" id="match-table">
+                <div class="h2h-match-header">
+                    <div class="h2h-match-col">Year</div>
+                    <div class="h2h-match-col">Winner</div>
+                    <div class="h2h-match-col">Event</div>
+                    <div class="h2h-match-col">Round</div>
+                    <div class="h2h-match-col">Surface</div>
+                    <div class="h2h-match-col">Score</div>
+                    <div class="h2h-match-col">View Details</div>
+                </div>
+                <!-- Dynamic Match Rows Will Go Here -->
+            </div>
+        </div>
+    </div>
+    <div id="pre-match-stats-content" class="tab-content hidden">
+        <div id="current-tournament-record" class="section-box">
+            <div class="stat-header">Current tournament</div>
+        </div>
+        <div id="history-tournament-record" class="section-box">
+            <div class="stat-header">History tournament</div>
+        </div>
+        <div id="ranking-stats" class="section-box">
+            <div class="stat-header">Ranking</div>
+        </div>
+        <div id="recent-form-stats" class="section-box">
+            <div class="stat-header">Last 10 Matches Win Percentage</div>
+        </div>
+        <div id="special-stats" class="section-box">
+            <div class="stat-header">Special</div>
+        </div>
     </div>
 </div>
-
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', async () => {
+        initializeTabs();
+        await loadMatchData();
+    });
+
+    function initializeTabs() {
         const tabs = document.querySelectorAll('.tabs button');
         const contents = document.querySelectorAll('.tab-content');
 
         tabs.forEach(tab => {
-            tab.addEventListener('click', function () {
-                // Remove 'active' class from all tabs and contents
+            tab.addEventListener('click', () => {
                 tabs.forEach(t => t.classList.remove('active'));
                 contents.forEach(c => c.classList.remove('active'));
-
-                // Activate the clicked tab and its corresponding content
-                this.classList.add('active');
-                const contentId = this.id.replace('-tab', '-content');
-                document.getElementById(contentId).classList.add('active');
+                tab.classList.add('active');
+                document.getElementById(tab.id.replace('-tab', '-content')).classList.add('active');
             });
         });
-    });
+    }
 
-    document.addEventListener('DOMContentLoaded', function () {
-    const buttons = document.querySelectorAll('.filter-btn');
-    const matches = document.querySelectorAll('.match-row');
-
-    buttons.forEach(button => {
-        button.addEventListener('click', function () {
-            // Remove 'active' class from all buttons
-            buttons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active'); // Mark current button as active
-
-            const filter = this.getAttribute('data-surface');
-
-            // Filter matches based on selected surface
-            matches.forEach(match => {
-                if (filter === 'all' || match.getAttribute('data-surface') === filter) {
-                    match.classList.remove('hidden'); // Show match
-                } else {
-                    match.classList.add('hidden'); // Hide match
-                }
-            });
-        });
-    });
-});
-
-    document.addEventListener('DOMContentLoaded', async function () {
-    // Get match_id from the URL
+    async function loadMatchData() {
         const matchId = window.location.pathname.replace(/\/$/, '').split('/').pop();
-    try {
-        // Fetch match details from the API
-        const response = await fetch(`/stats/api/matches/${matchId}/`);
-        const data = await response.json();
 
-        // Populate Header
+        try {
+            const matchData = await fetchJson(`/stats/api/matches/${matchId}/`);
+            const preMatchData = await fetchJson(`/stats/api/pre-match-stats/${matchId}`);
+            populateHeader(matchData);
+            populateScore(matchData);
+            populateOdds(matchData);
+            populateStats(matchData, preMatchData);
+            populatePreMatchStats(preMatchData);
+
+            await loadHeadToHead(matchData);
+        } catch (error) {
+            console.error('Error fetching match data:', error);
+        }
+    }
+
+    async function loadHeadToHead(data) {
+        try {
+            const h2h_matches = await fetchJson(`/stats/api/h2h-matches/?player1=${data.winner_id}&player2=${data.loser_id}`);
+            processHeadToHead(h2h_matches, data);
+        } catch (error) {
+            console.error('Error fetching H2H data:', error);
+        }
+    }
+
+    function processHeadToHead(matches, data) {
+        const surfaces = ['all', 'hard', 'clay', 'grass'];
+        const surfaceWins = initializeSurfaceWins(surfaces, matches, data);
+        const matchTable = document.getElementById('match-table');
+        matches.forEach(match => {
+            addMatchRow(matchTable, match);
+        });
+        updateWinCounts(surfaceWins['all'], data)
+        initializeSurfaceFilters(surfaces, surfaceWins, data);
+    }
+
+    // Initialize wins by surface
+    function initializeSurfaceWins(surfaces, matches, data) {
+        const surfaceWins = {};
+        surfaces.forEach(surface => {
+            surfaceWins[surface] = {p1: 0, p2: 0};
+        });
+        matches.forEach(match => {
+            const surface = match.surface.toLowerCase();
+            if (match.winner_name === data.winner_name) {
+                surfaceWins[surface].p1++;
+                surfaceWins['all'].p1++;
+            } else {
+                surfaceWins[surface].p2++;
+                surfaceWins['all'].p2++;
+            }
+        })
+        return surfaceWins;
+    }
+
+    function addMatchRow(table, match) {
+        const row = document.createElement('div');
+        row.classList.add('match-row');
+        row.setAttribute('data-surface', match.surface.toLowerCase());
+        row.innerHTML = `
+        <div class="h2h-match-row-text">${match.date.split("-")[0]}</div>
+        <div class="h2h-match-row-text">${match.winner_name}</div>
+        <div class="h2h-match-row-text">${match.tournament_name}</div>
+        <div class="h2h-match-row-text">${match.round}</div>
+        <div class="h2h-match-row-text">${match.surface}</div>
+        <div class="h2h-match-row-text">${formatScore(match)}</div>
+    `;
+        table.appendChild(row);
+    }
+
+
+    // Filter matches by surface
+    function initializeSurfaceFilters(surfaces, surfaceWins, data) {
+        const filtersContainer = document.getElementById('surface-filters');
+        const matchRows = document.querySelectorAll('.match-row');
+
+        // Create filter buttons
+        surfaces.forEach((surface, index) => {
+            const button = document.createElement('button');
+            button.classList.add('filter-btn');
+            button.textContent = surface.charAt(0).toUpperCase() + surface.slice(1); // Capitalize
+            button.setAttribute('data-surface', surface);
+
+            // Mark the first button as active by default
+            if (index === 0) button.classList.add('active');
+            filtersContainer.appendChild(button);
+
+            // Add click listener
+            button.addEventListener('click', () => {
+                // Handle active button toggle
+                document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active'); // Mark clicked button as active
+
+                // Filter matches
+                matchRows.forEach(row => {
+                    const matchSurface = row.getAttribute('data-surface');
+                    row.classList.toggle('hidden', surface !== 'all' && matchSurface !== surface);
+                });
+
+                // Update win counts
+                updateWinCounts(surfaceWins[surface], data)
+            });
+        });
+    }
+
+    // Update win counts
+    function updateWinCounts(wins, data) {
+        document.getElementById('player1-wins').textContent = `${data.winner_name}: ${wins.p1}`;
+        document.getElementById('player2-wins').textContent = `${data.loser_name}: ${wins.p2}`;
+    }
+
+    // Function to dynamically extract and format scores
+    function formatScore(data) {
+        let scores = [];
+
+        // Loop through the keys in the data object
+        Object.keys(data).forEach((key) => {
+            // Match keys like w1, l1, w2, l2, etc.
+            const match = key.match(/([wl])(\d)/); // Matches 'w1', 'l1', etc.
+            if (match) {
+                const setNumber = match[2]; // Extract set number (1, 2, etc.)
+                const type = match[1];     // 'w' or 'l'
+
+                // Initialize array for each set
+                if (!scores[setNumber - 1]) {
+                    scores[setNumber - 1] = {w: null, l: null};
+                }
+
+                scores[setNumber - 1][type] = data[key]; // Assign values
+            }
+        });
+
+        // Format scores into the desired string
+        return scores
+            .filter(set => set.w !== null && set.l !== null) // Remove incomplete sets
+            .map(set => `${set.w}${set.l}`)                  // Concatenate each set
+            .join(" ");                                      // Join all sets with space
+    }
+
+    function updateStatBar(section, statName, winnerRaw, loserRaw, isPercent = true, filterType = 'match',
+                           winnerValNum = null, loserValNum = null, winnerValDec = null, loserValDec = null) {
+        console.log(winnerValNum, loserValNum, winnerValDec, loserValDec);
+        // Calculate stats based on whether they should be treated as percentages
+        const winnerStat = isPercent ? (winnerRaw * 100).toFixed(0) : winnerRaw.toFixed(0);
+        const loserStat = isPercent ? (loserRaw * 100).toFixed(0) : loserRaw.toFixed(0);
+        let winnerPct;
+        let loserPct;
+        let winnerDisplay, loserDisplay;
+         // Handle boolean values
+        if (typeof winnerRaw === 'boolean' && typeof loserRaw === 'boolean') {
+            winnerDisplay = winnerRaw ? 'Yes' : 'No';
+            loserDisplay = loserRaw ? 'Yes' : 'No';
+            winnerPct = winnerRaw ? 100 : 0;
+            loserPct = loserRaw ? 100 : 0;
+        }
+        else if (statName.toLowerCase().includes('elo')) {
+            const winnerAdj = winnerRaw - 1500;
+            const loserAdj = loserRaw - 1500;
+            const totalAdj = winnerRaw + loserRaw - 3000;
+            if (winnerRaw < 1500) {
+                winnerPct = 100;
+                loserPct = 0;
+            } else if (loserRaw < 1500) {
+                winnerPct = 0;
+                loserPct = 100;
+            } else {
+                // Calculate adjusted percentages
+                winnerPct = ((winnerAdj / totalAdj) * 100).toFixed(1);
+                loserPct = ((loserAdj / totalAdj) * 100).toFixed(1);
+            }
+            winnerDisplay = winnerRaw.toFixed(0);
+            loserDisplay = loserRaw.toFixed(0);
+        } else {
+            // Calculate percentages for bar widths
+            const total = winnerRaw + loserRaw;
+            winnerPct = isPercent
+                ? winnerStat // Already a percentage
+                : (total > 0 ? (winnerRaw / total) * 100 : 0).toFixed(1); // Compute percentage only for non-percent values
+
+            loserPct = isPercent
+                ? loserStat // Already a percentage
+                : (total > 0 ? (loserRaw / total) * 100 : 0).toFixed(1); // Compute percentage only for non-percent values
+                 // Display formats based on whether detailed values are provided
+            winnerDisplay = (winnerValNum !== null && winnerValDec !== null)
+                ? `${winnerStat}% (${winnerValNum}/${winnerValDec})`
+                : isPercent ? `${winnerStat}%` : `${winnerStat}`;
+
+            loserDisplay = (loserValNum !== null && loserValDec !== null)
+                ? `${loserStat}% (${loserValNum}/${loserValDec})`
+                : isPercent ? `${loserStat}%` : `${loserStat}`;
+        }
+
+        const statRow = document.createElement('div');
+        statRow.setAttribute('data-filter', filterType);
+        statRow.classList.add('stat-row-container');
+        statRow.innerHTML = `
+            <div class="stat-top-row">
+                <div class="stat-val-left">${winnerDisplay}</div>
+                <div class="stat-title">${statName}</div>
+                <div class="stat-val-right">${loserDisplay}</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-bar-container">
+                    <div class="stat-bar-empty" style="width: ${100 - winnerPct}%;"></div>
+                    <div class="stat-bar-left" style="width: ${winnerPct}%;"></div>
+                    <div class="stat-bar-right" style="width: ${loserPct}%;"></div>
+                    <div class="stat-bar-empty" style="width: ${100 - loserPct}%;"></div>
+                </div>
+            </div>
+    `;
+        // Append the generated row to the section
+        section.appendChild(statRow);
+    }
+
+    async function fetchJson(url) {
+        const response = await fetch(url);
+        return response.json();
+    }
+
+    // Populate match header
+    function populateHeader(data) {
         document.querySelector('.tournament').textContent = `${data.tournament_name} (${data.indoor_or_outdoor})`;
         document.querySelector('.match-header div:nth-child(2)').textContent = `${data.date} - ${data.round}`;
 
-        const playerNames = document.querySelectorAll('.player-name');
-        const playerRanks = document.querySelectorAll('.player-rank');
+        updatePlayerDetails('.player-name', [data.winner_name, data.loser_name]);
+        updatePlayerDetails('.player-rank', [`ATP: ${data.winner_rank}`, `ATP: ${data.loser_rank}`]);
+    }
 
-        // Update Winner Details
-        playerNames[0].textContent = data.winner_name;
-        playerRanks[0].textContent = `ATP: ${data.winner_rank}`;
+    // Update player details
+    function updatePlayerDetails(selector, values) {
+        document.querySelectorAll(selector).forEach((el, i) => el.textContent = values[i]);
+    }
 
-        // Update Loser Details
-        playerNames[1].textContent = data.loser_name;
-        playerRanks[1].textContent = `ATP: ${data.loser_rank}`;
+    // Populate match scores
+    function populateScore(data) {
+        document.querySelector('.match-score').textContent = `${data.wsets} - ${data.lsets}`;
+        document.querySelector('.match-round').textContent = data.round;
 
-        // Populate Score
-        const scoreContainer = document.querySelector('.match-score');
-        scoreContainer.textContent = `${data.wsets} - ${data.lsets}`;
-
-        const roundContainer = document.querySelector('.match-round');
-        roundContainer.textContent = data.round;
-
-        // Populate Set Scores
         const scoreTable = document.querySelector('.score-table tbody');
-        scoreTable.innerHTML = `
-            <tr>
-                <td>${data.winner_name}</td>
-                <td>${data.w1 || '-'}</td>
-                <td>${data.w2 || '-'}</td>
-                <td>${data.w3 || '-'}</td>
-            </tr>
-            <tr>
-                <td>${data.loser_name}</td>
-                <td>${data.l1 || '-'}</td>
-                <td>${data.l2 || '-'}</td>
-                <td>${data.l3 || '-'}</td>
-            </tr>
-        `;
+        const rows = [
+            [data.winner_name, ['w1', 'w2', 'w3']],
+            [data.loser_name, ['l1', 'l2', 'l3']]
+        ];
 
-        // Populate Odds Section
-        const impliedWinProb = (1 / data.avgw * 100).toFixed(2);
-        const impliedLoseProb = (1 / data.avgl * 100).toFixed(2);
+        scoreTable.innerHTML = rows.map(([name, scores]) => `
+        <tr>
+            <td>${name}</td>
+            ${scores.map(key => `<td>${data[key] || '-'}</td>`).join('')}
+        </tr>
+    `).join('');
+    }
 
+    // Populate odds section
+    function populateOdds(data) {
         const oddsTable = document.querySelector('#odds-section table tbody');
-        oddsTable.innerHTML = `
+        data['loser_odds_prediction'] = 1 - data['winner_odds_prediction']
+        data['loser_model_prediction'] = 1 - data['winner_model_prediction']
+        console.log(data['winner_odds_prediction'])
+        oddsTable.innerHTML = ['winner', 'loser']
+            .map(type => `
             <tr>
-                <td>${data.winner_name}</td>
-                <td>${data.avgw.toFixed(2)}</td>
-                <td>${impliedWinProb}%</td>
-                <td>-</td> <!-- Replace with model prediction later -->
-            </tr>
-            <tr>
-                <td>${data.loser_name}</td>
-                <td>${data.avgl.toFixed(2)}</td>
-                <td>${impliedLoseProb}%</td>
-                <td>-</td> <!-- Replace with model prediction later -->
-            </tr>
-        `;
+                <td>${data[`${type}_name`]}</td>
+                <td>${data[`avg${type[0]}`].toFixed(2)}</td>
+                <td>${(100 * data[`${type}_odds_prediction`]).toFixed(2)}%</td>
+                <td>${(100 * data[`${type}_model_prediction`]).toFixed(2)}%</td>
+            </tr>`)
+            .join('');
+    }
 
-        // Populate Stats
-        const statSection = document.querySelector('#stats-section');
+    // Populate statistics
+    function populateStats(matchData, preMatchData) {
         const serviceStatSection = document.querySelector('#service-stats');
         const returnStatSection = document.querySelector('#return-stats');
-        updateStatBar(serviceStatSection, "Aces", data.w_ace, data.l_ace, false);
-        updateStatBar(serviceStatSection, "Double Faults", data.w_df, data.l_df, false);
-        updateStatBar(serviceStatSection, "Break Points Saved", data.w_bpSaved, data.l_bpSaved, false);
-        updateStatBar(serviceStatSection, "1st Serve Percentage", data.winner_1st_serve_in_pct, data.loser_1st_serve_in_pct, true, data.w_svpt, data.w_1stIn);
-        updateStatBar(returnStatSection, "1st Serve Return Points Won", true, data.winner_1st_serve_return_win_pct, data.loser_1st_serve_return_win_pct);
+        const pointsStatSection = document.querySelector('#points-stats');
 
 
-    } catch (error) {
-        console.error('Error fetching match data:', error);
+        updateStatBar(serviceStatSection, "Aces", matchData.w_ace, matchData.l_ace, false);
+        updateStatBar(serviceStatSection, "Aces", preMatchData.w_ace_avg, preMatchData.l_ace_avg, false, 'career');
+        updateStatBar(serviceStatSection, "Double Faults", matchData.w_df, matchData.l_df, false) ;
+        updateStatBar(serviceStatSection, "Double Faults", preMatchData.w_df_avg, preMatchData.l_df_avg, false, 'career') ;
+        updateStatBar(serviceStatSection, "1st Serve In", matchData.winner_1st_serve_in_pct, matchData.loser_1st_serve_in_pct, true, 'match', matchData.w_1stIn, matchData.l_1stIn, matchData.w_svpt, matchData.l_svpt);
+        updateStatBar(serviceStatSection, "1st Serve In", preMatchData.winner_1st_serve_in_pct_avg, preMatchData.loser_1st_serve_in_pct_avg, true, 'career');
+        updateStatBar(serviceStatSection, "1st Serve Points Won", matchData.winner_1st_serve_win_pct, matchData.loser_1st_serve_win_pct, true, 'match', matchData.w_1stWon, matchData.l_1stWon, matchData.w_1stIn, matchData.l_1stIn);
+        updateStatBar(serviceStatSection, "1st Serve Points Won", preMatchData.winner_1st_serve_win_pct_avg, preMatchData.loser_1st_serve_win_pct_avg, true, 'career');
+        updateStatBar(serviceStatSection, "2nd Serve Points Won", matchData.winner_2nd_serve_win_pct, matchData.loser_2nd_serve_win_pct, true, 'match', matchData.w_2ndWon, matchData.l_2ndWon, matchData.w_2ndIn, matchData.l_2ndIn);
+        updateStatBar(serviceStatSection, "2nd Serve Points Won", preMatchData.winner_2nd_serve_win_pct_avg, preMatchData.loser_2nd_serve_win_pct_avg, true, 'career');
+        updateStatBar(serviceStatSection, "Break Points Saved", matchData.winner_bp_saved_pct, matchData.loser_bp_saved_pct, true, 'match', matchData.w_bpSaved, matchData.l_bpSaved, matchData.w_bpFaced, matchData.l_bpFaced);
+        updateStatBar(serviceStatSection, "Break Points Saved", preMatchData.winner_bp_saved_pct_avg, preMatchData.loser_bp_saved_pct_avg, true, 'career');
+        updateStatBar(serviceStatSection, "Service Games Played", matchData.w_SvGms, matchData.l_SvGms, false);
+        updateStatBar(returnStatSection, "1st Serve Return Points Won", matchData.winner_1st_serve_return_win_pct, matchData.loser_1st_serve_return_win_pct, true, 'match', matchData.l_1stIn - matchData.l_1stWon, matchData.w_1stIn - matchData.w_1stWon, matchData.l_1stIn, matchData.w_1stIn);
+        updateStatBar(returnStatSection, "1st Serve Return Points Won", preMatchData.winner_1st_serve_return_win_pct_avg, preMatchData.loser_1st_serve_return_win_pct_avg, true, 'career');
+        updateStatBar(returnStatSection, "2nd Serve Return Points Won", matchData.winner_2nd_serve_return_win_pct, matchData.loser_2nd_serve_return_win_pct, true, 'match', matchData.l_2ndIn - matchData.l_2ndWon, matchData.w_2ndIn - matchData.w_2ndWon, matchData.l_2ndIn, matchData.w_2ndIn);
+        updateStatBar(returnStatSection, "2nd Serve Return Points Won", preMatchData.winner_1st_serve_return_win_pct_avg, preMatchData.loser_1st_serve_return_win_pct_avg, true, 'career');
+        updateStatBar(returnStatSection, "Break Points Converted", (matchData.l_bpFaced - matchData.l_bpSaved) / (matchData.l_bpFaced), (matchData.w_bpFaced - matchData.w_bpSaved) / (matchData.w_bpFaced), true, 'match', matchData.l_bpFaced - matchData.l_bpSaved, matchData.w_bpFaced - matchData.w_bpSaved, matchData.l_bpFaced, matchData.w_bpFaced);
+        updateStatBar(returnStatSection, "Break Points Converted", preMatchData.winner_bp_won_pct_avg, preMatchData.loser_bp_won_pct_avg, true, 'career');
+        updateStatBar(returnStatSection, "Return Games Played", matchData.l_SvGms, matchData.w_SvGms, false);
+        updateStatBar(pointsStatSection, "Service Points Won", (matchData.w_1stWon + matchData.w_2ndWon) / matchData.w_svpt, (matchData.l_1stWon + matchData.l_2ndWon) / matchData.l_svpt, true, 'match', matchData.w_1stWon + matchData.w_2ndWon, matchData.l_1stWon + matchData.l_2ndWon, matchData.w_svpt, matchData.l_svpt);
+        let w_ReturnWon = matchData.l_1stIn - matchData.l_1stWon + matchData.l_2ndIn - matchData.l_2ndWon
+        let w_ReturnPlayed = matchData.l_1stIn + matchData.l_2ndIn
+        let l_ReturnWon = matchData.w_1stIn - matchData.w_1stWon + matchData.w_2ndIn - matchData.w_2ndWon
+        let l_ReturnPlayed = matchData.w_1stIn + matchData.w_2ndIn
+        updateStatBar(pointsStatSection, "Return Points Won", w_ReturnWon / w_ReturnPlayed, l_ReturnWon / l_ReturnPlayed, true, 'match', w_ReturnWon, l_ReturnWon, w_ReturnPlayed, l_ReturnPlayed);
+        updateStatBar(pointsStatSection, "Total Points Won", (matchData.w_1stWon + matchData.w_2ndWon + w_ReturnWon) / (matchData.w_svpt + w_ReturnPlayed), (matchData.l_1stWon + matchData.l_2ndWon + l_ReturnWon) / (matchData.l_svpt + l_ReturnPlayed), true, 'match', matchData.w_1stWon + matchData.w_2ndWon + w_ReturnWon, matchData.l_1stWon + matchData.l_2ndWon + l_ReturnWon,  matchData.w_svpt + w_ReturnPlayed, matchData.l_svpt + l_ReturnPlayed);
+
+
+        initializeStatsFilters()
+
     }
-});
 
-function updateStatBar(section, statName, winnerRaw, loserRaw, isPercent = true, winnerVal = null, loserVal = null) {
-    // Calculate stats based on whether they should be treated as percentages
-    const winnerStat = isPercent ? (winnerRaw * 100).toFixed(0) : winnerRaw;
-    const loserStat = isPercent ? (loserRaw * 100).toFixed(0) : loserRaw;
+    function populatePreMatchStats(data) {
+        const currentTournamentRecordSection = document.querySelector('#current-tournament-record');
+        const historyTournamentRecordSection = document.querySelector('#history-tournament-record');
+        const rankingStatSection = document.querySelector('#ranking-stats');
+        const recentFormStatSection = document.querySelector('#recent-form-stats');
+        const specialStatSection = document.querySelector('#special-stats');
 
-    // Calculate percentages for bar widths
-    const total = winnerRaw + loserRaw;
-    const winnerPct = isPercent
-        ? winnerStat // Already a percentage
-        : (total > 0 ? (winnerRaw / total) * 100 : 0).toFixed(1); // Compute percentage only for non-percent values
 
-    const loserPct = isPercent
-        ? loserStat // Already a percentage
-        : (total > 0 ? (loserRaw / total) * 100 : 0).toFixed(1); // Compute percentage only for non-percent values
+        updateStatBar(currentTournamentRecordSection, "Set Difference", data.Winner_Set_Diff_Tournament, data.Loser_Set_Diff_Tournament, false);
+        updateStatBar(currentTournamentRecordSection, "Game Difference", data.Winner_Game_Diff_Tournament, data.Loser_Game_Diff_Tournament, false);
+        updateStatBar(historyTournamentRecordSection, "Wins", data.winner_total_wins_tournament_history, data.loser_total_wins_tournament_history, false);
+        updateStatBar(historyTournamentRecordSection, "Losses", data.winner_total_losses_tournament_history, data.loser_total_losses_tournament_history, false);
+        updateStatBar(rankingStatSection, "Combined Elo", data.blended_elo_winner, data.blended_elo_loser, false);
+        updateStatBar(rankingStatSection, "Non Surface Elo", data.elo_winner, data.elo_loser, false);
+        updateStatBar(rankingStatSection, "Surface Elo", data.surface_elo_winner, data.surface_elo_loser, false);
+        updateStatBar(recentFormStatSection, "All", data.winner_win_pct_last_10, data.loser_win_pct_last_10, true);
+        updateStatBar(recentFormStatSection, "Surface", data.winner_win_pct_last_10_surface, data.loser_win_pct_last_10_surface, true);
+        updateStatBar(specialStatSection, "Home Advantage", data.winner_home, data.loser_home, true);
+        updateStatBar(specialStatSection, "First Match After Injury", !!data.winner_injury_score, !!data.loser_injury_score, true);
+        updateStatBar(specialStatSection, "Fatigue Score", data.winner_fatigue_score, data.loser_fatigue_score, false);
+    }
+function initializeStatsFilters() {
+    const filtersContainer = document.getElementById('stats-filters');
+    const statRows = document.querySelectorAll('.stat-row-container'); // Select all rows to filter
+    statRows.forEach(row => {
+                    const rowFilter = row.getAttribute('data-filter'); // Get the filter attribute from the row
+                    row.classList.toggle('hidden', rowFilter !== 'match');
+    });
+    const filters = ['match', 'career'];
+    // Create filter buttons
+    filters.forEach((filter, index) => {
+        const button = document.createElement('button');
+        button.classList.add('filter-btn');
+        button.textContent = filter.charAt(0).toUpperCase() + filter.slice(1); // Capitalize
+        button.setAttribute('data-filter', filter);
 
-    // Display formats based on whether detailed values are provided
-    const winnerDisplay = (winnerVal !== null && loserVal !== null)
-        ? `${winnerStat}% (${winnerVal}/${winnerVal + loserVal})`
-        : isPercent ? `${winnerStat}%` : `${winnerStat}`;
+        // Mark the first button as active by default
+        if (index === 0) button.classList.add('active');
+        filtersContainer.appendChild(button);
 
-    const loserDisplay = (winnerVal !== null && loserVal !== null)
-        ? `${loserStat}% (${loserVal}/${winnerVal + loserVal})`
-        : isPercent ? `${loserStat}%` : `${loserStat}`;
-    // Generate the HTML row
-    const statRow = `
-        <div class="stat-top-row">
-            <div class="stat-val-left">${winnerDisplay}</div>
-            <div class="stat-title">${statName}</div>
-            <div class="stat-val-right">${loserDisplay}</div>
-        </div>
-        <div class="stat-row">
-            <div class="stat-bar-container">
-                <div class="stat-bar-empty" style="width: ${100 - winnerPct}%;"></div>
-                <div class="stat-bar-left" style="width: ${winnerPct}%;"></div>
-                <div class="stat-bar-right" style="width: ${loserPct}%;"></div>
-                <div class="stat-bar-empty" style="width: ${100 - loserPct}%;"></div>
-            </div>
-        </div>
-    `;
-    // Append the generated row to the section
-    section.insertAdjacentHTML('beforeend', statRow);
+        // Add click listener
+        button.addEventListener('click', () => {
+            // Handle active button toggle
+            document.querySelectorAll('#stats-filters .filter-btn').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active'); // Mark clicked button as active
+            // Filter rows based on the selected filter
+            const selectedFilter = button.getAttribute('data-filter');
+            statRows.forEach(row => {
+                const rowFilter = row.getAttribute('data-filter'); // Get the filter attribute from the row
+                row.classList.toggle('hidden', rowFilter !== selectedFilter);
+            });
+        });
+    });
 }
-
-
 
 
 </script>

@@ -1,11 +1,10 @@
 from django.shortcuts import render, redirect
-from .models import Player, Match
+from .models import Player, Match, PreMatchStats
 from django.db.models import Q
 import datetime
 from django.utils.timezone import now
 from rest_framework import generics
-from .models import Match
-from .serializers import MatchSerializer
+from .serializers import MatchSerializer, PreMatchStatsSerializer
 
 def stats_view(request):
     # Most recent matches
@@ -81,11 +80,34 @@ def results(request):
     }
     return render(request, 'stats/results.html', context)
 
-# def match_detail(request, match_id):
-#     match = Match.objects.get(match_id=match_id)
-#     return render(request, 'stats/match_detail.html', {'match': match})
 
 class MatchDetailAPI(generics.RetrieveAPIView):
     queryset = Match.objects.all()
     serializer_class = MatchSerializer
     lookup_field = 'match_id'  # Allows lookup by match_id
+
+
+class H2HMatchListAPI(generics.ListAPIView):
+    serializer_class = MatchSerializer
+
+    def get_queryset(self):
+        # Parse player IDs safely
+        try:
+            player1_id = str(self.request.query_params.get('player1').strip())
+            player2_id = str(self.request.query_params.get('player2').strip())
+        except (TypeError, ValueError, AttributeError):
+            return Match.objects.none()
+
+
+        # Query matches by ForeignKey references
+        queryset = Match.objects.filter(
+            Q(winner=player1_id, loser=player2_id) |
+            Q(winner=player2_id, loser=player1_id)
+        ).order_by('-date')
+
+        return queryset
+
+class PreMatchStatsAPI(generics.RetrieveAPIView):
+    queryset = PreMatchStats.objects.select_related('match')
+    serializer_class = PreMatchStatsSerializer
+    lookup_field = 'match_id'  # Lookup based on match_id
