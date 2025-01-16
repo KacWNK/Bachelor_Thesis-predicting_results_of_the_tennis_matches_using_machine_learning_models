@@ -671,6 +671,10 @@
     }
 
     function processHeadToHead(matches, data) {
+        matches = matches.filter(match => {
+            const itemDate = new Date(match.date);
+            return itemDate < new Date(data.date); // Keep only if the date is earlier than the current date
+        });
         const surfaces = ['all', 'hard', 'clay', 'grass'];
         const surfaceWins = initializeSurfaceWins(surfaces, matches, data);
         const matchTable = document.getElementById('match-table');
@@ -892,7 +896,7 @@
         scoreTable.innerHTML = rows.map(([name, scores]) => `
         <tr>
             <td>${name}</td>
-            ${scores.map(key => `<td>${data[key] || '-'}</td>`).join('')}
+            ${scores.map(key => `<td>${String(data[key]) || '-'}</td>`).join('')}
         </tr>
     `).join('');
     }
@@ -937,7 +941,7 @@
         updateStatBar(returnStatSection, "1st Serve Return Points Won", matchData.winner_1st_serve_return_win_pct, matchData.loser_1st_serve_return_win_pct, true, 'match', matchData.l_1stIn - matchData.l_1stWon, matchData.w_1stIn - matchData.w_1stWon, matchData.l_1stIn, matchData.w_1stIn);
         updateStatBar(returnStatSection, "1st Serve Return Points Won", preMatchData.winner_1st_serve_return_win_pct_avg, preMatchData.loser_1st_serve_return_win_pct_avg, true, 'career');
         updateStatBar(returnStatSection, "2nd Serve Return Points Won", matchData.winner_2nd_serve_return_win_pct, matchData.loser_2nd_serve_return_win_pct, true, 'match', matchData.l_2ndIn - matchData.l_2ndWon, matchData.w_2ndIn - matchData.w_2ndWon, matchData.l_2ndIn, matchData.w_2ndIn);
-        updateStatBar(returnStatSection, "2nd Serve Return Points Won", preMatchData.winner_1st_serve_return_win_pct_avg, preMatchData.loser_1st_serve_return_win_pct_avg, true, 'career');
+        updateStatBar(returnStatSection, "2nd Serve Return Points Won", preMatchData.winner_2nd_serve_return_win_pct_avg, preMatchData.loser_2nd_serve_return_win_pct_avg, true, 'career');
         updateStatBar(returnStatSection, "Break Points Converted", (matchData.l_bpFaced - matchData.l_bpSaved) / (matchData.l_bpFaced), (matchData.w_bpFaced - matchData.w_bpSaved) / (matchData.w_bpFaced), true, 'match', matchData.l_bpFaced - matchData.l_bpSaved, matchData.w_bpFaced - matchData.w_bpSaved, matchData.l_bpFaced, matchData.w_bpFaced);
         updateStatBar(returnStatSection, "Break Points Converted", preMatchData.winner_bp_won_pct_avg, preMatchData.loser_bp_won_pct_avg, true, 'career');
         updateStatBar(returnStatSection, "Return Games Played", matchData.l_SvGms, matchData.w_SvGms, false);

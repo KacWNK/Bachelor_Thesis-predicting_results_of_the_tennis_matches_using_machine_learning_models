@@ -99,7 +99,7 @@
             background-color: white; /* White background for the match list */
             padding: 2rem; /* Add padding inside the container */
             border-radius: 8px; /* Rounded corners */
-            width: 30%;
+            width: 50%;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the container */
             position: relative;
         }
@@ -310,8 +310,16 @@
                 <div class="player-name winner">{{ match.winner.name }}</div>
                 <div class="score-row">
                     <span class="sets">{{ match.wsets }}</span>
-                    <span class="games">{{ match.w1|default:"-" }}</span>
-                    <span class="games">{{ match.w2|default:"-" }}</span>
+                    <span class="games">{% if match.w1 != "" %}
+    {{ match.w1 }}
+  {% else %}
+    "-"
+  {% endif %}</span>
+                    <span class="games">{% if match.w2 != "" %}
+    {{ match.w2 }}
+  {% else %}
+    "-"
+  {% endif %}</span>
                     {% if match.w3 %}
                     <span class="games">{{ match.w3 }}</span>
                     {% endif %}
@@ -330,8 +338,16 @@
                 <div class="player-name">{{ match.loser.name }}</div>
                 <div class="score-row">
                     <span class="sets">{{ match.lsets }}</span>
-                    <span class="games">{{ match.l1|default:"-" }}</span>
-                    <span class="games">{{ match.l2|default:"-" }}</span>
+                    <span class="games">{% if match.l1 != "" %}
+    {{ match.l1 }}
+  {% else %}
+    "-"
+  {% endif %}</span>
+                    <span class="games">{% if match.l2 != "" %}
+    {{ match.l2 }}
+  {% else %}
+    "-"
+  {% endif %}</span>
                     {% if match.l3 %}
                     <span class="games">{{ match.l3 }}</span>
                     {% endif %}
