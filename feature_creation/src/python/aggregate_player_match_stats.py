@@ -135,7 +135,6 @@ def calculate_return_games_win_percentage_loser(row):
     return 1 - row['winner_service_games_won_pct']
 
 
-
 def add_player_match_stats_2(matches: pd.DataFrame) -> pd.DataFrame:
     matches['winner_1st_serve_return_win_pct'] = matches.apply(calculate_1st_serve_return_win_percentage, axis=1)
     matches['winner_2nd_serve_return_win_pct'] = matches.apply(calculate_2nd_serve_return_win_percentage, axis=1)
@@ -181,7 +180,8 @@ def calculate_percentage_of_break_points_saved_loser(row):
 
 def add_player_match_stats_3(matches: pd.DataFrame) -> pd.DataFrame:
     matches['winner_bp_won_pct'] = matches.apply(calculate_percentage_of_break_points_won_on_opponents_serve, axis=1)
-    matches['loser_bp_won_pct'] = matches.apply(calculate_percentage_of_break_points_won_on_opponents_serve_loser, axis=1)
+    matches['loser_bp_won_pct'] = matches.apply(calculate_percentage_of_break_points_won_on_opponents_serve_loser,
+                                                axis=1)
     matches['winner_bp_saved_pct'] = matches.apply(calculate_percentage_of_break_points_saved, axis=1)
     matches['loser_bp_saved_pct'] = matches.apply(calculate_percentage_of_break_points_saved_loser, axis=1)
 
@@ -261,7 +261,6 @@ def number_of_common_opponent_matches(row, df):
 
     common_opponents = player_a_opponents.intersection(player_b_opponents)
     return len(common_opponents)
-
 
 
 def calculate_weighted_mean(values, times, surface_weights, decay_rate=0.3):
@@ -361,7 +360,8 @@ def calculate_stats_with_uncertainty(row, df, weights_dict, winner_col, loser_co
 
 
 # Process Stats for Regular and CO Columns
-def process_all_stats(new_matches: pd.DataFrame, existing_df: pd.DataFrame, weights_dict, stat_cols: [tuple], surface_col):
+def process_all_stats(new_matches: pd.DataFrame, existing_df: pd.DataFrame, weights_dict, stat_cols: [tuple],
+                      surface_col):
     results = {}
     for stat_tuple in stat_cols:
         winner_col = stat_tuple[0]
@@ -408,6 +408,7 @@ def process_all_stats(new_matches: pd.DataFrame, existing_df: pd.DataFrame, weig
         new_matches[col] = values
 
     return new_matches
+
 
 def calculate_combined_uncertainties(df, stat_cols: [tuple]):
     non_co_uncertainty_cols_winner = []
@@ -456,8 +457,6 @@ def add_aggregated_player_stats(new_rows: pd.DataFrame, existing_df: pd.DataFram
     original_columns = list(matches.columns)
     matches = matches.sort_values(by='Date')
 
-
-
     weights_dict = calculate_surface_weights_kl(matches, ['w_ace', 'l_ace', 'w_df', 'l_df', 'w_2ndIn', 'l_2ndIn',
                                                           'winner_1st_serve_in_pct',
                                                           'winner_1st_serve_win_pct',
@@ -480,41 +479,47 @@ def add_aggregated_player_stats(new_rows: pd.DataFrame, existing_df: pd.DataFram
                                                           'winner_bp_saved_pct',
                                                           'loser_bp_saved_pct'], 'Surface', bins=20)
 
-
     new_rows = process_all_stats(new_rows, matches, weights_dict, [('w_ace', 'l_ace'), ('w_df', 'l_df'),
-                                                    ('w_2ndIn', 'l_2ndIn'),
-                                                    ('winner_1st_serve_in_pct', 'loser_1st_serve_in_pct'),
-                                                    ('winner_1st_serve_win_pct', 'loser_1st_serve_win_pct'),
-                                                    ('winner_2nd_serve_in_pct', 'loser_2nd_serve_in_pct'),
-                                                    ('winner_2nd_serve_win_pct', 'loser_2nd_serve_win_pct'),
-                                                    ('winner_service_games_won_pct', 'loser_service_games_won_pct'),
-                                                    ('winner_1st_serve_return_win_pct',
-                                                     'loser_1st_serve_return_win_pct'),
-                                                    ('winner_2nd_serve_return_win_pct',
-                                                     'loser_2nd_serve_return_win_pct'),
-                                                    ('winner_return_games_win_pct', 'loser_return_games_win_pct'),
-                                                    ('winner_bp_won_pct', 'loser_bp_won_pct'),
-                                                    ('winner_bp_saved_pct', 'loser_bp_saved_pct')
-                                                    ]
-                            , 'Surface')
+                                                                   ('w_2ndIn', 'l_2ndIn'),
+                                                                   (
+                                                                   'winner_1st_serve_in_pct', 'loser_1st_serve_in_pct'),
+                                                                   ('winner_1st_serve_win_pct',
+                                                                    'loser_1st_serve_win_pct'),
+                                                                   (
+                                                                   'winner_2nd_serve_in_pct', 'loser_2nd_serve_in_pct'),
+                                                                   ('winner_2nd_serve_win_pct',
+                                                                    'loser_2nd_serve_win_pct'),
+                                                                   ('winner_service_games_won_pct',
+                                                                    'loser_service_games_won_pct'),
+                                                                   ('winner_1st_serve_return_win_pct',
+                                                                    'loser_1st_serve_return_win_pct'),
+                                                                   ('winner_2nd_serve_return_win_pct',
+                                                                    'loser_2nd_serve_return_win_pct'),
+                                                                   ('winner_return_games_win_pct',
+                                                                    'loser_return_games_win_pct'),
+                                                                   ('winner_bp_won_pct', 'loser_bp_won_pct'),
+                                                                   ('winner_bp_saved_pct', 'loser_bp_saved_pct')
+                                                                   ]
+                                 , 'Surface')
 
     new_rows = new_rows.copy()
     new_rows = calculate_combined_uncertainties(new_rows, [('w_ace', 'l_ace'), ('w_df', 'l_df'),
-                                                     ('w_2ndIn', 'l_2ndIn'),
-                                                     ('winner_1st_serve_in_pct', 'loser_1st_serve_in_pct'),
-                                                     ('winner_1st_serve_win_pct', 'loser_1st_serve_win_pct'),
-                                                     ('winner_2nd_serve_in_pct', 'loser_2nd_serve_in_pct'),
-                                                     ('winner_2nd_serve_win_pct', 'loser_2nd_serve_win_pct'),
-                                                     ('winner_service_games_won_pct', 'loser_service_games_won_pct'),
-                                                     ('winner_1st_serve_return_win_pct',
-                                                      'loser_1st_serve_return_win_pct'),
-                                                     ('winner_2nd_serve_return_win_pct',
-                                                      'loser_2nd_serve_return_win_pct'),
-                                                     ('winner_return_games_win_pct', 'loser_return_games_win_pct'),
-                                                     ('winner_bp_won_pct', 'loser_bp_won_pct'),
-                                                     ('winner_bp_saved_pct', 'loser_bp_saved_pct')
-                                                     ])
-
+                                                           ('w_2ndIn', 'l_2ndIn'),
+                                                           ('winner_1st_serve_in_pct', 'loser_1st_serve_in_pct'),
+                                                           ('winner_1st_serve_win_pct', 'loser_1st_serve_win_pct'),
+                                                           ('winner_2nd_serve_in_pct', 'loser_2nd_serve_in_pct'),
+                                                           ('winner_2nd_serve_win_pct', 'loser_2nd_serve_win_pct'),
+                                                           ('winner_service_games_won_pct',
+                                                            'loser_service_games_won_pct'),
+                                                           ('winner_1st_serve_return_win_pct',
+                                                            'loser_1st_serve_return_win_pct'),
+                                                           ('winner_2nd_serve_return_win_pct',
+                                                            'loser_2nd_serve_return_win_pct'),
+                                                           (
+                                                           'winner_return_games_win_pct', 'loser_return_games_win_pct'),
+                                                           ('winner_bp_won_pct', 'loser_bp_won_pct'),
+                                                           ('winner_bp_saved_pct', 'loser_bp_saved_pct')
+                                                           ])
 
     new_rows["CO_uncertainty_winner"] = new_rows["CO_uncertainty_winner"].clip(lower=0, upper=1)
     new_rows["CO_uncertainty_loser"] = new_rows["CO_uncertainty_loser"].clip(lower=0, upper=1)
@@ -522,7 +527,8 @@ def add_aggregated_player_stats(new_rows: pd.DataFrame, existing_df: pd.DataFram
     new_rows["CO_uncertainty_loser"] = new_rows["CO_uncertainty_loser"].clip(lower=0, upper=1)
 
     new_rows["CO_uncertainty"] = np.sqrt(new_rows["CO_uncertainty_winner"] * new_rows["CO_uncertainty_loser"])
-    new_rows["non_CO_uncertainty"] = np.sqrt(new_rows["non_CO_uncertainty_winner"] * new_rows["non_CO_uncertainty_loser"])
+    new_rows["non_CO_uncertainty"] = np.sqrt(
+        new_rows["non_CO_uncertainty_winner"] * new_rows["non_CO_uncertainty_loser"])
 
     # Avoid saving all created columns that were just a passing step
     # new_columns = ['match_id',

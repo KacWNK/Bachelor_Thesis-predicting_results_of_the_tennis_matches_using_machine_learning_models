@@ -31,8 +31,10 @@ try:
     calendar_items = calendar_container.find_elements(By.CLASS_NAME, "seasonCalendar__content")
 
     i = 0
+    end = False
     for item in calendar_items:
-
+        if end:
+            break
         try:
             month_year = item.find_element(By.CLASS_NAME, "seasonCalendar__headline").text.strip()
 
@@ -50,8 +52,11 @@ try:
                                                                                                             "a")
                     winner = winner_element.text.strip()
                 except:
-                    winner = "No winner listed"
+                    pass
                 print(tournament_link)
+                if 'montpellier' in tournament_link.lower():
+                    end = True
+                    break
                 driver.get(tournament_link)
                 WebDriverWait(driver, 15).until(
                     EC.presence_of_element_located((By.CLASS_NAME, "event__match"))
@@ -65,7 +70,6 @@ try:
                     try:
                         match_link_element = match_div.find_element(By.TAG_NAME, "a")
                         match_link = match_link_element.get_attribute("href")
-                        print(match_link)
                         match_links.append(match_link)
                     except Exception as e:
                         print(f"Error processing match div: {e}")
@@ -81,6 +85,6 @@ try:
 
 
 finally:
-    with open("../../data/livesport_scraped/match_links_2024.json", "w") as file:
+    with open("../raw_data/livesport/match_links_2025.json", "w") as file:
         json.dump(match_links, file, indent=4)
     driver.quit()

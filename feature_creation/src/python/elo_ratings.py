@@ -53,9 +53,9 @@ class EloRatingsProcessor:
             # # Adjust surface-specific initial ratings based on surface win rates
             surface_ratings[player] = {
                 'General': initial_rating,
-                'Hard': initial_rating,
-                'Clay': initial_rating,
-                'Grass': initial_rating
+                'hard': initial_rating,
+                'clay': initial_rating,
+                'grass': initial_rating
             }
 
         return surface_ratings
@@ -146,9 +146,9 @@ class EloRatingsProcessor:
     def insert_elo_ratings_to_df(self):
         matches_history = {
             'General': defaultdict(lambda: defaultdict(list)),
-            'Hard': defaultdict(lambda: defaultdict(list)),
-            'Clay': defaultdict(lambda: defaultdict(list)),
-            'Grass': defaultdict(lambda: defaultdict(list))
+            'hard': defaultdict(lambda: defaultdict(list)),
+            'clay': defaultdict(lambda: defaultdict(list)),
+            'grass': defaultdict(lambda: defaultdict(list))
         }
         elo_winners, elo_losers = [], []
         surface_elo_winners, surface_elo_losers = [], []
@@ -181,8 +181,12 @@ class EloRatingsProcessor:
 
 
 def add_elo_rating(new_rows: pd.DataFrame, existing_df: pd.DataFrame) -> pd.DataFrame:
+    new_rows['Surface'] = new_rows['Surface'].str.lower()
     combined_df = pd.concat([existing_df, new_rows], ignore_index=True) if existing_df is not None else new_rows
     combined_df = combined_df.drop_duplicates().reset_index(drop=True)
+    new_rows['Date'] = pd.to_datetime(new_rows['Date'])
+    combined_df['Date'] = pd.to_datetime(combined_df['Date'])
+
     player_ranks = create_player_ranks(combined_df)
 
     complex_elo_ratings_predictor = EloRatingsProcessor(combined_df, new_rows, player_ranks)

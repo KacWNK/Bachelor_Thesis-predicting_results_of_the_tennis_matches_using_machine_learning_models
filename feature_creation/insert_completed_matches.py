@@ -23,7 +23,7 @@ def insert_completed_matches_to_matches_df(completed_matches: Union[list[dict], 
 input_path = "../data/completed_matches.csv"
 completed_matches = pd.read_csv(input_path)
 
-matches_df = pd.read_csv("data/processed_matches.csv")
+matches_df = pd.read_csv("data/matches_2018-2024.csv")
 
 # Update the DataFrame
 updated_df = insert_completed_matches_to_matches_df(completed_matches, matches_df)

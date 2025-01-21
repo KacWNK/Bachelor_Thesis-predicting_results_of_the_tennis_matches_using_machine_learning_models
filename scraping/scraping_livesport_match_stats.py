@@ -4,17 +4,15 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
 import re
+from datetime import datetime
 
-with open("../../data/livesport_scraped/match_links_2024.json", "r") as file:
+with open("../raw_data/livesport/match_links_2025.json", "r") as file:
     match_links = json.load(file)
-
-
 def parse_tournament_info(input_string: str) -> dict:
     print(input_string)
     pattern = r"ATP - SINGLES: ([A-Za-z\s]+) \(([^)]+)\), ([A-Za-z\s]+)(?: \((indoor)\))? - ([A-Za-z\s0-9/-]+)"
     match = re.match(pattern, input_string, re.IGNORECASE)
     if match:
-        print("Hej")
         return {
             'tournament_name': match.group(1).strip(),
             'location': match.group(2).strip(),
@@ -27,7 +25,20 @@ def parse_tournament_info(input_string: str) -> dict:
 
 def parse_time_and_date(input_string: str) -> dict:
     parts = input_string.split(" ")
-    return {'date': parts[0].strip(), 'time': parts[1].strip()}
+    if parts[1] in ['AM,', 'PM,']:
+        input_string = ' '.join(parts)
+
+        parsed_datetime = datetime.strptime(input_string, '%I:%M %p, %B %d, %Y')
+        time = parsed_datetime.strftime('%H:%M')
+        date = parsed_datetime.strftime('%Y-%m-%d')
+
+        print(f"Time (24-hour): {time}")
+        print(f"Date: {date}")
+        return {'date': date, 'time': time}
+    else:
+        parsed_datetime = datetime.strptime(parts[0].strip(), "%d.%m.%Y")
+        date = parsed_datetime.strftime('%Y-%m-%d')
+        return {'date': date, 'time': parts[1].strip()}
 
 
 def parse_score(input_string: str) -> dict:
@@ -184,7 +195,7 @@ def main():
                 print(f"Error processing URL {url}: {e}")
     finally:
         driver.quit()
-        json.dump(output, open("../../data/livesport_scraped/match_details_2024.json", "w"), indent=4)
+        json.dump(output, open("../raw_data/livesport/match_details_2025.json", "w"), indent=4)
 
 
 if __name__ == "__main__":

@@ -1,351 +1,420 @@
-tournament_id,tournament_name,tournament_location,tournament_date,tournament_level,draw_size,Surface,indoor_or_outdoor
-2018-M020,Brisbane International,Brisbane,2018-01-01,A,32,Hard,Outdoor
-2018-0451,Qatar Exxon Mobil Open,Doha,2018-01-01,A,32,Hard,Outdoor
-2018-0891,Tata Open,Pune,2018-01-01,A,32,Hard,Outdoor
-2018-0301,ASB Classic,Auckland,2018-01-08,A,32,Hard,Outdoor
-2018-M001,Sydney International,Sydney,2018-01-08,A,32,Hard,Outdoor
-2018-580,Australian Open,Melbourne,2018-01-15,G,128,Hard,Outdoor
-2018-0375,Open Sud de France,Montpellier,2018-02-05,A,32,Hard,Indoor
-2018-7161,Ecuador Open,Quito,2018-02-05,A,32,Clay,Outdoor
-2018-7434,Garanti Koza Sofia Open,Sofia,2018-02-05,A,32,Hard,Indoor
-2018-0506,Argentina Open,Buenos Aires,2018-02-12,A,32,Clay,Outdoor
-2018-0424,New York Open,New York,2018-02-12,A,32,Hard,Indoor
-2018-0407,ABN AMRO World Tennis Tournament,Rotterdam,2018-02-12,A,32,Hard,Indoor
-2018-0499,Delray Beach Open,Delray Beach,2018-02-19,A,32,Hard,Outdoor
-2018-0496,Open 13,Marseille,2018-02-19,A,32,Hard,Indoor
-2018-6932,Rio Open,Rio de Janeiro,2018-02-19,A,32,Clay,Outdoor
-2018-M004,Abierto Mexicano,Acapulco,2018-02-26,A,32,Hard,Outdoor
-2018-0495,Dubai Tennis Championships,Dubai,2018-02-26,A,32,Hard,Outdoor
-2018-0533,Brasil Open,Sao Paulo,2018-02-26,A,32,Clay,Indoor
-2018-M006,BNP Paribas Open,Indian Wells,2018-03-05,M,128,Hard,Outdoor
-2018-M007,Sony Ericsson Open,Miami,2018-03-19,M,128,Hard,Outdoor
-2018-0717,U.S. Men's Clay Court Championships,Houston,2018-04-09,A,32,Clay,Outdoor
-2018-0360,Grand Prix Hassan II,Marrakech,2018-04-09,A,32,Clay,Outdoor
-2018-0410,Monte Carlo Masters,Monte Carlo,2018-04-16,M,64,Clay,Outdoor
-2018-0425,Open Banco Sabadell ,Barcelona,2018-04-23,A,64,Clay,Outdoor
-2018-7648,Gazprom Hungarian Open,Budapest,2018-04-23,A,32,Clay,Outdoor
-2018-7290,Millennium Estoril Open,Estoril,2018-04-30,A,32,Clay,Outdoor
-2018-7163,Istanbul Open,Istanbul,2018-04-30,A,32,Clay,Outdoor
-2018-0308,BMW Open,Munich,2018-04-30,A,32,Clay,Outdoor
-2018-M021,Mutua Madrid Open,Madrid,2018-05-07,M,64,Clay,Outdoor
-2018-M009,Internazionali BNL d'Italia,Rome,2018-05-14,M,64,Clay,Outdoor
-2018-0322,Geneva Open,Geneva,2018-05-21,A,32,Clay,Outdoor
-2018-7694,Lyon Open,Lyon,2018-05-21,A,32,Clay,Outdoor
-2018-520,French Open,Paris,2018-05-28,G,128,Clay,Outdoor
-2018-M010,Ricoh Open,'s-Hertogenbosch,2018-06-11,A,32,Grass,Outdoor
-2018-0321,Mercedes Cup,Stuttgart,2018-06-11,A,32,Grass,Outdoor
-2018-0500,Gerry Weber Open,Halle,2018-06-18,A,32,Grass,Outdoor
-2018-0311,AEGON Championships,Queens Club,2018-06-18,A,32,Grass,Outdoor
-2018-7650,Antalya Open,Antalya,2018-06-25,A,32,Grass,Outdoor
-2018-M016,Eastbourne International,Eastbourne,2018-06-25,A,32,Grass,Outdoor
-2018-540,Wimbledon,London,2018-07-02,G,128,Grass,Outdoor
-2018-0316,SkiStar Swedish Open,Bastad,2018-07-16,A,32,Clay,Outdoor
-2018-0315,Hall of Fame Championships,Newport,2018-07-16,A,32,Grass,Outdoor
-2018-0439,Croatia Open,Umag,2018-07-16,A,32,Clay,Outdoor
-2018-6116,BB&T Atlanta Open,Atlanta,2018-07-23,A,32,Hard,Outdoor
-2018-0314,Suisse Open Gstaad,Gstaad,2018-07-23,A,32,Clay,Outdoor
-2018-0414,German Tennis Championships,Hamburg,2018-07-23,A,32,Clay,Outdoor
-2018-0319,Generali Open,Kitzbuhel,2018-07-30,A,32,Clay,Outdoor
-2018-7480,Abierto Mexicano Mifel,Los Cabos,2018-07-30,A,32,Hard,Outdoor
-2018-M035,Citi Open,Washington,2018-07-30,A,64,Hard,Outdoor
-2018-0421,Rogers Masters,Toronto,2018-08-06,M,64,Hard,Outdoor
-2018-M024,Western & Southern Financial Group Masters,Cincinnati,2018-08-13,M,64,Hard,Outdoor
-2018-6242,Winston-Salem Open at Wake Forest University,Winston-Salem,2018-08-20,A,64,Hard,Outdoor
-2018-560,US Open,New York,2018-08-27,G,128,Hard,Outdoor
-2018-0341,Open de Moselle,Metz,2018-09-17,A,32,Hard,Indoor
-2018-0568,St. Petersburg Open,St. Petersburg,2018-09-17,A,32,Hard,Indoor
-2018-7581,Chengdu Open,Chengdu,2018-09-24,A,32,Hard,Outdoor
-2018-6967,Shenzhen Open,Shenzhen,2018-09-24,A,32,Hard,Outdoor
-2018-M015,China Open,Beijing,2018-10-01,A,32,Hard,Outdoor
-2018-0329,Rakuten Japan Open Tennis Championships,Tokyo,2018-10-01,A,32,Hard,Outdoor
-2018-5014,Shanghai Masters,Shanghai,2018-10-08,M,64,Hard,Outdoor
-2018-7485,European Open,Antwerp,2018-10-15,A,32,Hard,Indoor
-2018-M014,Kremlin Cup,Moscow,2018-10-15,A,32,Hard,Indoor
-2018-0429,Stockholm Open,Stockholm,2018-10-15,A,32,Hard,Indoor
-2018-0328,Swiss Indoors,Basel,2018-10-22,A,32,Hard,Indoor
-2018-0337,Erste Bank Open,Vienna,2018-10-22,A,32,Hard,Indoor
-2018-0352,BNP Paribas Masters,Paris 2,2018-10-29,M,64,Hard,Indoor
-2019-M020,Brisbane International,Brisbane,2018-12-31,A,32,Hard,Outdoor
-2019-0451,Qatar Exxon Mobil Open,Doha,2018-12-31,A,32,Hard,Outdoor
-2019-0891,Maharashtra Open,Pune,2018-12-31,A,32,Hard,Outdoor
-2019-0301,ASB Classic,Auckland,2019-01-07,A,32,Hard,Outdoor
-2019-M001,Sydney International,Sydney,2019-01-07,A,32,Hard,Outdoor
-2019-580,Australian Open,Melbourne,2019-01-14,G,128,Hard,Outdoor
-2019-9158,Cordoba Open,Cordoba,2019-02-04,A,32,Clay,Outdoor
-2019-0375,Open Sud de France,Montpellier,2019-02-04,A,32,Hard,Indoor
-2019-7434,Sofia Open,Sofia,2019-02-04,A,32,Hard,Indoor
-2019-0506,Argentina Open,Buenos Aires,2019-02-11,A,32,Clay,Outdoor
-2019-0424,New York Open,New York,2019-02-11,A,32,Hard,Indoor
-2019-0407,ABN AMRO World Tennis Tournament,Rotterdam,2019-02-11,A,32,Hard,Indoor
-2019-0499,Delray Beach Open,Delray Beach,2019-02-18,A,32,Hard,Outdoor
-2019-0496,Open 13,Marseille,2019-02-18,A,32,Hard,Indoor
-2019-6932,Rio Open,Rio de Janeiro,2019-02-18,A,32,Clay,Outdoor
-2019-M004,Abierto Mexicano,Acapulco,2019-02-25,A,32,Hard,Outdoor
-2019-0495,Dubai Tennis Championships,Dubai,2019-02-25,A,32,Hard,Outdoor
-2019-0533,Brasil Open,Sao Paulo,2019-02-25,A,32,Clay,Indoor
-2019-M006,BNP Paribas Open,Indian Wells,2019-03-04,M,128,Hard,Outdoor
-2019-M007,Sony Ericsson Open,Miami,2019-03-18,M,128,Hard,Outdoor
-2019-0717,U.S. Men's Clay Court Championships,Houston,2019-04-08,A,32,Clay,Outdoor
-2019-0360,Grand Prix Hassan II,Marrakech,2019-04-08,A,32,Clay,Outdoor
-2019-0410,Monte Carlo Masters,Monte Carlo,2019-04-15,M,64,Clay,Outdoor
-2019-0425,Open Banco Sabadell ,Barcelona,2019-04-22,A,64,Clay,Outdoor
-2019-7648,Hungarian Open,Budapest,2019-04-22,A,32,Clay,Outdoor
-2019-7290,Millennium Estoril Open,Estoril,2019-04-29,A,32,Clay,Outdoor
-2019-0308,BMW Open,Munich,2019-04-29,A,32,Clay,Outdoor
-2019-M021,Mutua Madrid Open,Madrid,2019-05-06,M,64,Clay,Outdoor
-2019-M009,Internazionali BNL d'Italia,Rome,2019-05-13,M,64,Clay,Outdoor
-2019-0322,Geneva Open,Geneva,2019-05-20,A,32,Clay,Outdoor
-2019-7694,Lyon Open,Lyon,2019-05-20,A,32,Clay,Outdoor
-2019-520,French Open,Paris,2019-05-27,G,128,Clay,Outdoor
-2019-M010,Rosmalen Grass Court Championships,'s-Hertogenbosch,2019-06-10,A,32,Grass,Outdoor
-2019-0321,Mercedes Cup,Stuttgart,2019-06-10,A,32,Grass,Outdoor
-2019-0500,Halle Open,Halle,2019-06-17,A,32,Grass,Outdoor
-2019-0311,Queen's Club Championships,Queens Club,2019-06-17,A,32,Grass,Outdoor
-2019-7650,Antalya Open,Antalya,2019-06-24,A,32,Grass,Outdoor
-2019-M016,Eastbourne International,Eastbourne,2019-06-24,A,32,Grass,Outdoor
-2019-540,Wimbledon,London,2019-07-01,G,128,Grass,Outdoor
-2019-0316,SkiStar Swedish Open,Bastad,2019-07-15,A,32,Clay,Outdoor
-2019-0315,Hall of Fame Championships,Newport,2019-07-15,A,32,Grass,Outdoor
-2019-0439,Croatia Open,Umag,2019-07-15,A,32,Clay,Outdoor
-2019-6116,BB&T Atlanta Open,Atlanta,2019-07-22,A,32,Hard,Outdoor
-2019-0314,Suisse Open Gstaad,Gstaad,2019-07-22,A,32,Clay,Outdoor
-2019-0414,German Tennis Championships,Hamburg,2019-07-22,A,32,Clay,Outdoor
-2019-0319,Generali Open,Kitzbuhel,2019-07-29,A,32,Clay,Outdoor
-2019-7480,Abierto Mexicano Mifel,Los Cabos,2019-07-29,A,32,Hard,Outdoor
-2019-M035,Citi Open,Washington,2019-07-29,A,64,Hard,Outdoor
-2019-0421,Rogers Masters,Montreal,2019-08-05,M,64,Hard,Outdoor
-2019-M024,Western & Southern Financial Group Masters,Cincinnati,2019-08-12,M,64,Hard,Outdoor
-2019-6242,Winston-Salem Open at Wake Forest University,Winston-Salem,2019-08-19,A,64,Hard,Outdoor
-2019-560,US Open,New York,2019-08-26,G,128,Hard,Outdoor
-2019-0341,Open de Moselle,Metz,2019-09-16,A,32,Hard,Indoor
-2019-0568,St. Petersburg Open,St. Petersburg,2019-09-16,A,32,Hard,Indoor
-2019-7581,Chengdu Open,Chengdu,2019-09-23,A,32,Hard,Outdoor
-2019-9164,Zhuhai Open,Zhuhai,2019-09-23,A,32,Hard,Outdoor
-2019-M015,China Open,Beijing,2019-09-30,A,32,Hard,Outdoor
-2019-0329,Rakuten Japan Open Tennis Championships,Tokyo,2019-09-30,A,32,Hard,Outdoor
-2019-5014,Shanghai Masters,Shanghai,2019-10-07,M,64,Hard,Outdoor
-2019-7485,European Open,Antwerp,2019-10-14,A,32,Hard,Indoor
-2019-M014,Kremlin Cup,Moscow,2019-10-14,A,32,Hard,Indoor
-2019-0429,Stockholm Open,Stockholm,2019-10-14,A,32,Hard,Indoor
-2019-0328,Swiss Indoors,Basel,2019-10-21,A,32,Hard,Indoor
-2019-0337,Erste Bank Open,Vienna,2019-10-21,A,32,Hard,Indoor
-2019-0352,BNP Paribas Masters,Paris 2,2019-10-28,M,64,Hard,Indoor
-2020-0451,Qatar Exxon Mobil Open,Doha,2020-01-06,A,32,Hard,Outdoor
-2020-M056,Adelaide International,Adelaide,2020-01-13,A,32,Hard,Outdoor
-2020-0301,ASB Classic,Auckland,2020-01-13,A,32,Hard,Outdoor
-2020-580,Australian Open,Melbourne,2020-01-20,G,128,Hard,Outdoor
-2020-9158,Cordoba Open,Cordoba,2020-02-03,A,32,Clay,Outdoor
-2020-0375,Open Sud de France,Montpellier,2020-02-03,A,32,Hard,Indoor
-2020-0891,Maharashtra Open,Pune,2020-02-03,A,32,Hard,Outdoor
-2020-0506,Argentina Open,Buenos Aires,2020-02-10,A,32,Clay,Outdoor
-2020-0424,New York Open,New York,2020-02-10,A,32,Hard,Indoor
-2020-0407,ABN AMRO World Tennis Tournament,Rotterdam,2020-02-10,A,32,Hard,Indoor
-2020-0499,Delray Beach Open,Delray Beach,2020-02-17,A,32,Hard,Outdoor
-2020-0496,Open 13,Marseille,2020-02-17,A,32,Hard,Indoor
-2020-6932,Rio Open,Rio de Janeiro,2020-02-17,A,32,Clay,Outdoor
-2020-M004,Abierto Mexicano,Acapulco,2020-02-24,A,32,Hard,Outdoor
-2020-0495,Dubai Tennis Championships,Dubai,2020-02-24,A,32,Hard,Outdoor
-2020-8996,Chile Open,Santiago,2020-02-24,A,32,Clay,Indoor
-2020-M024,Western & Southern Financial Group Masters,Cincinnati,2020-08-24,M,64,Hard,Outdoor
-2020-0319,Generali Open,Kitzbuhel,2020-09-07,A,32,Clay,Outdoor
-2020-560,US Open,New York,2020-08-31,G,128,Hard,Outdoor
-2020-M009,Internazionali BNL d'Italia,Rome,2020-09-14,M,64,Clay,Outdoor
-2020-0414,German Tennis Championships,Hamburg,2020-09-21,A,32,Clay,Outdoor
-2020-520,French Open,Paris,2020-09-28,G,128,Clay,Outdoor
-2020-9404,bett1HULKS Indoors,Cologne 1,2020-10-12,A,32,Hard,Indoor
-2020-9408,Forte Village Sardegna Open,Sardinia,2020-10-12,A,32,Clay,Outdoor
-2020-0568,St. Petersburg Open,St. Petersburg,2020-10-12,A,32,Hard,Indoor
-2020-7485,European Open,Antwerp,2020-10-19,A,32,Hard,Indoor
-2020-9406,bett1HULKS Championship,Cologne 2,2020-10-19,A,32,Hard,Indoor
-2020-9410,Astana Open,Nur-Sultan,2020-10-26,A,32,Hard,Indoor
-2020-0337,Erste Bank Open,Vienna,2020-10-26,A,32,Hard,Indoor
-2020-0352,BNP Paribas Masters,Paris 2,2020-11-02,M,64,Hard,Indoor
-2020-7434,Sofia Open,Sofia,2020-11-09,A,32,Hard,Indoor
-2021-9426,Antalya Open,Antalya,2021-01-05,A,32,Hard,Indoor
-2021-0499,Delray Beach Open,Delray Beach,2021-01-04,A,32,Hard,Outdoor
-2021-580,Australian Open,Melbourne,2021-02-08,G,128,Hard,Outdoor
-2021-9158,Cordoba Open,Cordoba,2021-02-22,A,32,Clay,Outdoor
-2021-0375,Open Sud de France,Montpellier,2021-02-22,A,32,Hard,Indoor
-2021-9460,Singapore Open,Singapore,2021-02-22,A,32,Hard,Indoor
-2021-0506,Argentina Open,Buenos Aires,2021-03-01,A,32,Clay,Outdoor
-2021-0407,ABN AMRO World Tennis Tournament,Rotterdam,2021-03-01,A,32,Hard,Indoor
-2021-0451,Qatar Exxon Mobil Open,Doha,2021-03-08,A,32,Hard,Outdoor
-2021-0496,Open 13,Marseille,2021-03-08,A,32,Hard,Indoor
-2021-8996,Chile Open,Santiago,2021-03-08,A,32,Clay,Indoor
-2021-0807,Abierto Mexicano,Acapulco,2021-03-15,A,32,Hard,Outdoor
-2021-0495,Dubai Tennis Championships,Dubai,2021-03-15,A,64,Hard,Outdoor
-2021-0403,Miami Open,Miami,2021-03-22,M,128,Hard,Outdoor
-2021-9481,Sardegna Open,Cagliari,2021-04-05,A,32,Hard,Outdoor
-2021-9462,AnyTech365 Andalucia Open,Marbella,2021-04-05,A,32,Hard,Outdoor
-2021-0410,Monte Carlo Masters,Monte Carlo,2021-04-12,M,64,Clay,Outdoor
-2021-0425,Barcelona Open,Barcelona,2021-04-19,A,64,Clay,Outdoor
-2021-5053,Serbia Open,Belgrade,2021-04-19,A,32,Clay,Outdoor
-2021-7290,Millennium Estoril Open,Estoril,2021-04-26,A,32,Clay,Outdoor
-2021-0308,BMW Open,Munich,2021-04-26,A,32,Clay,Outdoor
-2021-1536,Mutua Madrid Open,Madrid,2021-05-03,M,64,Clay,Outdoor
-2021-0416,Internazionali BNL d'Italia,Rome,2021-05-10,M,64,Clay,Outdoor
-2021-0322,Geneva Open,Geneva,2021-05-17,A,32,Clay,Outdoor
-2021-7694,Lyon Open,Lyon,2021-05-17,A,32,Clay,Outdoor
-2021-9512,Belgrade Open,Belgrade 2,2021-05-24,A,32,Clay,Outdoor
-2021-9510,Emilia-Romagna Open,Parma,2021-05-24,A,32,Clay,Outdoor
-2021-520,French Open,Paris,2021-05-31,G,128,Clay,Outdoor
-2021-0321,Mercedes Cup,Stuttgart,2021-06-07,A,32,Grass,Outdoor
-2021-0500,Halle Open,Halle,2021-06-14,A,32,Grass,Outdoor
-2021-0311,Queen's Club Championships,Queens Club,2021-06-14,A,32,Grass,Outdoor
-2021-0741,Viking International,Eastbourne,2021-06-21,A,32,Grass,Outdoor
-2021-8994,Mallorca Championships,Mallorca,2021-06-21,A,32,Grass,Outdoor
-2021-540,Wimbledon,London,2021-06-28,G,128,Grass,Outdoor
-2021-0316,Nordea Open,Bastad,2021-07-12,A,32,Clay,Outdoor
-2021-0414,European Open,Hamburg,2021-07-12,A,32,Clay,Outdoor
-2021-0315,Hall of Fame Championships,Newport,2021-07-12,A,32,Grass,Outdoor
-2021-0314,Suisse Open Gstaad,Gstaad,2021-07-19,A,32,Clay,Outdoor
-2021-7480,Mifel Open,Los Cabos,2021-07-19,A,32,Hard,Outdoor
-2021-0439,Croatia Open,Umag,2021-07-19,A,32,Clay,Outdoor
-2021-6116,BB&T Atlanta Open,Atlanta,2021-07-26,A,32,Hard,Outdoor
-2021-0319,Generali Open,Kitzbuhel,2021-07-26,A,32,Clay,Outdoor
-2021-0418,Citi Open,Washington,2021-08-02,A,64,Hard,Outdoor
-2021-0421,Canadian Open,Toronto,2021-08-09,M,64,Hard,Outdoor
-2021-0422,Western & Southern Financial Group Masters,Cincinnati,2021-08-16,M,64,Hard,Outdoor
-2021-6242,Winston-Salem Open at Wake Forest University,Winston-Salem,2021-08-23,A,64,Hard,Outdoor
-2021-560,US Open,New York,2021-08-30,G,128,Hard,Outdoor
-2021-0341,Open de Moselle,Metz,2021-09-20,A,32,Hard,Indoor
-2021-9410,Astana Open,Nur-Sultan,2021-09-20,A,32,Hard,Indoor
-2021-9569,San Diego Open,San Diego,2021-09-27,A,32,Hard,Outdoor
-2021-7434,Sofia Open,Sofia,2021-09-27,A,32,Hard,Indoor
-2021-0404,BNP Paribas Open,Indian Wells,2021-10-04,M,128,Hard,Outdoor
-2021-7485,European Open,Antwerp,2021-10-18,A,32,Hard,Indoor
-2021-0438,Kremlin Cup,Moscow,2021-10-18,A,32,Hard,Indoor
-2021-0568,St. Petersburg Open,St. Petersburg,2021-10-25,A,32,Hard,Indoor
-2021-0337,Vienna Open,Vienna,2021-10-25,A,32,Hard,Indoor
-2021-0352,BNP Paribas Masters,Paris 2,2021-11-01,M,64,Hard,Indoor
-2021-0429,Stockholm Open,Stockholm,2021-11-08,A,32,Hard,Indoor
-2022-8998,Adelaide International 1,Adelaide 1,2022-01-03,A,32,Hard,Outdoor
-2022-9667,Adelaide International 2,Adelaide 2,2022-01-10,A,32,Hard,Outdoor
-2022-9663,Sydney Tennis Classic,Sydney,2022-01-10,A,32,Hard,Outdoor
-2022-580,Australian Open,Melbourne,2022-01-17,G,128,Hard,Outdoor
-2022-9158,Cordoba Open,Cordoba,2022-01-31,A,32,Clay,Outdoor
-2022-0375,Open Sud de France,Montpellier,2022-01-31,A,32,Hard,Indoor
-2022-0891,Maharashtra Open,Pune,2022-01-31,A,32,Hard,Outdoor
-2022-0506,Argentina Open,Buenos Aires,2022-02-07,A,32,Clay,Outdoor
-2022-0424,Dallas Open,Dallas,2022-02-07,A,32,Hard,Indoor
-2022-0407,ABN AMRO World Tennis Tournament,Rotterdam,2022-02-07,A,32,Hard,Indoor
-2022-0499,Delray Beach Open,Delray Beach,2022-02-14,A,32,Hard,Outdoor
-2022-0451,Qatar Exxon Mobil Open,Doha,2022-02-14,A,32,Hard,Outdoor
-2022-0496,Open 13,Marseille,2022-02-14,A,32,Hard,Indoor
-2022-6932,Rio Open,Rio de Janeiro,2022-02-14,A,32,Clay,Outdoor
-2022-0807,Abierto Mexicano,Acapulco,2022-02-21,A,32,Hard,Outdoor
-2022-0495,Dubai Tennis Championships,Dubai,2022-02-21,A,32,Hard,Outdoor
-2022-8996,Chile Open,Santiago,2022-02-21,A,32,Clay,Indoor
-2022-0404,BNP Paribas Open,Indian Wells,2022-03-07,M,128,Hard,Outdoor
-2022-0403,Miami Open,Miami,2022-03-21,M,128,Hard,Outdoor
-2022-0717,U.S. Men's Clay Court Championships,Houston,2022-04-04,A,32,Clay,Outdoor
-2022-0360,Grand Prix Hassan II,Marrakech,2022-04-04,A,32,Clay,Outdoor
-2022-0410,Monte Carlo Masters,Monte Carlo,2022-04-11,M,64,Clay,Outdoor
-2022-0425,Barcelona Open,Barcelona,2022-04-18,A,64,Clay,Outdoor
-2022-5053,Serbia Open,Belgrade,2022-04-18,A,32,Clay,Outdoor
-2022-7290,Millennium Estoril Open,Estoril,2022-04-25,A,32,Clay,Outdoor
-2022-0308,BMW Open,Munich,2022-04-25,A,32,Clay,Outdoor
-2022-1536,Mutua Madrid Open,Madrid,2022-05-02,M,64,Clay,Outdoor
-2022-0416,Internazionali BNL d'Italia,Rome,2022-05-09,M,64,Clay,Outdoor
-2022-0322,Geneva Open,Geneva,2022-05-16,A,32,Clay,Outdoor
-2022-7694,Lyon Open,Lyon,2022-05-16,A,32,Clay,Outdoor
-2022-520,French Open,Paris,2022-05-23,G,128,Clay,Outdoor
-2022-0440,Rosmalen Grass Court Championships,'s-Hertogenbosch,2022-06-06,A,32,Grass,Outdoor
-2022-0321,Mercedes Cup,Stuttgart,2022-06-06,A,32,Grass,Outdoor
-2022-0500,Halle Open,Halle,2022-06-13,A,32,Grass,Outdoor
-2022-0311,Queen's Club Championships,Queens Club,2022-06-13,A,32,Grass,Outdoor
-2022-0741,Eastbourne International,Eastbourne,2022-06-20,A,32,Grass,Outdoor
-2022-8994,Mallorca Championships,Mallorca,2022-06-20,A,32,Grass,Outdoor
-2022-540,Wimbledon,London,2022-06-27,G,128,Grass,Outdoor
-2022-0316,Nordea Open,Bastad,2022-07-11,A,32,Clay,Outdoor
-2022-0315,Hall of Fame Championships,Newport,2022-07-11,A,32,Grass,Outdoor
-2022-0314,Suisse Open Gstaad,Gstaad,2022-07-18,A,32,Clay,Outdoor
-2022-0414,European Open,Hamburg,2022-07-18,A,32,Clay,Outdoor
-2022-6116,Atlanta Open,Atlanta,2022-07-25,A,32,Hard,Outdoor
-2022-0319,Generali Open,Kitzbuhel,2022-07-25,A,32,Clay,Outdoor
-2022-0439,Croatia Open,Umag,2022-07-25,A,32,Clay,Outdoor
-2022-7480,Los Cabos Open,Los Cabos,2022-08-01,A,32,Hard,Outdoor
-2022-0418,Citi Open,Washington,2022-08-01,A,64,Hard,Outdoor
-2022-0421,Canadian Open,Montreal,2022-08-08,M,64,Hard,Outdoor
-2022-0422,Western & Southern Financial Group Masters,Cincinnati,2022-08-15,M,64,Hard,Outdoor
-2022-6242,Winston-Salem Open at Wake Forest University,Winston-Salem,2022-08-22,A,64,Hard,Outdoor
-2022-560,US Open,New York,2022-08-29,G,128,Hard,Outdoor
-2022-0341,Open de Moselle,Metz,2022-09-19,A,32,Hard,Indoor
-2022-9569,San Diego Open,San Diego,2022-09-19,A,32,Hard,Outdoor
-2022-4140,Korea Open,Seoul,2022-09-26,A,32,Hard,Outdoor
-2022-7434,Sofia Open,Sofia,2022-09-26,A,32,Hard,Indoor
-2022-4138,Tel Aviv Open,Tel Aviv,2022-09-26,A,32,Hard,Indoor
-2022-9410,Astana Open,Nur-Sultan,2022-10-03,A,32,Hard,Indoor
-2022-0329,Rakuten Japan Open Tennis Championships,Tokyo,2022-10-03,A,32,Hard,Outdoor
-2022-2805,Firenze Open,Florence,2022-10-10,A,32,Hard,Indoor
-2022-2807,Gijon Open,Gijon,2022-10-10,A,32,Hard,Indoor
-2022-7485,European Open,Antwerp,2022-10-17,A,32,Hard,Indoor
-2022-2809,Napoli Cup,Naples,2022-10-17,A,32,Hard,Outdoor
-2022-0429,Stockholm Open,Stockholm,2022-10-17,A,32,Hard,Indoor
-2022-0328,Swiss Indoors,Basel,2022-10-24,A,32,Hard,Indoor
-2022-0337,Vienna Open,Vienna,2022-10-24,A,32,Hard,Indoor
-2022-0352,BNP Paribas Masters,Paris 2,2022-10-31,M,64,Hard,Indoor
-2023-2843,Adelaide International 1,Adelaide 1,2023-01-02,A,32,Hard,Outdoor
-2023-0891,Maharashtra Open,Pune,2023-01-02,A,32,Hard,Outdoor
-2023-8998,Adelaide International 2,Adelaide 2,2023-01-09,A,32,Hard,Outdoor
-2023-0301,ASB Classic,Auckland,2023-01-09,A,32,Hard,Outdoor
-2023-580,Australian Open,Melbourne,2023-01-16,G,128,Hard,Outdoor
-2023-9158,Cordoba Open,Cordoba,2023-02-06,A,32,Clay,Outdoor
-2023-0424,Dallas Open,Dallas,2023-02-06,A,32,Hard,Indoor
-2023-0375,Open Sud de France,Montpellier,2023-02-06,A,32,Hard,Indoor
-2023-0506,Argentina Open,Buenos Aires,2023-02-13,A,32,Clay,Outdoor
-2023-0499,Delray Beach Open,Delray Beach,2023-02-13,A,32,Hard,Outdoor
-2023-0407,ABN AMRO World Tennis Tournament,Rotterdam,2023-02-13,A,32,Hard,Indoor
-2023-0451,Qatar Exxon Mobil Open,Doha,2023-02-20,A,32,Hard,Outdoor
-2023-0496,Open 13,Marseille,2023-02-20,A,32,Hard,Indoor
-2023-6932,Rio Open,Rio de Janeiro,2023-02-20,A,32,Clay,Outdoor
-2023-0807,Abierto Mexicano,Acapulco,2023-02-27,A,32,Hard,Outdoor
-2023-0495,Dubai Tennis Championships,Dubai,2023-02-27,A,32,Hard,Outdoor
-2023-8996,Chile Open,Santiago,2023-02-27,A,32,Clay,Indoor
-2023-0404,BNP Paribas Open,Indian Wells,2023-03-06,M,128,Hard,Outdoor
-2023-0403,Miami Open,Miami,2023-03-20,M,128,Hard,Outdoor
-2023-7290,Estoril Open,Estoril,2023-04-03,A,32,Clay,Outdoor
-2023-0717,U.S. Men's Clay Court Championships,Houston,2023-04-03,A,32,Clay,Outdoor
-2023-0360,Grand Prix Hassan II,Marrakech,2023-04-03,A,32,Clay,Outdoor
-2023-0410,Monte Carlo Masters,Monte Carlo,2023-04-10,M,64,Clay,Outdoor
-2023-0425,Barcelona Open,Barcelona,2023-04-17,A,64,Clay,Outdoor
-2023-2841,Srpska Open,Banja Luka,2023-04-17,A,32,Clay,Outdoor
-2023-0308,BMW Open,Munich,2023-04-17,A,32,Clay,Outdoor
-2023-1536,Mutua Madrid Open,Madrid,2023-04-24,M,128,Clay,Outdoor
-2023-0416,Internazionali BNL d'Italia,Rome,2023-05-08,M,128,Clay,Outdoor
-2023-0322,Geneva Open,Geneva,2023-05-22,A,32,Clay,Outdoor
-2023-7694,Lyon Open,Lyon,2023-05-22,A,32,Clay,Outdoor
-2023-520,French Open,Paris,2023-05-29,G,128,Clay,Outdoor
-2023-0440,Rosmalen Grass Court Championships,'s-Hertogenbosch,2023-06-12,A,32,Grass,Outdoor
-2023-0321,Stuttgart Open,Stuttgart,2023-06-12,A,32,Grass,Outdoor
-2023-0500,Halle Open,Halle,2023-06-19,A,32,Grass,Outdoor
-2023-0311,Queen's Club Championships,Queens Club,2023-06-19,A,32,Grass,Outdoor
-2023-0741,Eastbourne International,Eastbourne,2023-06-26,A,32,Grass,Outdoor
-2023-8994,Mallorca Championships,Mallorca,2023-06-26,A,32,Grass,Outdoor
-2023-540,Wimbledon,London,2023-07-03,G,128,Grass,Outdoor
-2023-0316,Nordea Open,Bastad,2023-07-17,A,32,Clay,Outdoor
-2023-0314,Suisse Open Gstaad,Gstaad,2023-07-17,A,32,Clay,Outdoor
-2023-0315,Hall of Fame Championships,Newport,2023-07-17,A,32,Grass,Outdoor
-2023-6116,Atlanta Open,Atlanta,2023-07-24,A,32,Hard,Outdoor
-2023-0414,European Open,Hamburg,2023-07-24,A,32,Clay,Outdoor
-2023-0439,Croatia Open,Umag,2023-07-24,A,32,Clay,Outdoor
-2023-0319,Generali Open,Kitzbuhel,2023-07-31,A,32,Clay,Outdoor
-2023-7480,Los Cabos Open,Los Cabos,2023-07-31,A,32,Hard,Outdoor
-2023-0418,Citi Open,Washington,2023-07-31,A,64,Hard,Outdoor
-2023-0421,Canadian Open,Toronto,2023-08-07,M,64,Hard,Outdoor
-2023-0422,Western & Southern Financial Group Masters,Cincinnati,2023-08-14,M,64,Hard,Outdoor
-2023-6242,Winston-Salem Open at Wake Forest University,Winston-Salem,2023-08-21,A,64,Hard,Outdoor
-2023-560,US Open,New York,2023-08-28,G,128,Hard,Outdoor
-2023-7581,Chengdu Open,Chengdu,2023-09-20,A,32,Hard,Outdoor
-2023-9164,Zhuhai Championships,Zhuhai,2023-09-20,A,32,Hard,Outdoor
-2023-0747,China Open,Beijing,2023-09-27,A,32,Hard,Outdoor
-2023-9410,Astana Open,Nur-Sultan,2023-09-25,A,32,Hard,Indoor
-2023-5014,Shanghai Masters,Shanghai,2023-10-02,M,128,Hard,Outdoor
-2023-7485,European Open,Antwerp,2023-10-16,A,32,Hard,Indoor
-2023-0429,Nordic Open,Stockholm,2023-10-16,A,32,Hard,Indoor
-2023-0329,Japan Open Tennis Championships,Tokyo,2023-10-16,A,32,Hard,Outdoor
-2023-0328,Swiss Indoors,Basel,2023-10-23,A,32,Hard,Indoor
-2023-0337,Vienna Open,Vienna,2023-10-23,A,32,Hard,Indoor
-2023-0352,BNP Paribas Masters,Paris 2,2023-10-30,M,64,Hard,Indoor
-2023-0341,Open de Moselle,Metz,2023-11-06,A,32,Hard,Indoor
-2023-7434,Sofia Open,Sofia,2023-11-06,A,32,Hard,Indoor
+tournament_id,tournament_name,tournament_location,tournament_level,draw_size,Surface,indoor_or_outdoor
+2018-M020,Brisbane International,Brisbane,A,32.0,hard,Outdoor
+2018-0891,Tata Open,Pune,A,32.0,hard,Outdoor
+2018-0451,Qatar Exxon Mobil Open,Doha,A,32.0,hard,Outdoor
+2018-M001,Sydney International,Sydney,A,32.0,hard,Outdoor
+2018-0301,ASB Classic,Auckland,A,32.0,hard,Outdoor
+2018-580,Australian Open,Melbourne,G,128.0,hard,Outdoor
+2018-7161,Ecuador Open,Quito,A,32.0,clay,Outdoor
+2018-7434,Garanti Koza Sofia Open,Sofia,A,32.0,hard,Indoor
+2018-0375,Open Sud de France,Montpellier,A,32.0,hard,Indoor
+2018-0506,Argentina Open,Buenos Aires,A,32.0,clay,Outdoor
+2018-0424,New York Open,New York,A,32.0,hard,Indoor
+2018-0407,ABN AMRO World Tennis Tournament,Rotterdam,A,32.0,hard,Indoor
+2018-0499,Delray Beach Open,Delray Beach,A,32.0,hard,Outdoor
+2018-0496,Open 13,Marseille,A,32.0,hard,Indoor
+2018-6932,Rio Open,Rio de Janeiro,A,32.0,clay,Outdoor
+2018-0533,Brasil Open,Sao Paulo,A,32.0,clay,Indoor
+2018-0495,Dubai Tennis Championships,Dubai,A,32.0,hard,Outdoor
+2018-M004,Abierto Mexicano,Acapulco,A,32.0,hard,Outdoor
+2018-M006,BNP Paribas Open,Indian Wells,M,128.0,hard,Outdoor
+2018-M007,Sony Ericsson Open,Miami,M,128.0,hard,Outdoor
+2018-0360,Grand Prix Hassan II,Marrakech,A,32.0,clay,Outdoor
+2018-0717,U.S. Men's Clay Court Championships,Houston,A,32.0,clay,Outdoor
+2018-0410,Monte Carlo Masters,Monte Carlo,M,64.0,clay,Outdoor
+2018-0425,Open Banco Sabadell ,Barcelona,A,64.0,clay,Outdoor
+2018-7648,Gazprom Hungarian Open,Budapest,A,32.0,clay,Outdoor
+2018-7290,Millennium Estoril Open,Estoril,A,32.0,clay,Outdoor
+2018-0308,BMW Open,Munich,A,32.0,clay,Outdoor
+2018-7163,Istanbul Open,Istanbul,A,32.0,clay,Outdoor
+2018-M021,Mutua Madrid Open,Madrid,M,64.0,clay,Outdoor
+2018-M009,Internazionali BNL d'Italia,Rome,M,64.0,clay,Outdoor
+2018-0322,Geneva Open,Geneva,A,32.0,clay,Outdoor
+2018-7694,Lyon Open,Lyon,A,32.0,clay,Outdoor
+2018-520,French Open,Paris,G,128.0,clay,Outdoor
+2018-M010,Ricoh Open,'s-Hertogenbosch,A,32.0,grass,Outdoor
+2018-0321,Mercedes Cup,Stuttgart,A,32.0,grass,Outdoor
+2018-0500,Gerry Weber Open,Halle,A,32.0,grass,Outdoor
+2018-0311,AEGON Championships,Queens Club,A,32.0,grass,Outdoor
+2018-7650,Antalya Open,Antalya,A,32.0,grass,Outdoor
+2018-M016,Eastbourne International,Eastbourne,A,32.0,grass,Outdoor
+2018-540,Wimbledon,London,G,128.0,grass,Outdoor
+2018-0315,Hall of Fame Championships,Newport,A,32.0,grass,Outdoor
+2018-0439,Croatia Open,Umag,A,32.0,clay,Outdoor
+2018-0316,SkiStar Swedish Open,Bastad,A,32.0,clay,Outdoor
+2018-0314,Suisse Open Gstaad,Gstaad,A,32.0,clay,Outdoor
+2018-6116,BB&T Atlanta Open,Atlanta,A,32.0,hard,Outdoor
+2018-0414,German Tennis Championships,Hamburg,A,32.0,clay,Outdoor
+2018-0319,Generali Open,Kitzbuhel,A,32.0,clay,Outdoor
+2018-M035,Citi Open,Washington,A,64.0,hard,Outdoor
+2018-7480,Abierto Mexicano Mifel,Los Cabos,A,32.0,hard,Outdoor
+2018-0421,Rogers Masters,Toronto,M,64.0,hard,Outdoor
+2018-M024,Western & Southern Financial Group Masters,Cincinnati,M,64.0,hard,Outdoor
+2018-6242,Winston-Salem Open at Wake Forest University,Winston-Salem,A,64.0,hard,Outdoor
+2018-560,US Open,New York,G,128.0,hard,Outdoor
+2018-0568,St. Petersburg Open,St. Petersburg,A,32.0,hard,Indoor
+2018-0341,Open de Moselle,Metz,A,32.0,hard,Indoor
+2018-6967,Shenzhen Open,Shenzhen,A,32.0,hard,Outdoor
+2018-7581,Chengdu Open,Chengdu,A,32.0,hard,Outdoor
+2018-M015,China Open,Beijing,A,32.0,hard,Outdoor
+2018-0329,Rakuten Japan Open Tennis Championships,Tokyo,A,32.0,hard,Outdoor
+2018-5014,Shanghai Masters,Shanghai,M,64.0,hard,Outdoor
+2018-7485,European Open,Antwerp,A,32.0,hard,Indoor
+2018-0429,Stockholm Open,Stockholm,A,32.0,hard,Indoor
+2018-M014,Kremlin Cup,Moscow,A,32.0,hard,Indoor
+2018-0328,Swiss Indoors,Basel,A,32.0,hard,Indoor
+2018-0337,Erste Bank Open,Vienna,A,32.0,hard,Indoor
+2018-0352,BNP Paribas Masters,Paris 2,M,64.0,hard,Indoor
+2019-M020,Brisbane International,Brisbane,A,32.0,hard,Outdoor
+2019-0891,Maharashtra Open,Pune,A,32.0,hard,Outdoor
+2019-0451,Qatar Exxon Mobil Open,Doha,A,32.0,hard,Outdoor
+2019-0301,ASB Classic,Auckland,A,32.0,hard,Outdoor
+2019-M001,Sydney International,Sydney,A,32.0,hard,Outdoor
+2019-580,Australian Open,Melbourne,G,128.0,hard,Outdoor
+2019-0375,Open Sud de France,Montpellier,A,32.0,hard,Indoor
+2019-7434,Sofia Open,Sofia,A,32.0,hard,Indoor
+2019-9158,Cordoba Open,Cordoba,A,32.0,clay,Outdoor
+2019-0506,Argentina Open,Buenos Aires,A,32.0,clay,Outdoor
+2019-0424,New York Open,New York,A,32.0,hard,Indoor
+2019-0407,ABN AMRO World Tennis Tournament,Rotterdam,A,32.0,hard,Indoor
+2019-0496,Open 13,Marseille,A,32.0,hard,Indoor
+2019-0499,Delray Beach Open,Delray Beach,A,32.0,hard,Outdoor
+2019-6932,Rio Open,Rio de Janeiro,A,32.0,clay,Outdoor
+2019-0533,Brasil Open,Sao Paulo,A,32.0,clay,Indoor
+2019-0495,Dubai Tennis Championships,Dubai,A,32.0,hard,Outdoor
+2019-M004,Abierto Mexicano,Acapulco,A,32.0,hard,Outdoor
+2019-M006,BNP Paribas Open,Indian Wells,M,128.0,hard,Outdoor
+2019-M007,Sony Ericsson Open,Miami,M,128.0,hard,Outdoor
+2019-0360,Grand Prix Hassan II,Marrakech,A,32.0,clay,Outdoor
+2019-0717,U.S. Men's Clay Court Championships,Houston,A,32.0,clay,Outdoor
+2019-0410,Monte Carlo Masters,Monte Carlo,M,64.0,clay,Outdoor
+2019-0425,Open Banco Sabadell ,Barcelona,A,64.0,clay,Outdoor
+2019-7648,Hungarian Open,Budapest,A,32.0,clay,Outdoor
+2019-7290,Millennium Estoril Open,Estoril,A,32.0,clay,Outdoor
+2019-0308,BMW Open,Munich,A,32.0,clay,Outdoor
+2019-M021,Mutua Madrid Open,Madrid,M,64.0,clay,Outdoor
+2019-M009,Internazionali BNL d'Italia,Rome,M,64.0,clay,Outdoor
+2019-7694,Lyon Open,Lyon,A,32.0,clay,Outdoor
+2019-0322,Geneva Open,Geneva,A,32.0,clay,Outdoor
+2019-520,French Open,Paris,G,128.0,clay,Outdoor
+2019-0321,Mercedes Cup,Stuttgart,A,32.0,grass,Outdoor
+2019-M010,Rosmalen Grass Court Championships,'s-Hertogenbosch,A,32.0,grass,Outdoor
+2019-0311,Queen's Club Championships,Queens Club,A,32.0,grass,Outdoor
+2019-0500,Halle Open,Halle,A,32.0,grass,Outdoor
+2019-7650,Antalya Open,Antalya,A,32.0,grass,Outdoor
+2019-M016,Eastbourne International,Eastbourne,A,32.0,grass,Outdoor
+2019-540,Wimbledon,London,G,128.0,grass,Outdoor
+2019-0316,SkiStar Swedish Open,Bastad,A,32.0,clay,Outdoor
+2019-0315,Hall of Fame Championships,Newport,A,32.0,grass,Outdoor
+2019-0439,Croatia Open,Umag,A,32.0,clay,Outdoor
+2019-0414,German Tennis Championships,Hamburg,A,32.0,clay,Outdoor
+2019-6116,BB&T Atlanta Open,Atlanta,A,32.0,hard,Outdoor
+2019-0314,Suisse Open Gstaad,Gstaad,A,32.0,clay,Outdoor
+2019-M035,Citi Open,Washington,A,64.0,hard,Outdoor
+2019-0319,Generali Open,Kitzbuhel,A,32.0,clay,Outdoor
+2019-7480,Abierto Mexicano Mifel,Los Cabos,A,32.0,hard,Outdoor
+2019-0421,Rogers Masters,Montreal,M,64.0,hard,Outdoor
+2019-M024,Western & Southern Financial Group Masters,Cincinnati,M,64.0,hard,Outdoor
+2019-6242,Winston-Salem Open at Wake Forest University,Winston-Salem,A,64.0,hard,Outdoor
+2019-560,US Open,New York,G,128.0,hard,Outdoor
+2019-0341,Open de Moselle,Metz,A,32.0,hard,Indoor
+2019-0568,St. Petersburg Open,St. Petersburg,A,32.0,hard,Indoor
+2019-7581,Chengdu Open,Chengdu,A,32.0,hard,Outdoor
+2019-9164,Zhuhai Open,Zhuhai,A,32.0,hard,Outdoor
+2019-0329,Rakuten Japan Open Tennis Championships,Tokyo,A,32.0,hard,Outdoor
+2019-M015,China Open,Beijing,A,32.0,hard,Outdoor
+2019-5014,Shanghai Masters,Shanghai,M,64.0,hard,Outdoor
+2019-7485,European Open,Antwerp,A,32.0,hard,Indoor
+2019-0429,Stockholm Open,Stockholm,A,32.0,hard,Indoor
+2019-M014,Kremlin Cup,Moscow,A,32.0,hard,Indoor
+2019-0337,Erste Bank Open,Vienna,A,32.0,hard,Indoor
+2019-0328,Swiss Indoors,Basel,A,32.0,hard,Indoor
+2019-0352,BNP Paribas Masters,Paris 2,M,64.0,hard,Indoor
+2020-0451,Qatar Exxon Mobil Open,Doha,A,32.0,hard,Outdoor
+2020-M056,Adelaide International,Adelaide,A,32.0,hard,Outdoor
+2020-0301,ASB Classic,Auckland,A,32.0,hard,Outdoor
+2020-580,Australian Open,Melbourne,G,128.0,hard,Outdoor
+2020-9158,Cordoba Open,Cordoba,A,32.0,clay,Outdoor
+2020-0891,Maharashtra Open,Pune,A,32.0,hard,Outdoor
+2020-0375,Open Sud de France,Montpellier,A,32.0,hard,Indoor
+2020-0506,Argentina Open,Buenos Aires,A,32.0,clay,Outdoor
+2020-0424,New York Open,New York,A,32.0,hard,Indoor
+2020-0407,ABN AMRO World Tennis Tournament,Rotterdam,A,32.0,hard,Indoor
+2020-0499,Delray Beach Open,Delray Beach,A,32.0,hard,Outdoor
+2020-6932,Rio Open,Rio de Janeiro,A,32.0,clay,Outdoor
+2020-0496,Open 13,Marseille,A,32.0,hard,Indoor
+2020-0495,Dubai Tennis Championships,Dubai,A,32.0,hard,Outdoor
+2020-M004,Abierto Mexicano,Acapulco,A,32.0,hard,Outdoor
+2020-8996,Chile Open,Santiago,A,32.0,clay,Indoor
+2020-M024,Western & Southern Financial Group Masters,Cincinnati,M,64.0,hard,Outdoor
+2020-560,US Open,New York,G,128.0,hard,Outdoor
+2020-0319,Generali Open,Kitzbuhel,A,32.0,clay,Outdoor
+2020-M009,Internazionali BNL d'Italia,Rome,M,64.0,clay,Outdoor
+2020-0414,German Tennis Championships,Hamburg,A,32.0,clay,Outdoor
+2020-520,French Open,Paris,G,128.0,clay,Outdoor
+2020-9404,bett1HULKS Indoors,Cologne 1,A,32.0,hard,Indoor
+2020-0568,St. Petersburg Open,St. Petersburg,A,32.0,hard,Indoor
+2020-9408,Forte Village Sardegna Open,Sardinia,A,32.0,clay,Outdoor
+2020-9406,bett1HULKS Championship,Cologne 2,A,32.0,hard,Indoor
+2020-7485,European Open,Antwerp,A,32.0,hard,Indoor
+2020-0337,Erste Bank Open,Vienna,A,32.0,hard,Indoor
+2020-9410,Astana Open,Nur-Sultan,A,32.0,hard,Indoor
+2020-0352,BNP Paribas Masters,Paris 2,M,64.0,hard,Indoor
+2020-7434,Sofia Open,Sofia,A,32.0,hard,Indoor
+2021-9426,Antalya Open,Antalya,A,32.0,hard,Indoor
+2021-0499,Delray Beach Open,Delray Beach,A,32.0,hard,Outdoor
+2021-580,Australian Open,Melbourne,G,128.0,hard,Outdoor
+2021-9460,Singapore Open,Singapore,A,32.0,hard,Indoor
+2021-9158,Cordoba Open,Cordoba,A,32.0,clay,Outdoor
+2021-0375,Open Sud de France,Montpellier,A,32.0,hard,Indoor
+2021-0407,ABN AMRO World Tennis Tournament,Rotterdam,A,32.0,hard,Indoor
+2021-0506,Argentina Open,Buenos Aires,A,32.0,clay,Outdoor
+2021-0451,Qatar Exxon Mobil Open,Doha,A,32.0,hard,Outdoor
+2021-8996,Chile Open,Santiago,A,32.0,clay,Indoor
+2021-0496,Open 13,Marseille,A,32.0,hard,Indoor
+2021-0495,Dubai Tennis Championships,Dubai,A,64.0,hard,Outdoor
+2021-0807,Abierto Mexicano,Acapulco,A,32.0,hard,Outdoor
+2021-0403,Miami Open,Miami,M,128.0,hard,Outdoor
+2021-9481,Sardegna Open,Cagliari,A,32.0,hard,Outdoor
+2021-9462,AnyTech365 Andalucia Open,Marbella,A,32.0,hard,Outdoor
+2021-0410,Monte Carlo Masters,Monte Carlo,M,64.0,clay,Outdoor
+2021-0425,Barcelona Open,Barcelona,A,64.0,clay,Outdoor
+2021-5053,Serbia Open,Belgrade,A,32.0,clay,Outdoor
+2021-7290,Millennium Estoril Open,Estoril,A,32.0,clay,Outdoor
+2021-0308,BMW Open,Munich,A,32.0,clay,Outdoor
+2021-1536,Mutua Madrid Open,Madrid,M,64.0,clay,Outdoor
+2021-0416,Internazionali BNL d'Italia,Rome,M,64.0,clay,Outdoor
+2021-0322,Geneva Open,Geneva,A,32.0,clay,Outdoor
+2021-7694,Lyon Open,Lyon,A,32.0,clay,Outdoor
+2021-9510,Emilia-Romagna Open,Parma,A,32.0,clay,Outdoor
+2021-9512,Belgrade Open,Belgrade 2,A,32.0,clay,Outdoor
+2021-520,French Open,Paris,G,128.0,clay,Outdoor
+2021-0321,Mercedes Cup,Stuttgart,A,32.0,grass,Outdoor
+2021-0500,Halle Open,Halle,A,32.0,grass,Outdoor
+2021-0311,Queen's Club Championships,Queens Club,A,32.0,grass,Outdoor
+2021-8994,Mallorca Championships,Mallorca,A,32.0,grass,Outdoor
+2021-0741,Viking International,Eastbourne,A,32.0,grass,Outdoor
+2021-540,Wimbledon,London,G,128.0,grass,Outdoor
+2021-0315,Hall of Fame Championships,Newport,A,32.0,grass,Outdoor
+2021-0316,Nordea Open,Bastad,A,32.0,clay,Outdoor
+2021-0414,European Open,Hamburg,A,32.0,clay,Outdoor
+2021-0314,Suisse Open Gstaad,Gstaad,A,32.0,clay,Outdoor
+2021-0439,Croatia Open,Umag,A,32.0,clay,Outdoor
+2021-7480,Mifel Open,Los Cabos,A,32.0,hard,Outdoor
+2021-0319,Generali Open,Kitzbuhel,A,32.0,clay,Outdoor
+2021-6116,BB&T Atlanta Open,Atlanta,A,32.0,hard,Outdoor
+2021-0418,Citi Open,Washington,A,64.0,hard,Outdoor
+2021-0421,Canadian Open,Toronto,M,64.0,hard,Outdoor
+2021-0422,Western & Southern Financial Group Masters,Cincinnati,M,64.0,hard,Outdoor
+2021-6242,Winston-Salem Open at Wake Forest University,Winston-Salem,A,64.0,hard,Outdoor
+2021-560,US Open,New York,G,128.0,hard,Outdoor
+2021-0341,Open de Moselle,Metz,A,32.0,hard,Indoor
+2021-9410,Astana Open,Nur-Sultan,A,32.0,hard,Indoor
+2021-7434,Sofia Open,Sofia,A,32.0,hard,Indoor
+2021-9569,San Diego Open,San Diego,A,32.0,hard,Outdoor
+2021-0404,BNP Paribas Open,Indian Wells,M,128.0,hard,Outdoor
+2021-0438,Kremlin Cup,Moscow,A,32.0,hard,Indoor
+2021-7485,European Open,Antwerp,A,32.0,hard,Indoor
+2021-0337,Vienna Open,Vienna,A,32.0,hard,Indoor
+2021-0568,St. Petersburg Open,St. Petersburg,A,32.0,hard,Indoor
+2021-0352,BNP Paribas Masters,Paris 2,M,64.0,hard,Indoor
+2021-0429,Stockholm Open,Stockholm,A,32.0,hard,Indoor
+2022-8998,Adelaide International 1,Adelaide 1,A,32.0,hard,Outdoor
+2022-9667,Adelaide International 2,Adelaide 2,A,32.0,hard,Outdoor
+2022-9663,Sydney Tennis Classic,Sydney,A,32.0,hard,Outdoor
+2022-580,Australian Open,Melbourne,G,128.0,hard,Outdoor
+2022-0375,Open Sud de France,Montpellier,A,32.0,hard,Indoor
+2022-9158,Cordoba Open,Cordoba,A,32.0,clay,Outdoor
+2022-0891,Maharashtra Open,Pune,A,32.0,hard,Outdoor
+2022-0407,ABN AMRO World Tennis Tournament,Rotterdam,A,32.0,hard,Indoor
+2022-0506,Argentina Open,Buenos Aires,A,32.0,clay,Outdoor
+2022-0424,Dallas Open,Dallas,A,32.0,hard,Indoor
+2022-0451,Qatar Exxon Mobil Open,Doha,A,32.0,hard,Outdoor
+2022-0496,Open 13,Marseille,A,32.0,hard,Indoor
+2022-0499,Delray Beach Open,Delray Beach,A,32.0,hard,Outdoor
+2022-6932,Rio Open,Rio de Janeiro,A,32.0,clay,Outdoor
+2022-0495,Dubai Tennis Championships,Dubai,A,32.0,hard,Outdoor
+2022-8996,Chile Open,Santiago,A,32.0,clay,Indoor
+2022-0807,Abierto Mexicano,Acapulco,A,32.0,hard,Outdoor
+2022-0404,BNP Paribas Open,Indian Wells,M,128.0,hard,Outdoor
+2022-0403,Miami Open,Miami,M,128.0,hard,Outdoor
+2022-0717,U.S. Men's Clay Court Championships,Houston,A,32.0,clay,Outdoor
+2022-0360,Grand Prix Hassan II,Marrakech,A,32.0,clay,Outdoor
+2022-0410,Monte Carlo Masters,Monte Carlo,M,64.0,clay,Outdoor
+2022-0425,Barcelona Open,Barcelona,A,64.0,clay,Outdoor
+2022-5053,Serbia Open,Belgrade,A,32.0,clay,Outdoor
+2022-7290,Millennium Estoril Open,Estoril,A,32.0,clay,Outdoor
+2022-0308,BMW Open,Munich,A,32.0,clay,Outdoor
+2022-1536,Mutua Madrid Open,Madrid,M,64.0,clay,Outdoor
+2022-0416,Internazionali BNL d'Italia,Rome,M,64.0,clay,Outdoor
+2022-0322,Geneva Open,Geneva,A,32.0,clay,Outdoor
+2022-7694,Lyon Open,Lyon,A,32.0,clay,Outdoor
+2022-520,French Open,Paris,G,128.0,clay,Outdoor
+2022-0321,Mercedes Cup,Stuttgart,A,32.0,grass,Outdoor
+2022-0440,Rosmalen Grass Court Championships,'s-Hertogenbosch,A,32.0,grass,Outdoor
+2022-0500,Halle Open,Halle,A,32.0,grass,Outdoor
+2022-0311,Queen's Club Championships,Queens Club,A,32.0,grass,Outdoor
+2022-8994,Mallorca Championships,Mallorca,A,32.0,grass,Outdoor
+2022-0741,Eastbourne International,Eastbourne,A,32.0,grass,Outdoor
+2022-540,Wimbledon,London,G,128.0,grass,Outdoor
+2022-0315,Hall of Fame Championships,Newport,A,32.0,grass,Outdoor
+2022-0316,Nordea Open,Bastad,A,32.0,clay,Outdoor
+2022-0314,Suisse Open Gstaad,Gstaad,A,32.0,clay,Outdoor
+2022-0414,European Open,Hamburg,A,32.0,clay,Outdoor
+2022-6116,Atlanta Open,Atlanta,A,32.0,hard,Outdoor
+2022-0319,Generali Open,Kitzbuhel,A,32.0,clay,Outdoor
+2022-0439,Croatia Open,Umag,A,32.0,clay,Outdoor
+2022-0418,Citi Open,Washington,A,64.0,hard,Outdoor
+2022-7480,Los Cabos Open,Los Cabos,A,32.0,hard,Outdoor
+2022-0421,Canadian Open,Montreal,M,64.0,hard,Outdoor
+2022-0422,Western & Southern Financial Group Masters,Cincinnati,M,64.0,hard,Outdoor
+2022-6242,Winston-Salem Open at Wake Forest University,Winston-Salem,A,64.0,hard,Outdoor
+2022-560,US Open,New York,G,128.0,hard,Outdoor
+2022-9569,San Diego Open,San Diego,A,32.0,hard,Outdoor
+2022-0341,Open de Moselle,Metz,A,32.0,hard,Indoor
+2022-4140,Korea Open,Seoul,A,32.0,hard,Outdoor
+2022-7434,Sofia Open,Sofia,A,32.0,hard,Indoor
+2022-4138,Tel Aviv Open,Tel Aviv,A,32.0,hard,Indoor
+2022-0329,Rakuten Japan Open Tennis Championships,Tokyo,A,32.0,hard,Outdoor
+2022-9410,Astana Open,Nur-Sultan,A,32.0,hard,Indoor
+2022-2807,Gijon Open,Gijon,A,32.0,hard,Indoor
+2022-2805,Firenze Open,Florence,A,32.0,hard,Indoor
+2022-0429,Stockholm Open,Stockholm,A,32.0,hard,Indoor
+2022-7485,European Open,Antwerp,A,32.0,hard,Indoor
+2022-2809,Napoli Cup,Naples,A,32.0,hard,Outdoor
+2022-0328,Swiss Indoors,Basel,A,32.0,hard,Indoor
+2022-0337,Vienna Open,Vienna,A,32.0,hard,Indoor
+2022-0352,BNP Paribas Masters,Paris 2,M,64.0,hard,Indoor
+2023-2843,Adelaide International 1,Adelaide 1,A,32.0,hard,Outdoor
+2023-0891,Maharashtra Open,Pune,A,32.0,hard,Outdoor
+2023-0301,ASB Classic,Auckland,A,32.0,hard,Outdoor
+2023-8998,Adelaide International 2,Adelaide 2,A,32.0,hard,Outdoor
+2023-580,Australian Open,Melbourne,G,128.0,hard,Outdoor
+2023-0375,Open Sud de France,Montpellier,A,32.0,hard,Indoor
+2023-9158,Cordoba Open,Cordoba,A,32.0,clay,Outdoor
+2023-0424,Dallas Open,Dallas,A,32.0,hard,Indoor
+2023-0506,Argentina Open,Buenos Aires,A,32.0,clay,Outdoor
+2023-0407,ABN AMRO World Tennis Tournament,Rotterdam,A,32.0,hard,Indoor
+2023-0499,Delray Beach Open,Delray Beach,A,32.0,hard,Outdoor
+2023-0496,Open 13,Marseille,A,32.0,hard,Indoor
+2023-6932,Rio Open,Rio de Janeiro,A,32.0,clay,Outdoor
+2023-0451,Qatar Exxon Mobil Open,Doha,A,32.0,hard,Outdoor
+2023-0495,Dubai Tennis Championships,Dubai,A,32.0,hard,Outdoor
+2023-8996,Chile Open,Santiago,A,32.0,clay,Indoor
+2023-0807,Abierto Mexicano,Acapulco,A,32.0,hard,Outdoor
+2023-0404,BNP Paribas Open,Indian Wells,M,128.0,hard,Outdoor
+2023-0403,Miami Open,Miami,M,128.0,hard,Outdoor
+2023-0360,Grand Prix Hassan II,Marrakech,A,32.0,clay,Outdoor
+2023-7290,Estoril Open,Estoril,A,32.0,clay,Outdoor
+2023-0717,U.S. Men's Clay Court Championships,Houston,A,32.0,clay,Outdoor
+2023-0410,Monte Carlo Masters,Monte Carlo,M,64.0,clay,Outdoor
+2023-0425,Barcelona Open,Barcelona,A,64.0,clay,Outdoor
+2023-0308,BMW Open,Munich,A,32.0,clay,Outdoor
+2023-2841,Srpska Open,Banja Luka,A,32.0,clay,Outdoor
+2023-1536,Mutua Madrid Open,Madrid,M,128.0,clay,Outdoor
+2023-0416,Internazionali BNL d'Italia,Rome,M,128.0,clay,Outdoor
+2023-0322,Geneva Open,Geneva,A,32.0,clay,Outdoor
+2023-7694,Lyon Open,Lyon,A,32.0,clay,Outdoor
+2023-520,French Open,Paris,G,128.0,clay,Outdoor
+2023-0321,Stuttgart Open,Stuttgart,A,32.0,grass,Outdoor
+2023-0440,Rosmalen Grass Court Championships,'s-Hertogenbosch,A,32.0,grass,Outdoor
+2023-0311,Queen's Club Championships,Queens Club,A,32.0,grass,Outdoor
+2023-0500,Halle Open,Halle,A,32.0,grass,Outdoor
+2023-8994,Mallorca Championships,Mallorca,A,32.0,grass,Outdoor
+2023-0741,Eastbourne International,Eastbourne,A,32.0,grass,Outdoor
+2023-540,Wimbledon,London,G,128.0,grass,Outdoor
+2023-0315,Hall of Fame Championships,Newport,A,32.0,grass,Outdoor
+2023-0316,Nordea Open,Bastad,A,32.0,clay,Outdoor
+2023-0314,Suisse Open Gstaad,Gstaad,A,32.0,clay,Outdoor
+2023-6116,Atlanta Open,Atlanta,A,32.0,hard,Outdoor
+2023-0439,Croatia Open,Umag,A,32.0,clay,Outdoor
+2023-0414,European Open,Hamburg,A,32.0,clay,Outdoor
+2023-0319,Generali Open,Kitzbuhel,A,32.0,clay,Outdoor
+2023-0418,Citi Open,Washington,A,64.0,hard,Outdoor
+2023-7480,Los Cabos Open,Los Cabos,A,32.0,hard,Outdoor
+2023-0421,Canadian Open,Toronto,M,64.0,hard,Outdoor
+2023-0422,Western & Southern Financial Group Masters,Cincinnati,M,64.0,hard,Outdoor
+2023-6242,Winston-Salem Open at Wake Forest University,Winston-Salem,A,64.0,hard,Outdoor
+2023-560,US Open,New York,G,128.0,hard,Outdoor
+2023-7581,Chengdu Open,Chengdu,A,32.0,hard,Outdoor
+2023-9164,Zhuhai Championships,Zhuhai,A,32.0,hard,Outdoor
+2023-9410,Astana Open,Nur-Sultan,A,32.0,hard,Indoor
+2023-0747,China Open,Beijing,A,32.0,hard,Outdoor
+2023-5014,Shanghai Masters,Shanghai,M,128.0,hard,Outdoor
+2023-7485,European Open,Antwerp,A,32.0,hard,Indoor
+2023-0429,Nordic Open,Stockholm,A,32.0,hard,Indoor
+2023-0329,Japan Open Tennis Championships,Tokyo,A,32.0,hard,Outdoor
+2023-0328,Swiss Indoors,Basel,A,32.0,hard,Indoor
+2023-0337,Vienna Open,Vienna,A,32.0,hard,Indoor
+2023-0352,BNP Paribas Masters,Paris 2,M,64.0,hard,Indoor
+2023-0341,Open de Moselle,Metz,A,32.0,hard,Indoor
+2023-7434,Sofia Open,Sofia,A,32.0,hard,Indoor
+Brisbane_2024,Brisbane International,Brisbane,ATP250,,hard,outdoor
+Hong Kong_2024,Hong Kong Tennis Open,Hong Kong,ATP250,,hard,outdoor
+Adelaide_2024,Adelaide International,Adelaide,ATP250,,hard,outdoor
+Auckland_2024,ASB Classic,Auckland,ATP250,,hard,outdoor
+Melbourne_2024,Australian Open,Melbourne,Grand Slam,,hard,outdoor
+Montpellier_2024,Open Sud de France,Montpellier,ATP250,,hard,INDOOR
+Cordoba_2024,Cordoba Open,Cordoba,ATP250,,clay,outdoor
+Marseille_2024,Open 13,Marseille,ATP250,,hard,INDOOR
+Dallas_2024,Dallas Open,Dallas,ATP250,,hard,INDOOR
+Rotterdam_2024,ABN AMRO World Tennis Tournament,Rotterdam,ATP500,,hard,INDOOR
+Buenos Aires_2024,Argentina Open,Buenos Aires,ATP250,,clay,outdoor
+Delray Beach_2024,Delray Beach Open,Delray Beach,ATP250,,hard,outdoor
+Doha_2024,Qatar Exxon Mobil Open,Doha,ATP250,,hard,outdoor
+Rio de Janeiro_2024,Rio Open,Rio de Janeiro,ATP500,,clay,outdoor
+Los Cabos_2024,Los Cabos Open,Los Cabos,ATP250,,hard,outdoor
+Dubai_2024,Dubai Tennis Championships,Dubai,ATP500,,hard,outdoor
+Santiago_2024,Chile Open,Santiago,ATP250,,clay,outdoor
+Acapulco_2024,Abierto Mexicano,Acapulco,ATP500,,hard,outdoor
+Indian Wells_2024,BNP Paribas Open,Indian Wells,Masters 1000,,hard,outdoor
+Miami_2024,Miami Open,Miami,Masters 1000,,hard,outdoor
+Houston_2024,U.S. Men's Clay Court Championships,Houston,ATP250,,clay,outdoor
+Estoril_2024,Estoril Open,Estoril,ATP250,,clay,outdoor
+Marrakech_2024,Grand Prix Hassan II,Marrakech,ATP250,,clay,outdoor
+Monte Carlo_2024,Monte Carlo Masters,Monte Carlo,Masters 1000,,clay,outdoor
+Munich_2024,BMW Open,Munich,ATP250,,clay,outdoor
+Bucharest_2024,Tiriac Open,Bucharest,ATP250,,clay,outdoor
+Barcelona_2024,Barcelona Open,Barcelona,ATP500,,clay,outdoor
+Madrid_2024,Mutua Madrid Open,Madrid,Masters 1000,,clay,outdoor
+Rome_2024,Internazionali BNL d'Italia,Rome,Masters 1000,,clay,outdoor
+Lyon_2024,Lyon Open,Lyon,ATP250,,clay,outdoor
+Geneva_2024,Geneva Open,Geneva,ATP250,,clay,outdoor
+Paris_2024,French Open,Paris,Grand Slam,,clay,outdoor
+Stuttgart_2024,Stuttgart Open,Stuttgart,ATP250,,grass,outdoor
+'s-Hertogenbosch_2024,Rosmalen Grass Court Championships,'s-Hertogenbosch,ATP250,,grass,outdoor
+Halle_2024,Halle Open,Halle,ATP500,,grass,outdoor
+Queens Club_2024,Queen's Club Championships,Queens Club,ATP500,,grass,outdoor
+Mallorca_2024,Mallorca Championships,Mallorca,ATP250,,grass,outdoor
+Eastbourne_2024,Eastbourne International,Eastbourne,ATP250,,grass,outdoor
+London_2024,Wimbledon,London,Grand Slam,,grass,outdoor
+Hamburg_2024,European Open,Hamburg,ATP250,,clay,outdoor
+Gstaad_2024,Suisse Open Gstaad,Gstaad,ATP250,,clay,outdoor
+Newport_2024,Hall of Fame Championships,Newport,ATP250,,grass,outdoor
+Bastad_2024,Nordea Open,Bastad,ATP250,,clay,outdoor
+Umag_2024,Croatia Open,Umag,ATP250,,clay,outdoor
+Kitzbuhel_2024,Generali Open,Kitzbuhel,ATP250,,clay,outdoor
+Atlanta_2024,Atlanta Open,Atlanta,ATP250,,hard,outdoor
+Washington_2024,Citi Open,Washington,ATP500,,hard,outdoor
+Montreal_2024,Canadian Open,Montreal,Masters 1000,,hard,outdoor
+Cincinnati_2024,Western & Southern Financial Group Masters,Cincinnati,Masters 1000,,hard,outdoor
+Winston-Salem_2024,Winston-Salem Open at Wake Forest University,Winston-Salem,ATP250,,hard,outdoor
+New York_2024,US Open,New York,Grand Slam,,hard,outdoor
+Hangzhou_2024,Hangzhou Open,Hangzhou,ATP250,,hard,outdoor
+Chengdu_2024,Chengdu Open,Chengdu,ATP250,,hard,outdoor
+Tokyo_2024,Japan Open Tennis Championships,Tokyo,ATP500,,hard,outdoor
+Beijing_2024,China Open,Beijing,ATP500,,hard,outdoor
+Shanghai_2024,Shanghai Masters,Shanghai,Masters 1000,,hard,outdoor
+Antwerp_2024,European Open,Antwerp,ATP250,,hard,INDOOR
+Stockholm_2024,Nordic Open,Stockholm,ATP250,,hard,INDOOR
+Almaty_2024,Almaty Open,Almaty,ATP250,,hard,INDOOR
+Basel_2024,Swiss Indoors,Basel,ATP500,,hard,INDOOR
+Vienna_2024,Vienna Open,Vienna,ATP500,,hard,INDOOR
+Paris 2_2024,BNP Paribas Masters,Paris 2,Masters 1000,,hard,INDOOR
+Belgrade 2_2024,Belgrade Open,Belgrade 2,ATP250,,hard,INDOOR
+Metz_2024,Open de Moselle,Metz,ATP250,,hard,INDOOR
+brisbane_2025,BRISBANE,brisbane,ATP 250,,hard,outdoor
+hong kong_2025,HONG KONG,hong kong,ATP 250,,hard,outdoor
+auckland_2025,AUCKLAND,auckland,ATP 250,,hard,outdoor
+adelaide_2025,ADELAIDE,adelaide,ATP 250,,hard,outdoor
+melbourne_2025,AUSTRALIAN OPEN,melbourne,Grand Slam,,hard,outdoor

@@ -7,7 +7,7 @@ def check_tournament_stats_in_existing_df(df, player_id, tournament_location) ->
 
     filtered_df = df[
         ((df["winner_id"] == player_id) | (df["loser_id"] == player_id)) &
-        (df["tournament_location"] == tournament_location)
+        (df["tournament_location"].str.lower() == tournament_location.lower())
         ]
 
     if filtered_df.empty:
@@ -27,7 +27,7 @@ def add_tournament_win_loss_history(new_matches: pd.DataFrame, existing_df: pd.D
     player_stats = {}
 
     for i, row in new_matches.iterrows():
-        tournament = row['tournament_location']
+        tournament = row['tournament_location'].lower()
         winner_id = row['winner_id']
         loser_id = row['loser_id']
         # Initialize stats for this tournament if not already present
