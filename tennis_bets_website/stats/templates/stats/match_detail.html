@@ -391,6 +391,10 @@
             display: none;
         }
 
+        #points-stats.hidden {
+            display: none; /* Hide the element when the "hidden" class is added */
+        }
+
         .h2h-match-table {
             display: flex;
             flex-direction: column;
@@ -596,7 +600,7 @@
         const tabs = document.querySelectorAll('.tabs button');
         const contents = document.querySelectorAll('.tab-content');
         if (scheduled) removeTabAndContent('stats-tab');
-        if (scheduled) removeTabAndContent('pre-match-stats-tab');
+        // if (scheduled) removeTabAndContent('pre-match-stats-tab');
 
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
@@ -629,11 +633,11 @@
             const preMatchData = await fetchJson(`/stats/api/pre-match-stats/${matchId}`);
             populateHeader(matchData);
             populateOdds(matchData);
+            populatePreMatchStats(preMatchData);
 
             if (!scheduled) {
             populateScore(matchData);
             populateStats(matchData, preMatchData);
-            populatePreMatchStats(preMatchData);
             } else {
                 hideSections();
             }
@@ -883,6 +887,8 @@
 
     // Populate match scores
     function populateScore(data) {
+        const scoreContainer = document.querySelector('.match-score');
+        scoreContainer.textContent = `${data.wsets} - ${data.lsets}`;
     const scoreTable = document.querySelector('.score-table');
     const scoreBody = scoreTable.querySelector('tbody');
     const scoreHead = scoreTable.querySelector('thead');
@@ -1007,6 +1013,7 @@
 function initializeStatsFilters() {
     const filtersContainer = document.getElementById('stats-filters');
     const statRows = document.querySelectorAll('.stat-row-container'); // Select all rows to filter
+            const pointsStatsSection = document.getElementById('points-stats'); // Select the points stats section
     statRows.forEach(row => {
                     const rowFilter = row.getAttribute('data-filter'); // Get the filter attribute from the row
                     row.classList.toggle('hidden', rowFilter !== 'match');
@@ -1034,6 +1041,13 @@ function initializeStatsFilters() {
                 const rowFilter = row.getAttribute('data-filter'); // Get the filter attribute from the row
                 row.classList.toggle('hidden', rowFilter !== selectedFilter);
             });
+
+            // Hide or show the points stats section based on the filter
+            if (selectedFilter === 'career' || selectedFilter === 'CO') {
+                pointsStatsSection.classList.add('hidden'); // Hide the points stats section
+            } else {
+                pointsStatsSection.classList.remove('hidden'); // Show the points stats section
+            }
         });
     });
 }
