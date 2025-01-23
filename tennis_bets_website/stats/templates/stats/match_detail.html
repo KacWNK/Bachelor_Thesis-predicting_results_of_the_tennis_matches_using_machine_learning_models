@@ -24,11 +24,19 @@
             justify-content: space-between; /* Space out elements */
             height: 120px;
         }
-
-        /* Top Bar Logo */
-        .top-bar .logo {
-            font-size: 1.5rem; /* Larger text size for logo */
+        .logo-container {
+            display: flex; /* Flexbox layout for logo and name */
+            align-items: center; /* Center vertically */
+            gap: 1rem; /* Space between logo and name */
         }
+
+        /* Site Name */
+        .logo-container .site-name {
+            font-size: 1.8rem; /* Larger text size for name */
+            font-weight: bold; /* Bold font */
+            color: white; /* White text color */
+        }
+
 
         /* Top Bar Buttons */
         .top-bar .nav-buttons a {
@@ -391,9 +399,9 @@
             display: none;
         }
 
-        #points-stats.hidden {
-            display: none; /* Hide the element when the "hidden" class is added */
-        }
+        /*#points-stats.hidden {*/
+        /*    display: none; !* Hide the element when the "hidden" class is added *!*/
+        /*}*/
 
         .h2h-match-table {
             display: flex;
@@ -434,13 +442,16 @@
 
 <body>
 <div class="top-bar">
-    <!-- Logo -->
-    <div class="logo">Logo</div>
+    <!-- Logo and Name -->
+    {% load static %}
+    <div class="logo-container">
+        <img src="{% static 'tennis-ball.png' %}" width="50" height="50" alt="Logo">
+        <span class="site-name">Tennis Insights</span>
+    </div>
 
     <!-- Navigation -->
     <div class="nav-buttons">
         <a href="http://127.0.0.1:8000/stats/results/?date=2025-01-21">Home</a>
-        <a href="#">About</a>
     </div>
 </div>
 <div class="container mt-4">
@@ -983,7 +994,6 @@
         let l_ReturnPlayed = matchData.w_1stIn + matchData.w_2ndIn
         updateStatBar(pointsStatSection, "Return Points Won", w_ReturnWon / w_ReturnPlayed, l_ReturnWon / l_ReturnPlayed, true, 'match', w_ReturnWon, l_ReturnWon, w_ReturnPlayed, l_ReturnPlayed);
         updateStatBar(pointsStatSection, "Total Points Won", (matchData.w_1stWon + matchData.w_2ndWon + w_ReturnWon) / (matchData.w_svpt + w_ReturnPlayed), (matchData.l_1stWon + matchData.l_2ndWon + l_ReturnWon) / (matchData.l_svpt + l_ReturnPlayed), true, 'match', matchData.w_1stWon + matchData.w_2ndWon + w_ReturnWon, matchData.l_1stWon + matchData.l_2ndWon + l_ReturnWon,  matchData.w_svpt + w_ReturnPlayed, matchData.l_svpt + l_ReturnPlayed);
-        console.log("jeasasd");
 
         initializeStatsFilters()
 
@@ -997,27 +1007,28 @@
         const specialStatSection = document.querySelector('#special-stats');
 
 
-        updateStatBar(currentTournamentRecordSection, "Set Difference", data.Winner_Set_Diff_Tournament, data.Loser_Set_Diff_Tournament, false);
-        updateStatBar(currentTournamentRecordSection, "Game Difference", data.Winner_Game_Diff_Tournament, data.Loser_Game_Diff_Tournament, false);
-        updateStatBar(historyTournamentRecordSection, "Wins", data.winner_total_wins_tournament_history, data.loser_total_wins_tournament_history, false);
-        updateStatBar(historyTournamentRecordSection, "Losses", data.winner_total_losses_tournament_history, data.loser_total_losses_tournament_history, false);
-        updateStatBar(rankingStatSection, "Combined Elo", data.blended_elo_winner, data.blended_elo_loser, false);
-        updateStatBar(rankingStatSection, "Non Surface Elo", data.elo_winner, data.elo_loser, false);
-        updateStatBar(rankingStatSection, "Surface Elo", data.surface_elo_winner, data.surface_elo_loser, false);
-        updateStatBar(recentFormStatSection, "All", data.winner_win_pct_last_10, data.loser_win_pct_last_10, true);
-        updateStatBar(recentFormStatSection, "Surface", data.winner_win_pct_last_10_surface, data.loser_win_pct_last_10_surface, true);
-        updateStatBar(specialStatSection, "Home Advantage", data.winner_home, data.loser_home, true);
-        updateStatBar(specialStatSection, "First Match After Injury", !!data.winner_injury_score, !!data.loser_injury_score, true);
-        updateStatBar(specialStatSection, "Fatigue Score", data.winner_fatigue_score, data.loser_fatigue_score, false);
+        updateStatBar(currentTournamentRecordSection, "Set Difference", data.Winner_Set_Diff_Tournament, data.Loser_Set_Diff_Tournament, false, 'pre-match');
+        updateStatBar(currentTournamentRecordSection, "Game Difference", data.Winner_Game_Diff_Tournament, data.Loser_Game_Diff_Tournament, false, 'pre-match');
+        updateStatBar(historyTournamentRecordSection, "Wins", data.winner_total_wins_tournament_history, data.loser_total_wins_tournament_history, false, 'pre-match');
+        updateStatBar(historyTournamentRecordSection, "Losses", data.winner_total_losses_tournament_history, data.loser_total_losses_tournament_history, false, 'pre-match');
+        updateStatBar(rankingStatSection, "Combined Elo", data.blended_elo_winner, data.blended_elo_loser, false, 'pre-match');
+        updateStatBar(rankingStatSection, "Non Surface Elo", data.elo_winner, data.elo_loser, false, 'pre-match');
+        updateStatBar(rankingStatSection, "Surface Elo", data.surface_elo_winner, data.surface_elo_loser, false, 'pre-match');
+        updateStatBar(recentFormStatSection, "All", data.winner_win_pct_last_10, data.loser_win_pct_last_10, true, 'pre-match');
+        updateStatBar(recentFormStatSection, "Surface", data.winner_win_pct_last_10_surface, data.loser_win_pct_last_10_surface, true, 'pre-match');
+        updateStatBar(specialStatSection, "Home Advantage", data.winner_home, data.loser_home, true, 'pre-match');
+        updateStatBar(specialStatSection, "First Match After Injury", !!data.winner_injury_score, !!data.loser_injury_score, true, 'pre-match');
+        updateStatBar(specialStatSection, "Fatigue Score", data.winner_fatigue_score, data.loser_fatigue_score, false, 'pre-match');
     }
 function initializeStatsFilters() {
     const filtersContainer = document.getElementById('stats-filters');
     const statRows = document.querySelectorAll('.stat-row-container'); // Select all rows to filter
-            const pointsStatsSection = document.getElementById('points-stats'); // Select the points stats section
+    const pointsStatsSection = document.getElementById('points-stats'); // Select the points stats section
     statRows.forEach(row => {
-                    const rowFilter = row.getAttribute('data-filter'); // Get the filter attribute from the row
-                    row.classList.toggle('hidden', rowFilter !== 'match');
+        const rowFilter = row.getAttribute('data-filter'); // Get the filter attribute from the row
+        row.classList.toggle('hidden', rowFilter !== 'match' && rowFilter !== 'pre-match');
     });
+    console.log(statRows);
     const filters = ['match', 'career', 'CO'];
     // Create filter buttons
     filters.forEach((filter, index) => {
@@ -1039,16 +1050,50 @@ function initializeStatsFilters() {
             const selectedFilter = button.getAttribute('data-filter');
             statRows.forEach(row => {
                 const rowFilter = row.getAttribute('data-filter'); // Get the filter attribute from the row
-                row.classList.toggle('hidden', rowFilter !== selectedFilter);
+                row.classList.toggle('hidden', (rowFilter !== selectedFilter && rowFilter !== 'pre-match'));
             });
 
-            // Hide or show the points stats section based on the filter
+            //Hide or show the points stats section based on the filter
             if (selectedFilter === 'career' || selectedFilter === 'CO') {
                 pointsStatsSection.classList.add('hidden'); // Hide the points stats section
+                updateSpecificStatHeaders(true);
             } else {
                 pointsStatsSection.classList.remove('hidden'); // Show the points stats section
+                updateSpecificStatHeaders(false);
+
             }
         });
+    });
+}
+    function updateSpecificStatHeaders(condition) {
+    // List of parent IDs to target
+    const statSections = ['service-stats', 'return-stats', 'points-stats'];
+
+    // Loop through each section
+    statSections.forEach(sectionId => {
+        // Get the parent element by ID
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+            // Find the .stat-header within this section and update it
+            const header = section.querySelector('.stat-header');
+            if (header) {
+                const suffix = ' (AVG/MATCH)';
+                const headerText = header.textContent;
+
+                if (condition) {
+                    // Add the suffix only if it's not already there
+                    if (!headerText.endsWith(suffix)) {
+                        header.textContent += suffix;
+                    }
+                } else {
+                    // Remove the suffix if it exists
+                    if (headerText.endsWith(suffix)) {
+                        header.textContent = headerText.slice(0, -suffix.length);
+                    }
+                }
+            }
+        }
     });
 }
 

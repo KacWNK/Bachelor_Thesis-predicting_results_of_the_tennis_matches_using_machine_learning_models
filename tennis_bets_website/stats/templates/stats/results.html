@@ -27,9 +27,17 @@
             height: 120px;
         }
 
-        /* Top Bar Logo */
-        .top-bar .logo {
-            font-size: 1.5rem; /* Larger text size for logo */
+         .logo-container {
+            display: flex; /* Flexbox layout for logo and name */
+            align-items: center; /* Center vertically */
+            gap: 1rem; /* Space between logo and name */
+        }
+
+        /* Site Name */
+        .logo-container .site-name {
+            font-size: 1.8rem; /* Larger text size for name */
+            font-weight: bold; /* Bold font */
+            color: white; /* White text color */
         }
 
         /* Top Bar Buttons */
@@ -260,13 +268,16 @@
 </head>
 <body>
 <div class="top-bar">
-    <!-- Logo -->
-    <div class="logo">Logo</div>
+    <!-- Logo and Name -->
+    {% load static %}
+    <div class="logo-container">
+        <img src="{% static 'tennis-ball.png' %}" width="50" height="50" alt="Logo">
+        <span class="site-name">Tennis Insights</span>
+    </div>
 
     <!-- Navigation -->
     <div class="nav-buttons">
-        <a href="#">Home</a>
-        <a href="#">About</a>
+        <a href="http://127.0.0.1:8000/stats/results/?date=2025-01-21">Home</a>
     </div>
 </div>
 
