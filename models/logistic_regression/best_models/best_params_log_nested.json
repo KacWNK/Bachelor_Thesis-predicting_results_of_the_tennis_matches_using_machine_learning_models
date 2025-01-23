@@ -1,1 +1,1 @@
-{"solver": "saga", "penalty": "l2", "C": 0.9673101205310934, "class_weight": "balanced"}
+{"solver": "liblinear", "penalty": "l2", "C": 2.269409056622677, "class_weight": "balanced"}
