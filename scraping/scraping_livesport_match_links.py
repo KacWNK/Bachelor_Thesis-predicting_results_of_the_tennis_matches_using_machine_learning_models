@@ -10,7 +10,6 @@ driver_path = "C:\\chromedriver\\chromedriver.exe"
 
 chrome_path = "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
 
-# Set Chrome options
 options = Options()
 options.binary_location = chrome_path
 
@@ -22,7 +21,6 @@ try:
     url = "https://www.livesport.com/en/tennis/calendar/atp/"
     driver.get(url)
 
-    # Wait for the dynamic content to load
     WebDriverWait(driver, 15).until(
         EC.presence_of_element_located((By.CLASS_NAME, "seasonCalendar__container"))
     )
@@ -74,7 +72,6 @@ try:
                     except Exception as e:
                         print(f"Error processing match div: {e}")
 
-                # Go back to the calendar page
                 driver.back()
                 WebDriverWait(driver, 10).until(
                     EC.presence_of_element_located((By.CLASS_NAME, "seasonCalendar__container"))

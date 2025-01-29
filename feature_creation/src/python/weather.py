@@ -60,14 +60,12 @@ def get_weather(latitude, longitude, date, time, variables):
     return None
 
 
-# Convert UTC+1 time to UTC
 def convert_utc_plus1_to_utc(date, time):
     dt = datetime.strptime(f"{date} {time}", "%Y-%m-%d %H:%M")
-    dt_utc = dt - timedelta(hours=1)  # Convert to UTC
+    dt_utc = dt - timedelta(hours=1)
     return dt_utc.strftime("%Y-%m-%d"), dt_utc.strftime("%H:%M")
 
 
-# Round time to the nearest hour
 def round_time_to_nearest_hour(time_str):
     time_obj = datetime.strptime(time_str, "%H:%M")
     if time_obj.minute >= 30:
@@ -77,7 +75,6 @@ def round_time_to_nearest_hour(time_str):
     return time_obj.strftime("%H:00")
 
 
-# Fetch weather data for a specific row
 def fetch_weather_data(row):
     variables = ["temperature_2m", "relative_humidity_2m", "windspeed_10m", "apparent_temperature"]
     date_utc, time_utc = convert_utc_plus1_to_utc(row["Date"], row["time"])
@@ -86,18 +83,13 @@ def fetch_weather_data(row):
     return weather_data
 
 
-# Add weather data to the matches DataFrame
 def add_weather_data(matches: pd.DataFrame):
-    # Ensure latitude and longitude columns are present
     matches = add_lat_long(matches)
 
-    # Apply weather data fetch and expand the results into new columns
     weather_columns = ["temperature_2m", "relative_humidity_2m", "windspeed_10m", "apparent_temperature"]
     weather_results = matches.apply(fetch_weather_data, axis=1)
 
-    # Expand weather results into separate columns
     weather_df = pd.DataFrame(weather_results.tolist(), columns=weather_columns, index=matches.index)
 
-    # Merge weather data into the original DataFrame
     matches = pd.concat([matches, weather_df], axis=1)
     return matches

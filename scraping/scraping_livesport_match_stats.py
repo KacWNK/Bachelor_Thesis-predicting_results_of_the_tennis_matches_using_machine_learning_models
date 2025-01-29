@@ -8,6 +8,8 @@ from datetime import datetime
 
 with open("../raw_data/livesport/match_links_2025.json", "r") as file:
     match_links = json.load(file)
+
+
 def parse_tournament_info(input_string: str) -> dict:
     print(input_string)
     pattern = r"ATP - SINGLES: ([A-Za-z\s]+) \(([^)]+)\), ([A-Za-z\s]+)(?: \((indoor)\))? - ([A-Za-z\s0-9/-]+)"
@@ -56,7 +58,6 @@ def parse_player_seed_or_entry(input_string: str) -> str:
     return text_without_brackets
 
 
-# Data Extraction Functions
 def extract_player_details(player_element) -> dict:
     name = player_element.find_element(By.CLASS_NAME, "participant__participantName.participant__overflow").text
     try:
@@ -71,14 +72,13 @@ def extract_player_details(player_element) -> dict:
 
 def extract_seed_details(smh_div, driver, side: str) -> str:
     parent_div = smh_div.find_element(By.CLASS_NAME, f"smh__participantName.smh__{side}")
-    driver.implicitly_wait(0)  # Disable implicit wait
+    driver.implicitly_wait(0)
     try:
         seed_or_entry_element = parent_div.find_element(By.CSS_SELECTOR, "span.smh__startPosition")
         return parse_player_seed_or_entry(seed_or_entry_element.text)
     except:
         return ""
     finally:
-        # Restore the original implicit wait
         driver.implicitly_wait(10)
 
 
@@ -90,7 +90,6 @@ def get_player_score_parts(smh_div, sets_played: int) -> dict:
     return scores
 
 
-# Selenium Initialization
 def initialize_webdriver(driver_path: str, chrome_path: str) -> webdriver.Chrome:
     options = Options()
     options.binary_location = chrome_path
@@ -170,7 +169,6 @@ def main():
     try:
         for url in match_links:
             try:
-                # Navigate to Match Summary
                 driver.get(url)
                 driver.implicitly_wait(10)
 
@@ -180,7 +178,6 @@ def main():
                     continue
 
                 match_summary = scrape_match_summary(driver)
-                # Navigate to Match Statistics
                 driver.get(change_url_to_statistics(url))
                 driver.implicitly_wait(10)
                 match_statistics = scrape_match_statistics(driver)

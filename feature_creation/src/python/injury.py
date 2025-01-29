@@ -6,12 +6,11 @@ def check_injury_in_existing_df(df, player_id):
         return 0
     filtered_df = df[
         (df["winner_id"] == player_id) | (df["loser_id"] == player_id)
-        ].sort_values("Date", ascending=False)  # Sort by Date descending
+        ].sort_values("Date", ascending=False)
 
     if filtered_df.empty:
         return 0
 
-    # Get the latest match
     latest_match = filtered_df.iloc[0]
 
     if latest_match["loser_id"] == player_id and latest_match["Comment"] == "Retired":
@@ -21,12 +20,10 @@ def check_injury_in_existing_df(df, player_id):
 
 
 def add_injury(new_rows: pd.DataFrame, existing_df: pd.DataFrame) -> pd.DataFrame:
-    # Ensure the DataFrame is sorted by match date
     new_rows = new_rows.sort_values(by=['Date'])
 
     last_match_retired = {}
     
-    # Iterate over each match
     for idx, row in new_rows.iterrows():
         winner_id = row['winner_id']
         loser_id = row['loser_id']

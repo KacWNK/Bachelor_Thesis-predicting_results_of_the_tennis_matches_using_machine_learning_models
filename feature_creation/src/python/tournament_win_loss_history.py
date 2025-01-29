@@ -13,7 +13,6 @@ def check_tournament_stats_in_existing_df(df, player_id, tournament_location) ->
     if filtered_df.empty:
         return 0, 0
 
-    # Get the row with the latest Date
     latest_match = filtered_df.loc[filtered_df["Date"].idxmax()]
     if player_id == latest_match["winner_id"]:
         return latest_match['winner_total_wins_tournament_history'] + 1, latest_match['winner_total_losses_tournament_history']
@@ -30,11 +29,9 @@ def add_tournament_win_loss_history(new_matches: pd.DataFrame, existing_df: pd.D
         tournament = row['tournament_location'].lower()
         winner_id = row['winner_id']
         loser_id = row['loser_id']
-        # Initialize stats for this tournament if not already present
         if tournament not in player_stats:
             player_stats[tournament] = {}
 
-        # Initialize player stats if not already present
         if winner_id not in player_stats[tournament]:
             winner_stats = check_tournament_stats_in_existing_df(existing_df, winner_id, tournament)
             player_stats[tournament][winner_id] = {'wins': winner_stats[0], 'losses': winner_stats[1]}
@@ -47,7 +44,6 @@ def add_tournament_win_loss_history(new_matches: pd.DataFrame, existing_df: pd.D
         new_matches.at[i, 'loser_total_wins_tournament_history'] = player_stats[tournament][loser_id]['wins']
         new_matches.at[i, 'loser_total_losses_tournament_history'] = player_stats[tournament][loser_id]['losses']
 
-        # Update the stats after the current match
         player_stats[tournament][winner_id]['wins'] += 1
         player_stats[tournament][loser_id]['losses'] += 1
 

@@ -34,7 +34,7 @@ for link in country_links:
         stop_iteration = False
         for row in rows:
             rank = row.find('td', class_='first rank').get_text()
-            if rank.isspace():  # Player doesn't have ATP ranking
+            if rank.isspace():
                 stop_iteration = True
                 break
             td_name = row.find('td', class_='t-name')
@@ -42,7 +42,7 @@ for link in country_links:
             player_links.append(f'https://www.tennisexplorer.com{player_link}')
 
         if stop_iteration:
-            break  # Break the while loop when rank is not available
+            break
 
         page_number += 1
 

@@ -6,7 +6,6 @@ import json
 
 results = {}
 unwanted_tournaments = ["challenger", "futures", "itf", "utr", "seniors", "a day at the drive", "bundesliga", "czech league", "german championships", "laver cup", "exh", "World Tennis League", "Masters Cup ATP", "Next Gen ATP Finals", 'Melbourne Summer Set']
-# Define the start and end dates for iteration
 start_date = datetime(2022, 1, 1)
 end_date = datetime(2022, 12, 31)
 current_date = start_date
@@ -15,7 +14,6 @@ while current_date <= end_date:
     month = current_date.month
     day = current_date.day
 
-    # Construct the URL with the current date
     main_url = f"https://www.tennisexplorer.com/results/?type=atp-single&year={year}&month={month:02d}&day={day:02d}"
     print(f"Processing URL: {main_url}")
     response = requests.get(main_url)
@@ -35,7 +33,6 @@ while current_date <= end_date:
         type_men2_span = tname_element.find("span", class_="type-men2")
         if type_men2_span:
             tournament_name = tname_element.get_text(strip=True)
-            # Condition to stop scraping (e.g., if the tournament name contains "Challenger")
             if any(tournament_type.lower() in tournament_name.lower() for tournament_type in unwanted_tournaments):
                 print(f"Stopping scraping: Unwanted tournament found ({tournament_name}).")
                 break
@@ -55,7 +52,6 @@ while current_date <= end_date:
                 match_response = requests.get(match_url)
                 match_response.raise_for_status()
 
-                # Parse the match detail page
                 match_soup = BeautifulSoup(match_response.content, "html.parser")
                 center_div = match_soup.find("div", id="center")
                 player_elements = center_div.find_all("th", class_="plName")

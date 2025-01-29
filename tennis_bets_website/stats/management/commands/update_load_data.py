@@ -14,16 +14,12 @@ class Command(BaseCommand):
         players_path = os.path.join(data_dir, 'players.csv')
         players_df = pd.read_csv(players_path)
 
-        # Ensure proper data handling for missing values
-        # players_df['rank'] = players_df['rank'].fillna('Unranked')  # Fill missing rank with 'Unranked'
-        # players_df['age'] = players_df['age'].fillna('Unknown')  # Fill missing age with 'Unknown'
-        # players_df['hand'] = players_df['hand'].fillna('Unknown')
 
         players = []
         for _, row in players_df.iterrows():
             try:
                 Player.objects.update_or_create(
-                    player_id=row['player_id'],  # Unique identifier for the player
+                    player_id=row['player_id'],
                     defaults={
                         'name': row['name'],
                         'rank': row['rank'],
@@ -57,26 +53,21 @@ class Command(BaseCommand):
         matches_path = os.path.join(data_dir, 'matches.csv')
         matches_df = pd.read_csv(matches_path)
 
-        # Helper function to handle NaN values
         def clean_value(value, default=None):
             if pd.isnull(value):
                 return default
             return value
 
-        # Convert date column and ensure proper handling of missing values
         matches_df['date'] = pd.to_datetime(matches_df['date'], errors='coerce')
 
-        matches = []
         for _, row in matches_df.iterrows():
             try:
-                # Fetch related models
                 winner = Player.objects.get(player_id=row['winner_id'])
                 loser = Player.objects.get(player_id=row['loser_id'])
                 tournament = Tournament.objects.get(tournament_id=row['tournament_id'])
 
-                # Use update_or_create to handle both updates and new creations
                 Match.objects.update_or_create(
-                    match_id=row['match_id'],  # Unique identifier for the match
+                    match_id=row['match_id'],
                     defaults={
                         'date': clean_value(row['date']),
                         'tournament': tournament,
@@ -173,17 +164,14 @@ class Command(BaseCommand):
         pre_match_stats_path = os.path.join(data_dir, 'pre-match_stats.csv')
         pre_match_stats_df = pd.read_csv(pre_match_stats_path)
 
-        # Convert date column and ensure proper handling of missing values
         pre_match_stats_df['date'] = pd.to_datetime(matches_df['date'], errors='coerce')
         pre_match_stats = []
         for index, row in pre_match_stats_df.iterrows():
             try:
-                # Fetch the related match
                 match = Match.objects.get(match_id=row['match_id'])
 
-                # Use update_or_create to handle both updates and creations
                 PreMatchStats.objects.update_or_create(
-                    match=match,  # Use the match as a unique reference
+                    match=match,
                     defaults={
                         'w_ace_avg': clean_value(row['w_ace_avg']),
                         'l_ace_avg': clean_value(row['l_ace_avg']),

@@ -3,28 +3,23 @@ from datetime import timedelta
 
 
 def add_fatigue_scores(new_rows: pd.DataFrame, existing_df: pd.DataFrame) -> pd.DataFrame:
-    # Połącz istniejącą i nową ramkę, aby uwzględnić dane z obu
     combined_df = pd.concat([existing_df, new_rows], ignore_index=True) if existing_df is not None else new_rows
     combined_df = combined_df.drop_duplicates().reset_index(drop=True)
     combined_df['Date'] = pd.to_datetime(combined_df['Date'], errors='coerce')
 
-    # Dodaj kolumny na wskaźniki zmęczenia
     new_rows["winner_fatigue_score"] = 0.0
     new_rows["loser_fatigue_score"] = 0.0
 
-    # Iteruj przez wiersze i oblicz wartości
     for i, row in new_rows.iterrows():
         current_date = pd.to_datetime(row["Date"])
         winner_id = row["winner_id"]
         loser_id = row["loser_id"]
 
-        # Filtruj dane dla obliczeń (mecze sprzed aktualnej daty z ostatnich 7 dni)
         relevant_matches = combined_df[
-            (combined_df["Date"] < current_date) &  # Mecze sprzed obecnej daty
-            (combined_df["Date"] >= current_date - timedelta(days=7))  # Mecze z ostatnich 7 dni
+            (combined_df["Date"] < current_date) &
+            (combined_df["Date"] >= current_date - timedelta(days=7))
         ]
 
-        # Oblicz fatigue score dla zwycięzcy
         winner_matches = relevant_matches[
             relevant_matches["winner_id"] == winner_id
         ]
@@ -33,7 +28,6 @@ def add_fatigue_scores(new_rows: pd.DataFrame, existing_df: pd.DataFrame) -> pd.
             for match_date, minutes in zip(winner_matches["Date"], winner_matches["minutes"])
         )
 
-        # Oblicz fatigue score dla przegranego
         loser_matches = relevant_matches[
             relevant_matches["winner_id"] == loser_id
         ]
@@ -42,7 +36,6 @@ def add_fatigue_scores(new_rows: pd.DataFrame, existing_df: pd.DataFrame) -> pd.
             for match_date, minutes in zip(loser_matches["Date"], loser_matches["minutes"])
         )
 
-        # Zapisz wyniki
         new_rows.at[i, "winner_fatigue_score"] = winner_fatigue
         new_rows.at[i, "loser_fatigue_score"] = loser_fatigue
 

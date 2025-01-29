@@ -2,17 +2,14 @@ import pandas as pd
 
 
 def add_h2h(new_rows: pd.DataFrame, existing_df: pd.DataFrame) -> pd.DataFrame:
-    # Ensure the Date column is converted to datetime for both DataFrames
     new_rows["Date"] = pd.to_datetime(new_rows["Date"], errors="coerce")
     if existing_df is not None:
         existing_df["Date"] = pd.to_datetime(existing_df["Date"], errors="coerce")
 
-    # Sort DataFrames by date to process matches chronologically
     if existing_df is not None:
         existing_df = existing_df.sort_values("Date").reset_index(drop=True)
     new_rows = new_rows.sort_values("Date").reset_index(drop=True)
 
-    # Iterate through each new row
     for i, row in new_rows.iterrows():
         winner, loser, surface, current_date = (
             row["winner_id"],
@@ -21,8 +18,6 @@ def add_h2h(new_rows: pd.DataFrame, existing_df: pd.DataFrame) -> pd.DataFrame:
             row["Date"],
         )
 
-        # Find the last match between these players (general)
-        previous_matches_general = None
         if existing_df is not None and not existing_df.empty:
             general_existing = existing_df[
                 (existing_df["winner_id"].isin([winner, loser])) &
@@ -41,7 +36,6 @@ def add_h2h(new_rows: pd.DataFrame, existing_df: pd.DataFrame) -> pd.DataFrame:
         if not previous_matches_general.empty:
             previous_matches_general = previous_matches_general.sort_values("Date").drop_duplicates()
 
-        # General H2H stats
         if previous_matches_general is not None and not previous_matches_general.empty:
             last_match_general = previous_matches_general.iloc[-1]
             if last_match_general["winner_id"] == winner:
@@ -54,12 +48,10 @@ def add_h2h(new_rows: pd.DataFrame, existing_df: pd.DataFrame) -> pd.DataFrame:
             prev_winner_h2h_wins = 0
             prev_loser_h2h_wins = 0
 
-        # Find the last match between these players on this surface
         previous_matches_surface = previous_matches_general[
             previous_matches_general["Surface"] == surface
             ] if previous_matches_general is not None else pd.DataFrame()
 
-        # Surface-specific H2H stats
         if previous_matches_surface is not None and not previous_matches_surface.empty:
             last_match_surface = previous_matches_surface.iloc[-1]
             if last_match_surface["winner_id"] == winner:
@@ -72,7 +64,6 @@ def add_h2h(new_rows: pd.DataFrame, existing_df: pd.DataFrame) -> pd.DataFrame:
             prev_winner_h2h_surface_wins = 0
             prev_loser_h2h_surface_wins = 0
 
-        # Assign the calculated stats to the current row
         new_rows.at[i, "winner_h2h_wins"] = prev_winner_h2h_wins
         new_rows.at[i, "loser_h2h_wins"] = prev_loser_h2h_wins
         new_rows.at[i, "winner_h2h_surface_wins"] = prev_winner_h2h_surface_wins

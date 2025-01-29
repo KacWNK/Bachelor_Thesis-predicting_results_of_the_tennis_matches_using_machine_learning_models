@@ -15,7 +15,6 @@ def check_tournament_stats_in_existing_df(df, player_id, tournament_id):
     if filtered_df.empty:
         return {"sets": 0, "games": 0}
 
-    # Get the row with the latest Date
     latest_match = filtered_df.loc[filtered_df["Date"].idxmax()]
     if player_id == latest_match["winner_id"]:
         return {"sets": latest_match['Winner_Set_Diff_Tournament'],

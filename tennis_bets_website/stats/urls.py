@@ -4,8 +4,6 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', views.stats_view, name='stats'),
-    path('player/search/', views.player_search, name='player_search'),
-    path('player/<int:player_id>/', views.player_bio, name='player_bio'),
     path('results/', TemplateView.as_view(template_name='stats/results.html'), name='results'),
     # API URL for match data
     path('api/matches/<str:match_id>/', views.MatchDetailAPI.as_view(), name='match-detail-api'),

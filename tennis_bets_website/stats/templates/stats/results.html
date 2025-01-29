@@ -5,54 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matches by Date</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Pikaday CSS -->
     <link href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css" rel="stylesheet">
-    <!-- Pikaday JS -->
     <script src="https://cdn.jsdelivr.net/npm/pikaday/pikaday.js"></script>
     <style>
         /* General Body */
         body {
-            background-color: #f8f9fa; /* Light gray background */
+            background-color: #f8f9fa;
         }
         /* Top Bar */
         .top-bar {
-            background-color: black; /* Black background */
-            color: white; /* White text color */
-            padding: 0.8rem 1.5rem; /* Padding inside the bar */
-            font-size: 1.2rem; /* Text size */
-            font-weight: bold; /* Make text bold */
-            display: flex; /* Flexbox layout */
-            align-items: center; /* Center items vertically */
-            justify-content: space-between; /* Space out elements */
+            background-color: black;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             height: 120px;
         }
 
          .logo-container {
-            display: flex; /* Flexbox layout for logo and name */
-            align-items: center; /* Center vertically */
-            gap: 1rem; /* Space between logo and name */
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         /* Site Name */
         .logo-container .site-name {
-            font-size: 1.8rem; /* Larger text size for name */
-            font-weight: bold; /* Bold font */
-            color: white; /* White text color */
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
         }
 
         /* Top Bar Buttons */
         .top-bar .nav-buttons a {
-            color: white; /* White text */
-            text-decoration: none; /* No underline */
-            margin-left: 1rem; /* Spacing between buttons */
-            padding: 0.5rem 1rem; /* Button padding */
-            border-radius: 0.375rem; /* Rounded corners */
-            transition: background-color 0.2s; /* Smooth hover effect */
+            color: white;
+            text-decoration: none;
+            margin-left: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: background-color 0.2s;
         }
 
         /* Hover Effect for Buttons */
         .top-bar .nav-buttons a:hover {
-            background-color: #444; /* Darker gray on hover */
+            background-color: #444;
         }
         /* Search Icon */
         .search-icon {
@@ -63,16 +61,16 @@
             font-size: 1.5rem;
         }
         .search-icon img {
-            width: 20px; /* Set icon size */
-            filter: invert(100%); /* Invert colors to make it white */
+            width: 20px;
+            filter: invert(100%);
         }
 
         /* Search Bar */
         .search-container {
-            display: none; /* Initially hidden */
+            display: none;
             position: absolute;
-            top: 70px; /* Below the top bar */
-            right: 10px; /* Align to the right */
+            top: 70px;
+            right: 10px;
             padding: 0.5rem;
             background: white;
             border: 1px solid #ccc;
@@ -83,7 +81,7 @@
 
         .search-container input {
             padding: 0.5rem;
-            width: 300px; /* Set width for the input */
+            width: 300px;
             border: 1px solid #ddd;
             border-radius: 4px;
         }
@@ -104,28 +102,28 @@
 
         /* Main Container */
         .container {
-            background-color: white; /* White background for the match list */
-            padding: 2rem; /* Add padding inside the container */
-            border-radius: 8px; /* Rounded corners */
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
             width: 50%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for the container */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             position: relative;
         }
 
         .datepicker-container {
             display: flex;
             align-items: center;
-            max-width: 250px; /* Adjust width as needed */
-            border: 1px solid #ced4da; /* Unified border for all elements */
-            border-radius: 0.375rem; /* Rounded corners for entire group */
-            overflow: hidden; /* Prevents gaps between elements */
+            max-width: 250px;
+            border: 1px solid #ced4da;
+            border-radius: 0.375rem;
+            overflow: hidden;
             margin-bottom: 10px;
         }
 
         /* Buttons */
         .datepicker-container .btn {
-            background: transparent; /* Transparent background */
-            padding: 0.5rem 1rem; /* Padding for arrow buttons */
+            background: transparent;
+            padding: 0.5rem 1rem;
             border: 1px solid #ced4da;
         }
 
@@ -137,11 +135,11 @@
         }
 
         .datepicker-container .form-control {
-            border-color: #ced4da; /* Match button border color */
-            border-left: none; /* Remove left border */
-            border-right: none; /* Remove right border */
-            border-radius: 0; /* Remove rounded edges */
-            box-shadow: none; /* Remove shadow */
+            border-color: #ced4da;
+            border-left: none;
+            border-right: none;
+            border-radius: 0;
+            box-shadow: none;
         }
 
         /* Hover Effects for Buttons */
@@ -166,29 +164,29 @@
 
         /* Pikaday Styles */
         .pika-single {
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow for better visuals */
-            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
 
         /* Highlight selected date */
         .pika-day.is-selected {
-            background-color: #007bff; /* Bootstrap primary color */
+            background-color: #007bff;
             color: white;
         }
 
         /* Hover effect */
         .pika-day:hover {
-            background-color: #e9ecef; /* Light hover effect */
+            background-color: #e9ecef;
             cursor: pointer;
         }
 
         /* Tournament Header */
         .tournament-header {
-            background-color: #e9ecef; /* Light gray for tournament row */
+            background-color: #e9ecef;
             padding: 0.5rem 1rem;
             font-size: 1.2rem;
             font-weight: bold;
-            border-radius: 6px; /* Slight rounding for aesthetics */
+            border-radius: 6px;
             margin-bottom: 1rem;
         }
 
@@ -196,32 +194,32 @@
         .match {
             display: flex;
             align-items: center;
-            border-bottom: 1px solid #ddd; /* Divider between matches */
+            border-bottom: 1px solid #ddd;
             padding: 1rem 0;
             cursor: pointer;
         }
 
         .match:hover {
-            background-color: #f1f1f1; /* Slightly darker hover effect for matches */
+            background-color: #f1f1f1;
         }
 
         /* Round Name */
         .round {
-            flex: 0 0 15%; /* Fixed width for the round column */
+            flex: 0 0 15%;
             font-size: 0.9rem;
             color: #6c757d;
             text-align: center;
             display: flex;
-            align-items: center; /* Center round vertically */
+            align-items: center;
             justify-content: center;
         }
 
         /* Players */
         .players {
-            flex: 1; /* Allow the players section to take remaining space */
+            flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem; /* Spacing between winner and loser rows */
+            gap: 0.5rem;
         }
 
         .player {
@@ -237,15 +235,15 @@
 
         /* Player Names */
         .player-name {
-            flex: 0 0 40%; /* Fixed width for player names */
+            flex: 0 0 40%;
         }
 
         /* Scores */
         .score-row {
-            flex: 1; /* Scores take the remaining horizontal space */
+            flex: 1;
             display: flex;
             justify-content: flex-start;
-            gap: 1rem; /* Larger spaces between scores */
+            gap: 1rem;
         }
 
         .sets {
@@ -288,13 +286,10 @@
 </div>
 <div class="container mt-4">
     <div class="input-group datepicker-container">
-        <!-- Left Arrow -->
         <button id="prev-day" class="btn btn-outline-secondary">&lt;</button>
 
-        <!-- Datepicker -->
         <input id="datepicker" class="form-control text-center" readonly>
 
-        <!-- Right Arrow -->
         <button id="next-day" class="btn btn-outline-secondary">&gt;</button>
     </div>
 
@@ -304,10 +299,8 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    // Global selectedDate variable
     let selectedDate = new URLSearchParams(window.location.search).get('date') || new Date().toISOString().split('T')[0];
 
-    // Initialize Pikaday
     const picker = new Pikaday({
         field: document.getElementById('datepicker'),
         format: 'YYYY-MM-DD',
@@ -319,7 +312,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Function to fetch matches for a given date
     async function fetchMatchesByDate(date) {
         try {
             const response = await fetch(`/stats/api/matches/?date=${date}`);
@@ -334,10 +326,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Function to render matches
     async function renderMatches(date) {
         const matchesContainer = document.getElementById('matches-container');
-        matchesContainer.innerHTML = ''; // Clear previous content
+        matchesContainer.innerHTML = '';
 
         const groupedMatches = await fetchMatchesByDate(date);
 
@@ -365,13 +356,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 const playersDiv = document.createElement('div');
                 playersDiv.className = 'players';
 
-                // Winner
                 const winnerDiv = createPlayerDiv(match.winner_name, match.wsets, [
                     match.w1, match.w2, match.w3, match.w4, match.w5
                 ], true);
                 playersDiv.appendChild(winnerDiv);
 
-                // Loser
                 const loserDiv = createPlayerDiv(match.loser_name, match.lsets, [
                     match.l1, match.l2, match.l3, match.l4, match.l5
                 ], false);
@@ -383,7 +372,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // Function to create player divs
     function createPlayerDiv(name, sets, games, isWinner = false) {
         const playerDiv = document.createElement('div');
         playerDiv.className = 'player';
@@ -414,33 +402,27 @@ document.addEventListener('DOMContentLoaded', function () {
         return playerDiv;
     }
 
-    // Function to update the URL and trigger dateChange event
     function updateDate(date) {
         const formattedDate = date.toISOString().split('T')[0];
-        selectedDate = formattedDate; // Update global selectedDate
+        selectedDate = formattedDate;
 
-        // Update the URL without reloading
         const urlParams = new URLSearchParams(window.location.search);
         urlParams.set('date', formattedDate);
         const newUrl = `${window.location.pathname}?${urlParams.toString()}`;
         history.pushState(null, '', newUrl);
 
-        // Trigger the custom event
         const dateChangeEvent = new CustomEvent('dateChange', { detail: { date: formattedDate } });
         document.dispatchEvent(dateChangeEvent);
 
-        // Sync the date picker
         picker.setDate(new Date(selectedDate), true);
     }
 
-      // Listen for dateChange events
     document.addEventListener('dateChange', async function (event) {
         const newDate = event.detail.date;
         console.log(`Date change detected: ${newDate}`);
-        await renderMatches(newDate); // Trigger re-render
+        await renderMatches(newDate);
     });
 
-    // Add Previous/Next Day Handlers
     document.getElementById('prev-day').addEventListener('click', function () {
         const date = new Date(selectedDate);
         date.setDate(date.getDate() - 1);
@@ -453,7 +435,6 @@ document.addEventListener('DOMContentLoaded', function () {
         updateDate(date);
     });
 
-    // Trigger initial matches rendering
     renderMatches(selectedDate);
 });
 </script>

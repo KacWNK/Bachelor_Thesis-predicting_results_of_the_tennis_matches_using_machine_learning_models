@@ -98,7 +98,6 @@ def add_home_advantage(new_matches: pd.DataFrame, existing_df: pd.DataFrame) -> 
 
     locations_to_countries = {key.lower(): value for key, value in locations_to_countries.items()}
 
-    # Map after converting the column values to lowercase
     new_matches['tournament_country'] = new_matches['tournament_location'].str.lower().map(locations_to_countries)
 
     new_matches['winner_home'] = (new_matches['winner_ioc'] == new_matches['tournament_country'])

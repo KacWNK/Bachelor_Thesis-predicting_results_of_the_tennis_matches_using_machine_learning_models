@@ -8,7 +8,6 @@ def calculate_win_percentage_before_match(new_rows: pd.DataFrame, existing_df: p
     matches = matches.drop_duplicates().reset_index(drop=True)
     matches['Date'] = pd.to_datetime(matches['Date'], errors='coerce')
 
-    # Filter matches for the given player before the current date
     player_matches = matches[
         ((matches['winner_id'] == player_id) | (matches['loser_id'] == player_id)) & (matches['Date'] < current_date)]
 
@@ -26,7 +25,6 @@ def calculate_win_percentage_before_match(new_rows: pd.DataFrame, existing_df: p
 
 
 def add_last_10_win_record(new_rows: pd.DataFrame, existing_df: pd.DataFrame) -> pd.DataFrame:
-    # Calculate win percentages
     new_rows['winner_win_pct_last_10'] = new_rows.apply(
         lambda row: calculate_win_percentage_before_match(new_rows, existing_df, row['winner_id'], row['Date']), axis=1)
     new_rows['loser_win_pct_last_10'] = new_rows.apply(

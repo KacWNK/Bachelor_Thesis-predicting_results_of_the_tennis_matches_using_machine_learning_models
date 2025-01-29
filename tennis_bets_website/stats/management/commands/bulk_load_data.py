@@ -14,11 +14,6 @@ class Command(BaseCommand):
         players_path = os.path.join(data_dir, 'players.csv')
         players_df = pd.read_csv(players_path)
 
-        # Ensure proper data handling for missing values
-        # players_df['rank'] = players_df['rank'].fillna('Unranked')  # Fill missing rank with 'Unranked'
-        # players_df['age'] = players_df['age'].fillna('Unknown')  # Fill missing age with 'Unknown'
-        # players_df['hand'] = players_df['hand'].fillna('Unknown')
-
         players = []
         for _, row in players_df.iterrows():
             players.append(Player(
@@ -45,31 +40,27 @@ class Command(BaseCommand):
                 surface=row['Surface'],
                 indoor_or_outdoor=row['indoor_or_outdoor']
             ))
-        Tournament.objects.bulk_create(tournaments, ignore_conflicts=True)  # Avoid duplicate errors
+        Tournament.objects.bulk_create(tournaments, ignore_conflicts=True)
         self.stdout.write(self.style.SUCCESS(f"{len(tournaments)} tournaments successfully loaded!"))
 
         # Load Matches
         matches_path = os.path.join(data_dir, 'matches.csv')
         matches_df = pd.read_csv(matches_path)
 
-        # Helper function to handle NaN values
         def clean_value(value, default=None):
             if pd.isnull(value):
                 return default
             return value
 
-        # Convert date column and ensure proper handling of missing values
         matches_df['date'] = pd.to_datetime(matches_df['date'], errors='coerce')
 
         matches = []
         for index, row in matches_df.iterrows():
             try:
-                # Fetch related models
                 winner = Player.objects.get(player_id=row['winner_id'])
                 loser = Player.objects.get(player_id=row['loser_id'])
                 tournament = Tournament.objects.get(tournament_id=row['tournament_id'])
 
-                # Create or update the match
                 matches.append(Match(
                     match_id=row['match_id'],
                     date=clean_value(row['date']),
@@ -176,12 +167,10 @@ class Command(BaseCommand):
         pre_match_stats_path = os.path.join(data_dir, 'pre-match_stats.csv')
         pre_match_stats_df = pd.read_csv(pre_match_stats_path)
 
-        # Convert date column and ensure proper handling of missing values
         pre_match_stats_df['date'] = pd.to_datetime(matches_df['date'], errors='coerce')
         pre_match_stats = []
         for index, row in pre_match_stats_df.iterrows():
             try:
-                # Fetch related models
                 match = Match.objects.get(match_id=row['match_id'])
                 pre_match_stats.append(PreMatchStats(
                     match=match,
@@ -193,13 +182,11 @@ class Command(BaseCommand):
                     l_df_avg=clean_value(row['l_df_avg']),
                     w_CO_df_avg=clean_value(row['w_CO_df_avg']),
                     l_CO_df_avg=clean_value(row['l_CO_df_avg']),
-                    # Second Serve stats
                     w_2ndIn_avg=clean_value(row['w_2ndIn_avg']),
                     l_2ndIn_avg=clean_value(row['l_2ndIn_avg']),
                     w_CO_2ndIn_avg=clean_value(row['w_CO_2ndIn_avg']),
                     l_CO_2ndIn_avg=clean_value(row['l_CO_2ndIn_avg']),
 
-                    # Serve percentages
                     winner_1st_serve_in_pct_avg=clean_value(row['winner_1st_serve_in_pct_avg']),
                     loser_1st_serve_in_pct_avg=clean_value(row['loser_1st_serve_in_pct_avg']),
                     winner_CO_1st_serve_in_pct_avg=clean_value(row['winner_CO_1st_serve_in_pct_avg']),
@@ -220,13 +207,11 @@ class Command(BaseCommand):
                     winner_CO_2nd_serve_win_pct_avg=clean_value(row['winner_CO_2nd_serve_win_pct_avg']),
                     loser_CO_2nd_serve_win_pct_avg=clean_value(row['loser_CO_2nd_serve_win_pct_avg']),
 
-                    # Service game statistics
                     winner_service_games_won_pct_avg=clean_value(row['winner_service_games_won_pct_avg']),
                     loser_service_games_won_pct_avg=clean_value(row['loser_service_games_won_pct_avg']),
                     winner_CO_service_games_won_pct_avg=clean_value(row['winner_CO_service_games_won_pct_avg']),
                     loser_CO_service_games_won_pct_avg=clean_value(row['loser_CO_service_games_won_pct_avg']),
 
-                    # Return statistics
                     winner_1st_serve_return_win_pct_avg=clean_value(row['winner_1st_serve_return_win_pct_avg']),
                     loser_1st_serve_return_win_pct_avg=clean_value(row['loser_1st_serve_return_win_pct_avg']),
                     winner_CO_1st_serve_return_win_pct_avg=clean_value(row['winner_CO_1st_serve_return_win_pct_avg']),
@@ -242,7 +227,6 @@ class Command(BaseCommand):
                     winner_CO_return_games_win_pct_avg=clean_value(row['winner_CO_return_games_win_pct_avg']),
                     loser_CO_return_games_win_pct_avg=clean_value(row['loser_CO_return_games_win_pct_avg']),
 
-                    # Break point statistics
                     winner_bp_won_pct_avg=clean_value(row['winner_bp_won_pct_avg']),
                     loser_bp_won_pct_avg=clean_value(row['loser_bp_won_pct_avg']),
                     winner_CO_bp_won_pct_avg=clean_value(row['winner_CO_bp_won_pct_avg']),
